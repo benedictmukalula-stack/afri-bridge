@@ -14,7 +14,7 @@ export default function Header() {
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2Fdc61da1f09234263a84e25f305acc6be%2F84ef958a2e9548af990a4ae1ff08bb40?format=webp&width=800&height=1200"
             alt="AfriBridge Logistics"
-            className="h-16 w-auto"
+            className="h-24 w-auto"
           />
         </Link>
 
