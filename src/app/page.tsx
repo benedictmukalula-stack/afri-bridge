@@ -52,7 +52,7 @@ export default function Home() {
       <TrustStrip />
 
       {/* Certifications & Trust Badges */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="section-spacing px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <p className="text-center text-gray-600 font-semibold mb-8 uppercase text-sm tracking-wide">
             Industry Certifications & Memberships
@@ -83,7 +83,7 @@ export default function Home() {
       </section>
 
       {/* Services Overview */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="section-spacing px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <img
             src="https://images.pexels.com/photos/8760709/pexels-photo-8760709.jpeg"
@@ -104,7 +104,7 @@ export default function Home() {
               { icon: '📦', title: 'Warehousing', desc: 'Bonded storage, pick & pack, last-mile delivery' },
               { icon: '⚙️', title: 'Project Cargo', desc: 'Oversized shipments, mining, energy sector solutions' },
             ].map((service, i) => (
-              <div key={i} className="card p-8 premium-card border border-gray-200 hover:border-emerald-300 fade-in-up" style={{ animationDelay: `${i * 0.1}s` }}>
+              <div key={i} className="card premium-card fade-in-up" style={{ animationDelay: `${i * 0.1}s` }}>
                 <div className="text-4xl mb-4">{service.icon}</div>
                 <h3 className="text-xl font-bold mb-3" style={{ color: '#0f172a' }}>
                   {service.title}
@@ -120,7 +120,7 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="section-spacing px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">How It Works</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -142,7 +142,7 @@ export default function Home() {
       </section>
 
       {/* Trade Corridors Preview */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="section-spacing px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <img
             src="https://images.pexels.com/photos/22730371/pexels-photo-22730371.jpeg"
@@ -170,7 +170,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials & Stats */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0f172a', color: 'white' }}>
+      <section className="section-spacing px-4 sm:px-6 lg:px-8" style={{ background: '#0f172a', color: 'white' }}>
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Trusted by African Logistics Leaders</h2>
           <p className="text-center text-gray-400 mb-16 max-w-2xl mx-auto">

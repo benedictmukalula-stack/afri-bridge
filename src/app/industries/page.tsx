@@ -67,7 +67,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* Industries Grid */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="section-spacing px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Featured Image */}
           <img
@@ -77,7 +77,7 @@ export default function IndustriesPage() {
           />
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {industries.map((industry, i) => (
-              <div key={i} className="card p-8 hover:shadow-lg transition">
+              <div key={i} className="card premium-card">
                 <div className="text-5xl mb-4">{industry.icon}</div>
                 <h3 className="text-2xl font-bold mb-3" style={{ color: '#0f172a' }}>
                   {industry.name}
@@ -99,7 +99,7 @@ export default function IndustriesPage() {
 
           {/* Case Study Strip */}
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="card p-8">
+            <div className="card premium-card">
               <h4 className="font-bold text-sm mb-2 text-emerald-600 uppercase tracking-wide">Case Study</h4>
               <h3 className="font-bold text-lg mb-2">Mining Concentrate Export</h3>
               <p className="text-sm text-gray-600 mb-4">
@@ -110,7 +110,7 @@ export default function IndustriesPage() {
               </a>
             </div>
 
-            <div className="card p-8">
+            <div className="card premium-card">
               <h4 className="font-bold text-sm mb-2 text-emerald-600 uppercase tracking-wide">Case Study</h4>
               <h3 className="font-bold text-lg mb-2">Pharma Cold Chain</h3>
               <p className="text-sm text-gray-600 mb-4">
@@ -121,7 +121,7 @@ export default function IndustriesPage() {
               </a>
             </div>
 
-            <div className="card p-8">
+            <div className="card premium-card">
               <h4 className="font-bold text-sm mb-2 text-emerald-600 uppercase tracking-wide">Case Study</h4>
               <h3 className="font-bold text-lg mb-2">FMCG Regional Distribution</h3>
               <p className="text-sm text-gray-600 mb-4">
@@ -149,11 +149,11 @@ export default function IndustriesPage() {
                 desc: 'Tariff strategy and consolidation options to minimize landed costs',
               },
             ].map((item, i) => (
-              <div key={i} className="bg-gray-50 p-8 rounded-lg">
-                <div className="text-3xl mb-3" style={{ color: '#10b981' }}>
+              <div key={i} className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                <div className="text-4xl mb-4" style={{ color: '#10b981' }}>
                   ✓
                 </div>
-                <h4 className="font-bold mb-2">{item.title}</h4>
+                <h4 className="font-bold text-lg mb-2">{item.title}</h4>
                 <p className="text-gray-600 text-sm">{item.desc}</p>
               </div>
             ))}

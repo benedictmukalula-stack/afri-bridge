@@ -26,7 +26,7 @@ export default function TrackingPage() {
       </section>
 
       {/* Tracking Input */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="section-spacing px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <form onSubmit={handleTrack} className="flex gap-4 mb-12 flex-col md:flex-row">
             <input
@@ -148,7 +148,7 @@ export default function TrackingPage() {
       </section>
 
       {/* Features Grid */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="section-spacing px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Why Track with AfriBridge?</h2>
           <div className="grid md:grid-cols-3 gap-8">

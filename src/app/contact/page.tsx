@@ -45,7 +45,7 @@ export default function ContactPage() {
       </section>
 
       {/* Two Column Layout */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="section-spacing px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
           {/* Left: Contact Info */}
           <div>
@@ -216,7 +216,7 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100">
+      <section className="section-spacing px-4 sm:px-6 lg:px-8 bg-gray-100">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl font-bold mb-8 text-center">Find Us on the Map</h2>
           <div className="w-full h-96 bg-gray-300 rounded-lg flex items-center justify-center">
@@ -230,7 +230,7 @@ export default function ContactPage() {
       </section>
 
       {/* Regional Offices */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="section-spacing px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl font-bold mb-8 text-center">Regional Coordination Centers</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -275,7 +275,7 @@ export default function ContactPage() {
       </section>
 
       {/* Book a Call */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ background: '#10b981' }}>
+      <section className="section-spacing px-4 sm:px-6 lg:px-8" style={{ background: '#10b981' }}>
         <div className="max-w-2xl mx-auto text-center text-white">
           <h2 className="text-3xl font-bold mb-4">Schedule a Strategy Call</h2>
           <p className="text-lg mb-8 text-emerald-50">

@@ -104,7 +104,7 @@ export default function TradeCorridorsPage() {
       </section>
 
       {/* Corridors */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="section-spacing px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto space-y-12">
           {corridors.map((corridor, i) => (
             <div key={i} className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition">
@@ -169,7 +169,7 @@ export default function TradeCorridorsPage() {
       </section>
 
       {/* Why AfriBridge */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="section-spacing px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Why AfriBridge for Corridor Logistics?</h2>
           <div className="grid md:grid-cols-3 gap-8">
