@@ -5,6 +5,9 @@ import { useState } from 'react';
 
 export default function QuotePage() {
   const [submitted, setSubmitted] = useState(false);
+  const [currentStep, setCurrentStep] = useState(1);
+  const totalSteps = 4;
+  const progress = (currentStep / totalSteps) * 100;
   const [formData, setFormData] = useState({
     fullName: '',
     company: '',
@@ -60,8 +63,9 @@ export default function QuotePage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ background: '#0f172a', color: 'white' }}>
-        <div className="max-w-6xl mx-auto">
+      <section className="relative py-16 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1f2937 100%)', color: 'white' }}>
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-transparent"></div>
+        <div className="max-w-6xl mx-auto relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Request a Freight Quote</h1>
           <p className="text-xl text-gray-300">Get a custom shipping quote from AfriBridge in under 24 hours</p>
         </div>
@@ -132,7 +136,22 @@ export default function QuotePage() {
           {/* Right: Form */}
           <div>
             {!submitted ? (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <>
+                {/* Progress Indicator */}
+                <div className="mb-8">
+                  <div className="flex justify-between text-sm font-semibold mb-3">
+                    <span>Step {currentStep} of {totalSteps}</span>
+                    <span className="text-emerald-600">{Math.round(progress)}%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                    <div
+                      className="bg-emerald-600 h-full transition-all duration-300"
+                      style={{ width: `${progress}%` }}
+                    ></div>
+                  </div>
+                </div>
+
+                <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Contact Info */}
                 <div>
                   <h3 className="font-bold mb-4">Contact Information</h3>
@@ -339,11 +358,12 @@ export default function QuotePage() {
                 {/* Submit */}
                 <button
                   type="submit"
-                  className="w-full btn btn-primary py-4 text-lg font-bold"
+                  className="w-full btn btn-primary py-4 text-lg font-bold premium-card"
                 >
                   Submit Quote Request
                 </button>
               </form>
+              </>
             ) : (
               <div className="bg-emerald-50 p-12 rounded-lg text-center h-full flex flex-col justify-center">
                 <div className="text-5xl mb-4">✓</div>

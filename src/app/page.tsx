@@ -6,8 +6,10 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 px-4 sm:px-6 lg:px-8" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1f2937 100%)' }}>
-        <div className="max-w-6xl mx-auto">
+      <section className="relative py-20 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1f2937 100%)' }}>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-transparent"></div>
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -43,6 +45,7 @@ export default function Home() {
                 src="https://images.pexels.com/photos/29899416/pexels-photo-29899416.jpeg"
                 alt="Container terminal with cranes and shipping containers"
                 className="h-96 w-full object-cover rounded-lg"
+                loading="lazy"
               />
             </div>
           </div>
@@ -52,6 +55,37 @@ export default function Home() {
       {/* Trust Strip */}
       <TrustStrip />
 
+      {/* Certifications & Trust Badges */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <p className="text-center text-gray-600 font-semibold mb-8 uppercase text-sm tracking-wide">
+            Industry Certifications & Memberships
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="flex flex-col items-center justify-center p-4 text-center">
+              <div className="text-4xl mb-2">🏛️</div>
+              <p className="text-sm font-semibold text-gray-700">Customs Clearing License</p>
+              <p className="text-xs text-gray-500">SADC Certified</p>
+            </div>
+            <div className="flex flex-col items-center justify-center p-4 text-center">
+              <div className="text-4xl mb-2">📦</div>
+              <p className="text-sm font-semibold text-gray-700">Freight Forwarder</p>
+              <p className="text-xs text-gray-500">IATA & FIATA Member</p>
+            </div>
+            <div className="flex flex-col items-center justify-center p-4 text-center">
+              <div className="text-4xl mb-2">✓</div>
+              <p className="text-sm font-semibold text-gray-700">ISO 9001:2015</p>
+              <p className="text-xs text-gray-500">Quality Assured</p>
+            </div>
+            <div className="flex flex-col items-center justify-center p-4 text-center">
+              <div className="text-4xl mb-2">🔒</div>
+              <p className="text-sm font-semibold text-gray-700">Compliance First</p>
+              <p className="text-xs text-gray-500">Full Regulatory Compliance</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Overview */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
@@ -59,6 +93,7 @@ export default function Home() {
             src="https://images.pexels.com/photos/8760709/pexels-photo-8760709.jpeg"
             alt="Warehouse logistics operations"
             className="w-full h-72 object-cover rounded-lg mb-12"
+            loading="lazy"
           />
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Our Services</h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
@@ -66,19 +101,20 @@ export default function Home() {
           </p>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: 'Customs Clearing', desc: 'Expert HS coding, documentation, duty & VAT guidance' },
-              { title: 'Air Freight', desc: 'Urgent shipments, consolidation, real-time tracking' },
-              { title: 'Ocean Freight', desc: 'FCL/LCL solutions, carrier management, cost optimization' },
-              { title: 'Road & Cross-Border', desc: 'SADC corridor expertise, border processing, compliance' },
-              { title: 'Warehousing', desc: 'Bonded storage, pick & pack, last-mile delivery' },
-              { title: 'Project Cargo', desc: 'Oversized shipments, mining, energy sector solutions' },
+              { icon: '🧾', title: 'Customs Clearing', desc: 'Expert HS coding, documentation, duty & VAT guidance' },
+              { icon: '✈️', title: 'Air Freight', desc: 'Urgent shipments, consolidation, real-time tracking' },
+              { icon: '🚢', title: 'Ocean Freight', desc: 'FCL/LCL solutions, carrier management, cost optimization' },
+              { icon: '🚚', title: 'Road & Cross-Border', desc: 'SADC corridor expertise, border processing, compliance' },
+              { icon: '📦', title: 'Warehousing', desc: 'Bonded storage, pick & pack, last-mile delivery' },
+              { icon: '⚙️', title: 'Project Cargo', desc: 'Oversized shipments, mining, energy sector solutions' },
             ].map((service, i) => (
-              <div key={i} className="card p-8">
+              <div key={i} className="card p-8 premium-card border border-gray-200 hover:border-emerald-300 fade-in-up" style={{ animationDelay: `${i * 0.1}s` }}>
+                <div className="text-4xl mb-4">{service.icon}</div>
                 <h3 className="text-xl font-bold mb-3" style={{ color: '#0f172a' }}>
                   {service.title}
                 </h3>
-                <p className="text-gray-600 mb-4">{service.desc}</p>
-                <Link href="/quote" className="inline-block text-emerald-600 font-semibold hover:text-emerald-700">
+                <p className="text-gray-600 mb-6 text-sm">{service.desc}</p>
+                <Link href="/quote" className="inline-block text-emerald-600 font-semibold hover:text-emerald-700 transition">
                   Get a Quote →
                 </Link>
               </div>
@@ -116,6 +152,7 @@ export default function Home() {
             src="https://images.pexels.com/photos/22730371/pexels-photo-22730371.jpeg"
             alt="African port and trade infrastructure"
             className="w-full h-72 object-cover rounded-lg mb-12"
+            loading="lazy"
           />
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Africa Trade Corridors</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -137,27 +174,40 @@ export default function Home() {
       </section>
 
       {/* Testimonials & Stats */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ background: '#0f172a', color: 'white' }}>
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0f172a', color: 'white' }}>
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Trusted by African Logistics Leaders</h2>
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-5xl font-bold mb-2" style={{ color: '#10b981' }}>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Trusted by African Logistics Leaders</h2>
+          <p className="text-center text-gray-400 mb-16 max-w-2xl mx-auto">
+            Our track record speaks for itself. Built on years of regional expertise and regional partnerships.
+          </p>
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            <div className="bg-gray-900 bg-opacity-50 p-8 rounded-lg border border-gray-800 hover:border-emerald-500 transition">
+              <div className="text-6xl font-bold mb-3" style={{ color: '#10b981' }}>
                 98%
               </div>
-              <p className="text-gray-300">On-time Delivery Rate</p>
+              <p className="text-gray-300 font-semibold">On-time Delivery</p>
+              <p className="text-gray-500 text-sm mt-2">Across all corridors</p>
             </div>
-            <div>
-              <div className="text-5xl font-bold mb-2" style={{ color: '#10b981' }}>
-                1000+
+            <div className="bg-gray-900 bg-opacity-50 p-8 rounded-lg border border-gray-800 hover:border-emerald-500 transition">
+              <div className="text-6xl font-bold mb-3" style={{ color: '#10b981' }}>
+                12K+
               </div>
-              <p className="text-gray-300">Successful Clearances Monthly</p>
+              <p className="text-gray-300 font-semibold">Shipments Handled</p>
+              <p className="text-gray-500 text-sm mt-2">Successfully cleared</p>
             </div>
-            <div>
-              <div className="text-5xl font-bold mb-2" style={{ color: '#10b981' }}>
-                15+
+            <div className="bg-gray-900 bg-opacity-50 p-8 rounded-lg border border-gray-800 hover:border-emerald-500 transition">
+              <div className="text-6xl font-bold mb-3" style={{ color: '#10b981' }}>
+                25+
               </div>
-              <p className="text-gray-300">Active Trade Corridors</p>
+              <p className="text-gray-300 font-semibold">Countries Served</p>
+              <p className="text-gray-500 text-sm mt-2">Across Africa</p>
+            </div>
+            <div className="bg-gray-900 bg-opacity-50 p-8 rounded-lg border border-gray-800 hover:border-emerald-500 transition">
+              <div className="text-6xl font-bold mb-3" style={{ color: '#10b981' }}>
+                24/7
+              </div>
+              <p className="text-gray-300 font-semibold">Operations Support</p>
+              <p className="text-gray-500 text-sm mt-2">Always available</p>
             </div>
           </div>
         </div>

@@ -72,8 +72,9 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0f172a', color: 'white' }}>
-        <div className="max-w-6xl mx-auto">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1f2937 100%)', color: 'white' }}>
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-transparent"></div>
+        <div className="max-w-6xl mx-auto relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
           <p className="text-xl text-gray-300 max-w-2xl">
             Comprehensive clearing, forwarding, and logistics solutions across Africa
@@ -106,6 +107,7 @@ export default function ServicesPage() {
                   src={service.image}
                   alt={service.title}
                   className="h-64 w-full object-cover rounded-lg"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -119,16 +121,16 @@ export default function ServicesPage() {
           <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {faqs.map((faq, i) => (
-              <div key={i} className="bg-white rounded border border-gray-200">
+              <div key={i} className="bg-white rounded border border-gray-200 premium-card fade-in-up" style={{ animationDelay: `${i * 0.05}s` }}>
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full text-left p-6 font-semibold flex justify-between items-center hover:bg-gray-50"
+                  className="w-full text-left p-6 font-semibold flex justify-between items-center hover:bg-gray-50 transition"
                 >
                   {faq.q}
-                  <span className="text-emerald-600 font-bold text-xl">{openFaq === i ? '−' : '+'}</span>
+                  <span className="text-emerald-600 font-bold text-xl transition-transform" style={{ transform: openFaq === i ? 'rotate(45deg)' : 'rotate(0)' }}>{openFaq === i ? '−' : '+'}</span>
                 </button>
                 {openFaq === i && (
-                  <div className="px-6 pb-6 pt-0 text-gray-600 border-t border-gray-200">
+                  <div className="px-6 pb-6 pt-0 text-gray-600 border-t border-gray-200 fade-in">
                     {faq.a}
                   </div>
                 )}

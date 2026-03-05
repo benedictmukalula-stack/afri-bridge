@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -15,8 +16,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AfriBridge - Premium Clearing & Logistics",
-  description: "Expert customs clearing, freight forwarding, and cross-border logistics for SADC trade corridors",
+  title: "AfriBridge - Premium Clearing & Logistics Across Africa",
+  description: "Expert customs clearing, freight forwarding, and cross-border logistics for SADC trade corridors. 98% on-time delivery, 25+ countries served.",
+  keywords: "customs clearing, freight forwarding, logistics, SADC, Africa, cross-border, cargo, shipping",
+  openGraph: {
+    title: "AfriBridge - Premium Clearing & Logistics",
+    description: "Expert logistics solutions for African trade corridors",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -34,6 +41,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );

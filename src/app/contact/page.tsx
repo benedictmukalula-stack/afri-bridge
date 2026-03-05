@@ -34,8 +34,9 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0f172a', color: 'white' }}>
-        <div className="max-w-6xl mx-auto">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1f2937 100%)', color: 'white' }}>
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-transparent"></div>
+        <div className="max-w-6xl mx-auto relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact AfriBridge</h1>
           <p className="text-xl text-gray-300">
             Our operations team responds within 24–48 hours. Available 24/7 on WhatsApp.

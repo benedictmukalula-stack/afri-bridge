@@ -17,8 +17,9 @@ export default function TrackingPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0f172a', color: 'white' }}>
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1f2937 100%)', color: 'white' }}>
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-transparent"></div>
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Track Your Shipment</h1>
           <p className="text-xl text-gray-300">Real-time visibility across all modes and corridors</p>
         </div>
