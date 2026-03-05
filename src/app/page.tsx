@@ -6,19 +6,19 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-20 md:py-40 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex items-center" style={{ backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2Fdc61da1f09234263a84e25f305acc6be%2F478a2d42a1c94c47b6ab76c57a333b69?format=webp&width=800&height=1200')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        {/* Transparent Dark Overlay */}
-        <div className="absolute inset-0 bg-black/50"></div>
-        {/* Gradient Overlay for Premium Feel */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
+      <section className="relative py-20 md:py-40 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex items-center" style={{ backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2Fdc61da1f09234263a84e25f305acc6be%2F478a2d42a1c94c47b6ab76c57a333b69?format=webp&width=800&height=1200')`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
+        {/* Subtle Gradient Overlay - Left to Right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-black/20 to-black/5"></div>
+        {/* Soft Bottom Gradient for Better Text Area */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/15"></div>
 
         <div className="max-w-6xl mx-auto w-full relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)', filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.2))' }}>
                 Premium Clearing & Logistics Across Africa
               </h1>
-              <p className="text-xl text-gray-100 mb-8 drop-shadow-md">
+              <p className="text-xl text-white mb-8" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.25)' }}>
                 Customs compliance, freight forwarding, and cross-border logistics built for SADC trade corridors.
               </p>
               <div className="flex gap-4 flex-wrap">
@@ -32,13 +32,13 @@ export default function Home() {
 
               {/* Value Chips */}
               <div className="flex flex-wrap gap-3 mt-12">
-                <div className="bg-emerald-600/90 backdrop-blur text-white px-4 py-2 rounded-full text-sm font-semibold drop-shadow-md">
+                <div className="bg-emerald-600/80 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>
                   ✓ Customs Compliance
                 </div>
-                <div className="bg-emerald-600/90 backdrop-blur text-white px-4 py-2 rounded-full text-sm font-semibold drop-shadow-md">
+                <div className="bg-emerald-600/80 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>
                   ✓ End-to-End Visibility
                 </div>
-                <div className="bg-emerald-600/90 backdrop-blur text-white px-4 py-2 rounded-full text-sm font-semibold drop-shadow-md">
+                <div className="bg-emerald-600/80 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>
                   ✓ SADC Expertise
                 </div>
               </div>
