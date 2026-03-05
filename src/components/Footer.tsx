@@ -7,9 +7,11 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Company */}
           <div>
-            <h4 className="font-bold text-lg mb-4" style={{ color: '#10b981' }}>
-              AfriBridge
-            </h4>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2Fdc61da1f09234263a84e25f305acc6be%2F84ef958a2e9548af990a4ae1ff08bb40?format=webp&width=800&height=1200"
+              alt="AfriBridge Logistics"
+              className="h-20 w-auto mb-4"
+            />
             <p className="text-sm text-gray-400">
               Premium clearing & logistics across Africa. Customs compliance, freight forwarding, and cross-border solutions for SADC trade corridors.
             </p>

@@ -10,8 +10,12 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold" style={{ color: '#0f172a' }}>
-          <span style={{ color: '#10b981' }}>Afri</span>Bridge
+        <Link href="/" className="flex items-center">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2Fdc61da1f09234263a84e25f305acc6be%2F84ef958a2e9548af990a4ae1ff08bb40?format=webp&width=800&height=1200"
+            alt="AfriBridge Logistics"
+            className="h-16 w-auto"
+          />
         </Link>
 
         {/* Desktop Nav */}
