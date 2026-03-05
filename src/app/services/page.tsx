@@ -72,11 +72,17 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1f2937 100%)', color: 'white' }}>
-        <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-transparent"></div>
-        <div className="max-w-6xl mx-auto relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
-          <p className="text-xl text-gray-300 max-w-2xl">
+      <section className="relative py-20 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-96 flex items-center" style={{ backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2Fdc61da1f09234263a84e25f305acc6be%2F2c8b8193cfb641b0971c02d22466e48c?format=webp&width=800&height=1200')`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
+        {/* Subtle Gradient Overlay - Left to Right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/25 to-black/10"></div>
+        {/* Soft Bottom Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20"></div>
+
+        <div className="max-w-6xl mx-auto w-full relative z-10">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
+            Our Services
+          </h1>
+          <p className="text-xl text-white max-w-2xl" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.25)' }}>
             Comprehensive clearing, forwarding, and logistics solutions across Africa
           </p>
         </div>
