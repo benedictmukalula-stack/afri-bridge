@@ -6,48 +6,44 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1f2937 100%)' }}>
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-transparent"></div>
-        <div className="max-w-6xl mx-auto relative z-10">
+      <section className="relative py-20 md:py-40 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex items-center" style={{ backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2Fdc61da1f09234263a84e25f305acc6be%2F478a2d42a1c94c47b6ab76c57a333b69?format=webp&width=800&height=1200')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        {/* Transparent Dark Overlay */}
+        <div className="absolute inset-0 bg-black/50"></div>
+        {/* Gradient Overlay for Premium Feel */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
+
+        <div className="max-w-6xl mx-auto w-full relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
                 Premium Clearing & Logistics Across Africa
               </h1>
-              <p className="text-xl text-gray-300 mb-8">
+              <p className="text-xl text-gray-100 mb-8 drop-shadow-md">
                 Customs compliance, freight forwarding, and cross-border logistics built for SADC trade corridors.
               </p>
               <div className="flex gap-4 flex-wrap">
-                <Link href="/quote" className="btn btn-primary">
+                <Link href="/quote" className="btn btn-primary shadow-lg hover:shadow-xl">
                   Request a Quote
                 </Link>
                 <Link href="/tracking" className="btn btn-secondary" style={{ color: 'white', borderColor: 'white' }}>
                   Track Shipment
                 </Link>
               </div>
-              
+
               {/* Value Chips */}
               <div className="flex flex-wrap gap-3 mt-12">
-                <div className="bg-emerald-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                <div className="bg-emerald-600/90 backdrop-blur text-white px-4 py-2 rounded-full text-sm font-semibold drop-shadow-md">
                   ✓ Customs Compliance
                 </div>
-                <div className="bg-emerald-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                <div className="bg-emerald-600/90 backdrop-blur text-white px-4 py-2 rounded-full text-sm font-semibold drop-shadow-md">
                   ✓ End-to-End Visibility
                 </div>
-                <div className="bg-emerald-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                <div className="bg-emerald-600/90 backdrop-blur text-white px-4 py-2 rounded-full text-sm font-semibold drop-shadow-md">
                   ✓ SADC Expertise
                 </div>
               </div>
             </div>
-            <div className="hidden md:block">
-              <img
-                src="https://images.pexels.com/photos/29899416/pexels-photo-29899416.jpeg"
-                alt="Container terminal with cranes and shipping containers"
-                className="h-96 w-full object-cover rounded-lg"
-                loading="lazy"
-              />
-            </div>
+            <div className="hidden md:block"></div>
           </div>
         </div>
       </section>
