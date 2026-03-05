@@ -12,31 +12,37 @@ export default function ServicesPage() {
       title: 'Customs Clearing & Compliance',
       desc: 'Expert HS coding, tariff classification, documentation management, and duty/VAT guidance. We ensure full regulatory compliance across all SADC borders.',
       details: ['HS Code expertise', 'Tariff optimization', 'VAT & duty guidance', 'Documentation review'],
+      image: 'https://images.pexels.com/photos/34570226/pexels-photo-34570226.jpeg',
     },
     {
       title: 'Air Freight',
       desc: 'Fast international shipments with full consolidation capabilities. Real-time tracking from origin to destination with customs pre-clearance.',
       details: ['Urgent shipments (24-48h)', 'Air consolidation', 'Dangerous goods handling', 'Express tracking'],
+      image: 'https://images.pexels.com/photos/11146455/pexels-photo-11146455.jpeg',
     },
     {
       title: 'Ocean Freight',
       desc: 'Full Container (FCL) and Less Container (LCL) solutions. Carrier negotiations, booking management, and port coordination.',
       details: ['FCL / LCL optimization', 'Carrier partnerships', 'Port operations', 'Incoterm expertise'],
+      image: 'https://images.pexels.com/photos/93106/pexels-photo-93106.jpeg',
     },
     {
       title: 'Road & Cross-Border',
       desc: 'Specialist SADC corridor services. Border post coordination, road freight consolidation, and compliance with regional trade rules.',
       details: ['SADC corridor expertise', 'Border processing', 'Road consolidation', 'Regional compliance'],
+      image: 'https://images.pexels.com/photos/13961752/pexels-photo-13961752.jpeg',
     },
     {
       title: 'Warehousing & Distribution',
       desc: 'Bonded warehouse storage, pick & pack services, and last-mile delivery partnerships across the region.',
       details: ['Bonded storage', 'Pick & pack', 'Last-mile delivery', 'Inventory management'],
+      image: 'https://images.pexels.com/photos/8760709/pexels-photo-8760709.jpeg',
     },
     {
       title: 'Project Cargo',
       desc: 'Oversized and heavy equipment shipments for mining, energy, and infrastructure sectors. Specialized handling and routing.',
       details: ['Oversized handling', 'Mining solutions', 'Energy sector', 'Infrastructure projects'],
+      image: 'https://images.pexels.com/photos/29899416/pexels-photo-29899416.jpeg',
     },
   ];
 
@@ -96,9 +102,11 @@ export default function ServicesPage() {
                 </Link>
               </div>
               <div className="hidden md:block">
-                <div className="bg-gray-300 h-64 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-600 font-semibold text-center">{service.title} Imagery</span>
-                </div>
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="h-64 w-full object-cover rounded-lg"
+                />
               </div>
             </div>
           ))}

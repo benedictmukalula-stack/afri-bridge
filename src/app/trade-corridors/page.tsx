@@ -88,9 +88,14 @@ export default function TradeCorridorsPage() {
         </div>
       </section>
 
-      {/* Intro */}
+      {/* Intro with Image */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto mb-8">
+          <img
+            src="https://images.pexels.com/photos/22730371/pexels-photo-22730371.jpeg"
+            alt="African port with containers and cranes"
+            className="w-full h-80 object-cover rounded-lg mb-8"
+          />
           <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto">
             With 15+ years of corridor expertise, we understand the unique compliance, timing, and logistics challenges of each trade lane. From border post coordination to tariff optimization, we'll move your cargo efficiently and safely.
           </p>

@@ -262,6 +262,17 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Partnership Image */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto mb-16">
+          <img
+            src="https://images.pexels.com/photos/7653971/pexels-photo-7653971.jpeg"
+            alt="Business partnership handshake"
+            className="w-full h-96 object-cover rounded-lg"
+          />
+        </div>
+      </section>
+
       {/* Book a Call */}
       <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ background: '#10b981' }}>
         <div className="max-w-2xl mx-auto text-center text-white">

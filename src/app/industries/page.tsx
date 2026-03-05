@@ -68,6 +68,12 @@ export default function IndustriesPage() {
       {/* Industries Grid */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
+          {/* Featured Image */}
+          <img
+            src="https://images.pexels.com/photos/13961752/pexels-photo-13961752.jpeg"
+            alt="Logistics industry overview"
+            className="w-full h-80 object-cover rounded-lg mb-12"
+          />
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {industries.map((industry, i) => (
               <div key={i} className="card p-8 hover:shadow-lg transition">

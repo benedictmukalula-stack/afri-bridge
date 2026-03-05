@@ -39,9 +39,11 @@ export default function Home() {
               </div>
             </div>
             <div className="hidden md:block">
-              <div className="bg-gray-400 h-96 rounded-lg flex items-center justify-center">
-                <span className="text-gray-600 font-semibold">Pan-African Port Terminal Imagery</span>
-              </div>
+              <img
+                src="https://images.pexels.com/photos/29899416/pexels-photo-29899416.jpeg"
+                alt="Container terminal with cranes and shipping containers"
+                className="h-96 w-full object-cover rounded-lg"
+              />
             </div>
           </div>
         </div>
@@ -53,6 +55,11 @@ export default function Home() {
       {/* Services Overview */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
+          <img
+            src="https://images.pexels.com/photos/8760709/pexels-photo-8760709.jpeg"
+            alt="Warehouse logistics operations"
+            className="w-full h-72 object-cover rounded-lg mb-12"
+          />
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Our Services</h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
             Comprehensive logistics solutions across all modes and corridors
@@ -105,6 +112,11 @@ export default function Home() {
       {/* Trade Corridors Preview */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
+          <img
+            src="https://images.pexels.com/photos/22730371/pexels-photo-22730371.jpeg"
+            alt="African port and trade infrastructure"
+            className="w-full h-72 object-cover rounded-lg mb-12"
+          />
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Africa Trade Corridors</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[

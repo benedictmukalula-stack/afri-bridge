@@ -126,6 +126,13 @@ export default function TrackingPage() {
             ))}
           </div>
 
+          {/* Tracking Image */}
+          <img
+            src="https://images.pexels.com/photos/3582392/pexels-photo-3582392.jpeg"
+            alt="Logistics control center"
+            className="w-full h-96 object-cover rounded-lg mb-12"
+          />
+
           {/* Help Section */}
           <div className="bg-gray-50 p-8 rounded-lg text-center">
             <h3 className="text-2xl font-bold mb-4">Having trouble tracking your shipment?</h3>

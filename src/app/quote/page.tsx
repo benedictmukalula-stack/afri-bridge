@@ -72,6 +72,11 @@ export default function QuotePage() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
           {/* Left: Trust Content */}
           <div>
+            <img
+              src="https://images.pexels.com/photos/5439165/pexels-photo-5439165.jpeg"
+              alt="Business professionals discussing logistics"
+              className="w-full h-80 object-cover rounded-lg mb-6"
+            />
             <h2 className="text-2xl font-bold mb-6">Why Choose AfriBridge?</h2>
             <ul className="space-y-4 mb-8">
               <li className="flex gap-3">
