@@ -38,13 +38,19 @@ export default function PremiumHeader() {
                 style={{
                   fontSize: '14px',
                   fontWeight: '500',
-                  color: '#4b5563',
+                  color: '#6b7280',
                   textDecoration: 'none',
-                  transition: 'color 0.25s ease',
+                  transition: 'all 0.3s ease',
                   letterSpacing: '0.3px',
+                  position: 'relative',
+                  paddingBottom: '4px',
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#0f172a')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#4b5563')}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#0B1F3A';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = '#6b7280';
+                }}
               >
                 {link.label}
               </Link>
@@ -69,24 +75,7 @@ export default function PremiumHeader() {
             </Link>
             <Link
               href="/quote"
-              style={{
-                fontSize: '14px',
-                fontWeight: '600',
-                color: 'white',
-                background: '#0f172a',
-                padding: '11px 28px',
-                borderRadius: '5px',
-                textDecoration: 'none',
-                transition: 'background 0.2s ease',
-                display: 'inline-block',
-                letterSpacing: '0.3px',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = '#1a2739';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = '#0f172a';
-              }}
+              className="btn btn-dark"
             >
               Request Quote
             </Link>
@@ -157,17 +146,8 @@ export default function PremiumHeader() {
             <div style={{ borderTop: '1px solid #e5e7eb', marginTop: '16px', paddingTop: '16px' }}>
               <Link
                 href="/quote"
-                style={{
-                  fontSize: '14px',
-                  fontWeight: '600',
-                  color: 'white',
-                  background: '#0f172a',
-                  padding: '12px 24px',
-                  borderRadius: '6px',
-                  textDecoration: 'none',
-                  display: 'block',
-                  textAlign: 'center',
-                }}
+                className="btn btn-dark"
+                style={{ display: 'block', textAlign: 'center' }}
               >
                 Request Quote
               </Link>
