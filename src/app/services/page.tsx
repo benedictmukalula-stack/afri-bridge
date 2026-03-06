@@ -73,20 +73,20 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative py-20 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-96 flex items-center" style={{ backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2Fdc61da1f09234263a84e25f305acc6be%2F2c8b8193cfb641b0971c02d22466e48c?format=webp&width=800&height=1200')`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
+      <section className="relative py-16 md:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-80 flex items-center" style={{ backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2Fdc61da1f09234263a84e25f305acc6be%2F2c8b8193cfb641b0971c02d22466e48c?format=webp&width=800&height=1200')`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
         {/* Enhanced Dark Gradient Overlay - Left to Right for better text visibility */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/45 to-black/25"></div>
         {/* Enhanced Bottom Gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/30"></div>
 
         <div className="max-w-6xl mx-auto w-full relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-3" style={{
             textShadow: '0 4px 12px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.4)',
             letterSpacing: '-0.02em'
           }}>
             Our Services
           </h1>
-          <p className="text-xl text-white max-w-2xl" style={{
+          <p className="text-base md:text-lg text-white max-w-2xl" style={{
             textShadow: '0 3px 8px rgba(0, 0, 0, 0.45), 0 1px 3px rgba(0, 0, 0, 0.3)',
             lineHeight: '1.8'
           }}>
