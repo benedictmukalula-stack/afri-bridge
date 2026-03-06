@@ -68,30 +68,35 @@ export default function IndustriesPage() {
       </section>
 
       {/* Industries Grid */}
-      <section className="section-spacing px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+      <section style={{ padding: '5rem 2rem' }}>
+        <div className="container-max">
           {/* Featured Image */}
           <ImagePlaceholder
             type="section"
             alt="Logistics industry overview"
-            className="mb-12 h-80"
+            className="fade-in-up"
+            style={{ marginBottom: '3rem', height: '320px' }}
           />
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>
             {industries.map((industry, i) => (
-              <div key={i} className="card premium-card">
-                <div className="text-5xl mb-4">{industry.icon}</div>
-                <h3 className="text-2xl font-bold mb-3" style={{ color: '#0f172a' }}>
+              <div key={i} className="card-premium fade-in-up" style={{ animationDelay: `${i * 0.05}s` }}>
+                <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{industry.icon}</div>
+                <h3 style={{ fontSize: '1.375rem', fontWeight: '700', marginBottom: '1rem', color: '#111827' }}>
                   {industry.name}
                 </h3>
-                <div className="mb-4">
-                  <h4 className="font-semibold text-sm text-gray-600 mb-1 uppercase tracking-wide">Typical Cargo</h4>
-                  <p className="text-gray-700 mb-4">{industry.cargo}</p>
+                <div style={{ marginBottom: '1rem' }}>
+                  <h4 style={{ fontSize: '11px', fontWeight: '700', color: '#6b7280', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.8px' }}>
+                    Typical Cargo
+                  </h4>
+                  <p style={{ color: '#6b7280', marginBottom: '1rem', fontSize: '0.9375rem' }}>{industry.cargo}</p>
                 </div>
-                <div className="mb-6">
-                  <h4 className="font-semibold text-sm text-gray-600 mb-1 uppercase tracking-wide">Compliance Notes</h4>
-                  <p className="text-gray-700 text-sm">{industry.compliance}</p>
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <h4 style={{ fontSize: '11px', fontWeight: '700', color: '#6b7280', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.8px' }}>
+                    Compliance Notes
+                  </h4>
+                  <p style={{ fontSize: '0.875rem', color: '#6b7280' }}>{industry.compliance}</p>
                 </div>
-                <Link href="/quote" className="text-emerald-600 font-semibold hover:text-emerald-700">
+                <Link href="/quote" className="premium-link">
                   Get a Quote →
                 </Link>
               </div>
@@ -99,43 +104,40 @@ export default function IndustriesPage() {
           </div>
 
           {/* Case Study Strip */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="card premium-card">
-              <h4 className="font-bold text-sm mb-2 text-emerald-600 uppercase tracking-wide">Case Study</h4>
-              <h3 className="font-bold text-lg mb-2">Mining Concentrate Export</h3>
-              <p className="text-sm text-gray-600 mb-4">
-                Zambia-based mining company shipped 50 containers of copper concentrate to China in 48 hours with full compliance clearance.
-              </p>
-              <a href="#" className="text-emerald-600 font-semibold text-sm">
-                Read More →
-              </a>
-            </div>
-
-            <div className="card premium-card">
-              <h4 className="font-bold text-sm mb-2 text-emerald-600 uppercase tracking-wide">Case Study</h4>
-              <h3 className="font-bold text-lg mb-2">Pharma Cold Chain</h3>
-              <p className="text-sm text-gray-600 mb-4">
-                Temperature-controlled vaccine shipment from South Africa to 5 SADC countries maintained 2-8°C throughout transit.
-              </p>
-              <a href="#" className="text-emerald-600 font-semibold text-sm">
-                Read More →
-              </a>
-            </div>
-
-            <div className="card premium-card">
-              <h4 className="font-bold text-sm mb-2 text-emerald-600 uppercase tracking-wide">Case Study</h4>
-              <h3 className="font-bold text-lg mb-2">FMCG Regional Distribution</h3>
-              <p className="text-sm text-gray-600 mb-4">
-                Consumer goods consolidation across 4 SADC borders cleared in 36 hours with optimized tariff classification.
-              </p>
-              <a href="#" className="text-emerald-600 font-semibold text-sm">
-                Read More →
-              </a>
-            </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>
+            {[
+              {
+                title: 'Mining Concentrate Export',
+                desc: 'Zambia-based mining company shipped 50 containers of copper concentrate to China in 48 hours with full compliance clearance.',
+              },
+              {
+                title: 'Pharma Cold Chain',
+                desc: 'Temperature-controlled vaccine shipment from South Africa to 5 SADC countries maintained 2-8°C throughout transit.',
+              },
+              {
+                title: 'FMCG Regional Distribution',
+                desc: 'Consumer goods consolidation across 4 SADC borders cleared in 36 hours with optimized tariff classification.',
+              },
+            ].map((study, i) => (
+              <div key={i} className="card-premium">
+                <div className="badge badge-secondary" style={{ marginBottom: '1rem' }}>
+                  Case Study
+                </div>
+                <h3 style={{ fontSize: '1.125rem', fontWeight: '700', marginBottom: '0.75rem', color: '#111827' }}>
+                  {study.title}
+                </h3>
+                <p style={{ fontSize: '0.875rem', color: '#6b7280', marginBottom: '1rem' }}>
+                  {study.desc}
+                </p>
+                <a href="#" className="premium-link" style={{ fontSize: '0.875rem' }}>
+                  Read More →
+                </a>
+              </div>
+            ))}
           </div>
 
           {/* Why AfriBridge */}
-          <div className="grid md:grid-cols-3 gap-8">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
             {[
               {
                 title: 'Sector Expertise',
@@ -150,12 +152,14 @@ export default function IndustriesPage() {
                 desc: 'Tariff strategy and consolidation options to minimize landed costs',
               },
             ].map((item, i) => (
-              <div key={i} className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                <div className="text-4xl mb-4" style={{ color: '#10b981' }}>
+              <div key={i} className="card-premium">
+                <div style={{ fontSize: '2.5rem', marginBottom: '1rem', color: 'var(--emerald)' }}>
                   ✓
                 </div>
-                <h4 className="font-bold text-lg mb-2">{item.title}</h4>
-                <p className="text-gray-600 text-sm">{item.desc}</p>
+                <h4 style={{ fontSize: '1.125rem', fontWeight: '700', marginBottom: '0.75rem', color: '#111827' }}>
+                  {item.title}
+                </h4>
+                <p style={{ fontSize: '0.9375rem', color: '#6b7280' }}>{item.desc}</p>
               </div>
             ))}
           </div>
