@@ -1,8 +1,8 @@
 import {
-  Content,
   fetchOneEntry,
   getBuilderSearchParams,
 } from "@builder.io/sdk-react-nextjs";
+import { BuilderContentWrapper } from "@/components/BuilderContent";
 
 export default async function CatchAllPage({
   params,
@@ -32,5 +32,11 @@ export default async function CatchAllPage({
     );
   }
 
-  return <Content model="page" content={content} apiKey={process.env.NEXT_PUBLIC_BUILDER_API_KEY!} />;
+  return (
+    <BuilderContentWrapper
+      model="page"
+      content={content}
+      apiKey={process.env.NEXT_PUBLIC_BUILDER_API_KEY!}
+    />
+  );
 }
