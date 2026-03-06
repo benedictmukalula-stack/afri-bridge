@@ -58,33 +58,37 @@ body {
 
 /* Typography - Premium Enterprise Standard */
 h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 2.2rem;
+  font-weight: 800;
   line-height: 1.2;
   margin-bottom: 1.25rem;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.6px;
+  color: var(--text-primary);
 }
 
 h2 {
-  font-size: 1.75rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 800;
   line-height: 1.3;
   margin-bottom: 0.875rem;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.4px;
+  color: var(--text-primary);
 }
 
 h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 700;
   margin-bottom: 0.75rem;
-  letter-spacing: -0.2px;
+  letter-spacing: -0.3px;
+  color: var(--text-primary);
 }
 
 p {
-  font-size: 0.9375rem;
-  color: #4b5563;
+  font-size: 0.875rem;
+  color: #5a6470;
   margin-bottom: 0.875rem;
-  line-height: 1.6;
+  line-height: 1.65;
+  font-weight: 500;
 }
 
 .text-lg {
@@ -94,16 +98,16 @@ p {
 
 /* Buttons - Premium Enterprise Standard */
 .btn {
-  padding: 0.75rem 1.75rem;
+  padding: 0.7rem 1.6rem;
   border: none;
   border-radius: 0.625rem;
-  font-weight: 600;
-  font-size: 0.9375rem;
+  font-weight: 700;
+  font-size: 0.875rem;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   display: inline-block;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px;
   outline: 2px solid transparent;
   outline-offset: 2px;
 }

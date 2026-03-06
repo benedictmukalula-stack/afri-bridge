@@ -291,16 +291,18 @@ export default function ContactPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             {/* Smart Assistant Card */}
             <div className="card-premium" style={{ textAlign: 'center', padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🤖</div>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: '#111827' }}>
+              <div style={{ marginBottom: '1rem', color: 'var(--emerald)' }}>
+                <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24"><path d="M13 17.9v1.5c0 .83-.67 1.5-1.5 1.5S10 20.33 10 19.5v-1.5c0-.17.03-.33.09-.48-.67-.37-1.28-.87-1.81-1.45.47.1.95.16 1.44.16 1.32 0 2.57-.34 3.64-.93.09.3.14.62.14.96zm-6-2.23C5.56 13.73 4 11.67 4 9c0-2.8 2.02-5.13 4.64-5.48.37 2.85 2.75 5.08 5.62 5.08s5.25-2.23 5.62-5.08C17.98 3.87 20 6.2 20 9c0 2.67-1.56 4.73-3.5 5.67-.32.2-.59.46-.81.76-.4.58-.76 1.2-1.05 1.84.17.14.35.26.53.37l3.5-3.5c.73.73 1.73 1.18 2.82 1.18.07 0 .13-.01.2-.01C17 15.8 14.69 18 12 18c-1.29 0-2.52-.37-3.56-.98.22-.08.44-.13.66-.13zm10-6.19c1.31 0 2.37-1.06 2.37-2.37S18.31 3.76 17 3.76s-2.37 1.06-2.37 2.37 1.06 2.37 2.37 2.37zM7 6.13c1.31 0 2.37-1.06 2.37-2.37S8.31 1.39 7 1.39 4.63 2.45 4.63 3.76 5.69 6.13 7 6.13z"/></svg>
+              </div>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: '700', marginBottom: '0.75rem', color: '#111827' }}>
                 AI Smart Assistant
               </h3>
-              <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '0.9375rem' }}>
+              <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '0.875rem' }}>
                 Ask our intelligent chatbot anything about our services, pricing, or logistics processes. Available 24/7.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <p style={{ fontSize: '12px', fontWeight: '600', color: '#1E6B4C', margin: '0', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Quick Topics:</p>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '13px', color: '#6b7280' }}>
+                <p style={{ fontSize: '11px', fontWeight: '600', color: '#1E6B4C', margin: '0', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Quick Topics:</p>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '12px', color: '#6b7280' }}>
                   <li>✓ Get a quote</li>
                   <li>✓ Track shipment</li>
                   <li>✓ Service details</li>
@@ -313,13 +315,13 @@ export default function ContactPage() {
                 }}
                 style={{
                   marginTop: '1.5rem',
-                  padding: '0.75rem 1.75rem',
+                  padding: '0.7rem 1.6rem',
                   background: 'linear-gradient(135deg, #1E6B4C 0%, #0B1F3A 100%)',
                   color: 'white',
                   border: 'none',
                   borderRadius: '6px',
-                  fontWeight: '600',
-                  fontSize: '0.9375rem',
+                  fontWeight: '700',
+                  fontSize: '0.875rem',
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
                 }}
@@ -338,16 +340,18 @@ export default function ContactPage() {
 
             {/* WhatsApp Assistant Card */}
             <div className="card-premium" style={{ textAlign: 'center', padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>💬</div>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: '#111827' }}>
+              <div style={{ marginBottom: '1rem', color: '#25D366' }}>
+                <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.96.52 3.88 1.53 5.56L2 22l4.63-1.48C8.1 21.45 10 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2m0 18c-1.81 0-3.55-.46-5.05-1.28l-.36-.2-3.73 1.19.99-3.63-.25-.4C3.51 13.52 3 12.81 3 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.31-7.35c-.24-.12-1.42-.7-1.64-.78-.22-.07-.38-.12-.54.12-.16.24-.64.78-.78.94-.14.16-.29.18-.53.06-.24-.12-1.01-.37-1.92-1.19-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.02-.37.1-.49.1-.1.24-.26.36-.39.12-.13.16-.22.24-.37.08-.15.04-.28-.02-.39-.06-.11-.54-1.3-.74-1.78-.19-.48-.39-.41-.54-.41-.14 0-.3-.02-.46-.02-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02 0 1.19.87 2.35 1 2.51.13.16 1.85 2.82 4.48 3.96.62.27 1.11.43 1.48.55.63.2 1.2.17 1.65.1.5-.08 1.54-.63 1.76-1.23.22-.61.22-1.13.16-1.23-.07-.1-.23-.16-.48-.28z"/></svg>
+              </div>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: '700', marginBottom: '0.75rem', color: '#111827' }}>
                 WhatsApp Support
               </h3>
-              <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '0.9375rem' }}>
+              <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '0.875rem' }}>
                 Connect with our team directly on WhatsApp for personalized assistance and immediate responses.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-                <p style={{ fontSize: '12px', fontWeight: '600', color: '#25D366', margin: '0', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Available:</p>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '13px', color: '#6b7280', textAlign: 'center' }}>
+                <p style={{ fontSize: '11px', fontWeight: '600', color: '#25D366', margin: '0', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Available:</p>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '12px', color: '#6b7280', textAlign: 'center' }}>
                   <li>✓ Instant responses</li>
                   <li>✓ Personal attention</li>
                   <li>✓ 24/7 availability</li>
@@ -360,13 +364,13 @@ export default function ContactPage() {
                 style={{
                   display: 'inline-block',
                   marginTop: '1.5rem',
-                  padding: '0.75rem 1.75rem',
+                  padding: '0.7rem 1.6rem',
                   background: 'linear-gradient(135deg, #25D366 0%, #20BA5A 100%)',
                   color: 'white',
                   border: 'none',
                   borderRadius: '6px',
-                  fontWeight: '600',
-                  fontSize: '0.9375rem',
+                  fontWeight: '700',
+                  fontSize: '0.875rem',
                   cursor: 'pointer',
                   textDecoration: 'none',
                   transition: 'all 0.2s ease',
@@ -386,18 +390,20 @@ export default function ContactPage() {
 
             {/* Phone Support Card */}
             <div className="card-premium" style={{ textAlign: 'center', padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>☎️</div>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: '#111827' }}>
+              <div style={{ marginBottom: '1rem', color: 'var(--emerald)' }}>
+                <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+              </div>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: '700', marginBottom: '0.75rem', color: '#111827' }}>
                 Call Support
               </h3>
-              <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '0.9375rem' }}>
+              <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '0.875rem' }}>
                 Speak directly with our logistics experts during business hours for complex inquiries.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-                <p style={{ fontSize: '12px', fontWeight: '600', color: '#0B1F3A', margin: '0', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Phone Lines:</p>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '13px', color: '#6b7280', textAlign: 'center' }}>
-                  <li>📞 +27 11 568 6712</li>
-                  <li>📱 +27 83 391 0863</li>
+                <p style={{ fontSize: '11px', fontWeight: '600', color: '#0B1F3A', margin: '0', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Phone Lines:</p>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '12px', color: '#6b7280', textAlign: 'center' }}>
+                  <li>+27 11 568 6712</li>
+                  <li>+27 83 391 0863</li>
                   <li>Mon-Fri 8:00-18:00 SAST</li>
                 </ul>
               </div>
@@ -406,13 +412,13 @@ export default function ContactPage() {
                 style={{
                   display: 'inline-block',
                   marginTop: '1.5rem',
-                  padding: '0.75rem 1.75rem',
+                  padding: '0.7rem 1.6rem',
                   background: '#0B1F3A',
                   color: 'white',
                   border: 'none',
                   borderRadius: '6px',
-                  fontWeight: '600',
-                  fontSize: '0.9375rem',
+                  fontWeight: '700',
+                  fontSize: '0.875rem',
                   cursor: 'pointer',
                   textDecoration: 'none',
                   transition: 'all 0.2s ease',
