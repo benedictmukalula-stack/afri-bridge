@@ -159,34 +159,145 @@ export default function VehicleExportPage() {
 
   return (
     <>
+      <style>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes slideInLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        .section-divider {
+          width: 60px;
+          height: 3px;
+          background: linear-gradient(90deg, #1E6B4C 0%, transparent 100%);
+          margin: 1.5rem 0;
+        }
+
+        .premium-step {
+          position: relative;
+          animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .premium-step:nth-child(1) { animation-delay: 0.1s; }
+        .premium-step:nth-child(2) { animation-delay: 0.2s; }
+        .premium-step:nth-child(3) { animation-delay: 0.3s; }
+        .premium-step:nth-child(4) { animation-delay: 0.4s; }
+        .premium-step:nth-child(5) { animation-delay: 0.5s; }
+        .premium-step:nth-child(6) { animation-delay: 0.6s; }
+        .premium-step:nth-child(7) { animation-delay: 0.7s; }
+        .premium-step:nth-child(8) { animation-delay: 0.8s; }
+
+        .premium-card {
+          transition: all 0.3s ease;
+        }
+
+        .premium-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 24px rgba(30, 107, 76, 0.15);
+        }
+
+        .step-connector {
+          position: absolute;
+          left: 22px;
+          top: 50px;
+          width: 2px;
+          height: calc(100% + 24px);
+          background: linear-gradient(180deg, #1E6B4C 0%, rgba(30, 107, 76, 0) 100%);
+          z-index: 0;
+        }
+      `}</style>
+
       {/* Premium Hero */}
-      <section className="relative py-16 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0B1F3A 0%, #1e3a5f 100%)' }}>
-        <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/15 via-transparent to-transparent"></div>
+      <section className="relative py-20 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0B1F3A 0%, #1e3a5f 100%)' }}>
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 via-transparent to-blue-500/10"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
         <div className="max-w-6xl mx-auto relative z-10">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4" style={{
-            color: '#F5B041',
-            textShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
-            letterSpacing: '-0.02em',
-            fontWeight: '800',
-            lineHeight: '1.2'
-          }}>
-            Vehicle Export Services
-          </h1>
-          <p className="text-base md:text-lg max-w-2xl" style={{
-            color: '#E5E7EB',
-            textShadow: '0 2px 8px rgba(0, 0, 0, 0.3)',
-            lineHeight: '1.7',
-            fontWeight: '500'
-          }}>
-            End-to-end vehicle export solutions from South Africa. Professional handling, multiple freight options, and transparent pricing for African and international buyers.
-          </p>
+          <div style={{ animation: 'fadeInUp 0.8s ease-out' }}>
+            <p style={{
+              color: '#F5B041',
+              fontSize: '14px',
+              fontWeight: '700',
+              letterSpacing: '1px',
+              textTransform: 'uppercase',
+              marginBottom: '1rem'
+            }}>
+              🚗 Professional Vehicle Export
+            </p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{
+              color: '#F5B041',
+              textShadow: '0 6px 20px rgba(0, 0, 0, 0.5)',
+              letterSpacing: '-0.02em',
+              fontWeight: '800',
+              lineHeight: '1.15'
+            }}>
+              End-to-End Vehicle Export Solutions
+            </h1>
+            <div className="section-divider"></div>
+            <p className="text-lg md:text-xl max-w-3xl" style={{
+              color: '#E5E7EB',
+              textShadow: '0 2px 8px rgba(0, 0, 0, 0.3)',
+              lineHeight: '1.8',
+              fontWeight: '400'
+            }}>
+              From South Africa to the world. Professional handling, transparent CIF pricing, multiple freight options, and expert customs clearance for confident vehicle exports.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Quick CTA */}
-      <section style={{ padding: '2.5rem 2rem', background: 'white', borderBottom: '1px solid #e5e7eb' }}>
-        <div className="max-w-6xl mx-auto text-center">
-          <Link href="/quote" className="inline-block px-6 py-3 bg-gradient-to-r from-emerald-600 to-emerald-500 text-white font-bold rounded-lg hover:shadow-lg transition-all" style={{ textDecoration: 'none', boxShadow: '0 4px 12px rgba(30, 107, 76, 0.2)' }}>
+      <section style={{
+        padding: '3rem 2rem',
+        background: 'linear-gradient(135deg, #f0fdf4 0%, #e8f8f5 100%)',
+        borderBottom: '2px solid #d1fae5',
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        <div style={{ position: 'absolute', top: '50%', right: 0, width: '300px', height: '300px', background: 'linear-gradient(135deg, rgba(30, 107, 76, 0.1) 0%, transparent 100%)', borderRadius: '50%', transform: 'translate(50%, -50%)' }}></div>
+        <div className="max-w-6xl mx-auto text-center relative z-10">
+          <p style={{ color: '#0B1F3A', fontSize: '14px', fontWeight: '600', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            ⚡ Get started in minutes
+          </p>
+          <Link
+            href="/quote"
+            style={{
+              display: 'inline-block',
+              padding: '1rem 2.5rem',
+              background: 'linear-gradient(135deg, #1E6B4C 0%, #0B1F3A 100%)',
+              color: 'white',
+              textDecoration: 'none',
+              borderRadius: '10px',
+              fontWeight: '800',
+              fontSize: '15px',
+              boxShadow: '0 8px 20px rgba(30, 107, 76, 0.3)',
+              transition: 'all 0.3s ease',
+              border: 'none'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-2px)';
+              e.currentTarget.style.boxShadow = '0 12px 28px rgba(30, 107, 76, 0.4)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 8px 20px rgba(30, 107, 76, 0.3)';
+            }}
+          >
             📋 Get Vehicle Export Quote
           </Link>
         </div>
@@ -197,11 +308,17 @@ export default function VehicleExportPage() {
         <div className="max-w-6xl mx-auto">
 
           {/* Service Overview */}
-          <div className="mb-10">
-            <h2 className="text-2xl font-bold mb-6" style={{ color: '#0B1F3A', fontWeight: '800' }}>
-              🌍 Complete Vehicle Export Solution
-            </h2>
-            <div className="grid md:grid-cols-3 gap-4">
+          <div className="mb-16">
+            <div style={{ marginBottom: '3rem' }}>
+              <h2 className="text-3xl font-bold mb-2" style={{ color: '#0B1F3A', fontWeight: '800' }}>
+                🌍 Complete Vehicle Export Solution
+              </h2>
+              <div className="section-divider"></div>
+              <p style={{ color: '#6b7280', fontSize: '16px', marginTop: '1rem', lineHeight: '1.6' }}>
+                Everything you need for a seamless vehicle export experience
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
               {[
                 { icon: '🚗', title: 'Vehicle Selection', desc: 'Access to dealership network' },
                 { icon: '📋', title: 'Full Documentation', desc: 'All permits and customs forms' },
@@ -210,18 +327,19 @@ export default function VehicleExportPage() {
                 { icon: '✓', title: 'Expert Clearance', desc: 'SARS & customs specialists' },
                 { icon: '📱', title: 'Real-Time Tracking', desc: 'Live shipment updates' }
               ].map((item, i) => (
-                <div key={i} style={{
+                <div key={i} className="premium-card" style={{
                   background: 'white',
-                  border: '1px solid #e5e7eb',
-                  borderRadius: '10px',
-                  padding: '1.5rem',
-                  textAlign: 'center'
+                  border: '2px solid #f0fdf4',
+                  borderRadius: '12px',
+                  padding: '2rem',
+                  textAlign: 'center',
+                  boxShadow: '0 4px 12px rgba(30, 107, 76, 0.08)'
                 }}>
-                  <div style={{ fontSize: '32px', marginBottom: '0.75rem' }}>{item.icon}</div>
-                  <h4 style={{ color: '#0B1F3A', fontWeight: '700', fontSize: '14px', marginBottom: '0.5rem' }}>
+                  <div style={{ fontSize: '48px', marginBottom: '1rem' }}>{item.icon}</div>
+                  <h4 style={{ color: '#0B1F3A', fontWeight: '700', fontSize: '16px', marginBottom: '0.75rem' }}>
                     {item.title}
                   </h4>
-                  <p style={{ color: '#6b7280', fontSize: '12px', margin: 0 }}>
+                  <p style={{ color: '#6b7280', fontSize: '14px', margin: 0, lineHeight: '1.5' }}>
                     {item.desc}
                   </p>
                 </div>
@@ -230,71 +348,90 @@ export default function VehicleExportPage() {
           </div>
 
           {/* Export Procedure Timeline */}
-          <div className="mb-10">
-            <h2 className="text-2xl font-bold mb-6" style={{ color: '#0B1F3A', fontWeight: '800' }}>
-              📍 8-Step Export Procedure
-            </h2>
-            <div className="space-y-3">
-              {exportSteps.map((item) => (
-                <div key={item.step} style={{
-                  background: 'white',
-                  border: '1px solid #e5e7eb',
-                  borderRadius: '10px',
-                  overflow: 'hidden'
-                }}>
+          <div className="mb-16">
+            <div style={{ marginBottom: '3rem' }}>
+              <h2 className="text-3xl font-bold mb-2" style={{ color: '#0B1F3A', fontWeight: '800' }}>
+                📍 8-Step Export Procedure
+              </h2>
+              <div className="section-divider"></div>
+              <p style={{ color: '#6b7280', fontSize: '16px', marginTop: '1rem', lineHeight: '1.6' }}>
+                A streamlined, professional process from selection to delivery
+              </p>
+            </div>
+            <div style={{ position: 'relative' }}>
+              {exportSteps.map((item, idx) => (
+                <div key={item.step} className="premium-step" style={{ position: 'relative', marginBottom: '1.5rem' }}>
+                  {idx < exportSteps.length - 1 && <div className="step-connector"></div>}
                   <button
                     onClick={() => setExpandedStep(expandedStep === item.step ? null : item.step)}
                     style={{
                       width: '100%',
-                      padding: '1.5rem',
-                      background: expandedStep === item.step ? '#f0fdf4' : 'white',
-                      border: 'none',
+                      padding: '1.75rem',
+                      background: expandedStep === item.step ? 'linear-gradient(135deg, #f0fdf4 0%, #e8f8f5 100%)' : 'white',
+                      border: expandedStep === item.step ? '2px solid #1E6B4C' : '2px solid #e5e7eb',
                       cursor: 'pointer',
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '1rem',
-                      transition: 'all 0.2s ease'
+                      gap: '1.5rem',
+                      transition: 'all 0.3s ease',
+                      borderRadius: '12px',
+                      boxShadow: expandedStep === item.step ? '0 8px 20px rgba(30, 107, 76, 0.15)' : '0 2px 8px rgba(0, 0, 0, 0.05)',
+                      position: 'relative',
+                      zIndex: 1
+                    }}
+                    onMouseEnter={(e) => {
+                      if (expandedStep !== item.step) {
+                        e.currentTarget.style.borderColor = '#1E6B4C';
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (expandedStep !== item.step) {
+                        e.currentTarget.style.borderColor = '#e5e7eb';
+                      }
                     }}
                   >
                     <div style={{
-                      width: '45px',
-                      height: '45px',
+                      width: '52px',
+                      height: '52px',
                       borderRadius: '50%',
-                      background: '#1E6B4C',
+                      background: 'linear-gradient(135deg, #1E6B4C 0%, #0B1F3A 100%)',
                       color: 'white',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      fontWeight: '800',
-                      fontSize: '18px',
-                      flexShrink: 0
+                      fontWeight: '900',
+                      fontSize: '20px',
+                      flexShrink: 0,
+                      boxShadow: '0 4px 12px rgba(30, 107, 76, 0.3)'
                     }}>
                       {item.step}
                     </div>
                     <div style={{ flex: 1, textAlign: 'left' }}>
-                      <h4 style={{ color: '#0B1F3A', fontWeight: '700', fontSize: '15px', margin: '0 0 0.25rem 0' }}>
+                      <h4 style={{ color: '#0B1F3A', fontWeight: '700', fontSize: '16px', margin: '0 0 0.35rem 0' }}>
                         {item.icon} {item.title}
                       </h4>
-                      <p style={{ color: '#6b7280', fontSize: '13px', margin: 0 }}>
+                      <p style={{ color: '#6b7280', fontSize: '14px', margin: 0 }}>
                         {item.description}
                       </p>
                     </div>
-                    <div style={{ fontSize: '20px', color: '#1E6B4C' }}>
+                    <div style={{ fontSize: '24px', color: expandedStep === item.step ? '#1E6B4C' : '#d1d5db' }}>
                       {expandedStep === item.step ? '▼' : '▶'}
                     </div>
                   </button>
 
                   {expandedStep === item.step && (
                     <div style={{
-                      padding: '1.5rem',
+                      padding: '2rem',
                       background: '#f9fafb',
-                      borderTop: '1px solid #e5e7eb'
+                      borderTop: '2px solid #1E6B4C',
+                      borderRadius: '0 0 12px 12px',
+                      marginTop: '-1px'
                     }}>
-                      <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                      <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                         {item.details.map((detail, idx) => (
-                          <li key={idx} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                            <span style={{ color: '#1E6B4C', fontWeight: '700', flexShrink: 0 }}>✓</span>
-                            <span style={{ color: '#4b5563', fontSize: '14px', lineHeight: '1.5' }}>{detail}</span>
+                          <li key={idx} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+                            <span style={{ color: '#1E6B4C', fontWeight: '800', fontSize: '18px', flexShrink: 0 }}>✓</span>
+                            <span style={{ color: '#4b5563', fontSize: '15px', lineHeight: '1.6' }}>{detail}</span>
                           </li>
                         ))}
                       </ul>
@@ -306,80 +443,108 @@ export default function VehicleExportPage() {
           </div>
 
           {/* Freight Options */}
-          <div className="mb-10">
-            <h2 className="text-2xl font-bold mb-6" style={{ color: '#0B1F3A', fontWeight: '800' }}>
-              🚢 Freight Options
-            </h2>
-            <div className="grid md:grid-cols-2 gap-4">
+          <div className="mb-16">
+            <div style={{ marginBottom: '3rem' }}>
+              <h2 className="text-3xl font-bold mb-2" style={{ color: '#0B1F3A', fontWeight: '800' }}>
+                🚢 Flexible Freight Options
+              </h2>
+              <div className="section-divider"></div>
+              <p style={{ color: '#6b7280', fontSize: '16px', marginTop: '1rem', lineHeight: '1.6' }}>
+                Choose the shipping method that best fits your timeline and budget
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {freightOptions.map((option, i) => (
-                <div key={i} style={{
+                <div key={i} className="premium-card" style={{
                   background: 'white',
-                  border: '1px solid #e5e7eb',
-                  borderRadius: '10px',
-                  padding: '1.5rem'
+                  border: '2px solid #e5e7eb',
+                  borderRadius: '12px',
+                  padding: '2rem',
+                  transition: 'all 0.3s ease'
                 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
-                    <span style={{ fontSize: '32px' }}>{option.icon}</span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+                    <span style={{ fontSize: '40px' }}>{option.icon}</span>
                     <div>
-                      <h4 style={{ color: '#0B1F3A', fontWeight: '700', fontSize: '15px', margin: 0 }}>
+                      <h4 style={{ color: '#0B1F3A', fontWeight: '700', fontSize: '16px', margin: '0 0 0.25rem 0' }}>
                         {option.name}
                       </h4>
-                      <p style={{ color: '#6b7280', fontSize: '12px', margin: 0 }}>
-                        Cost: {option.cost}
+                      <p style={{ color: '#9ca3af', fontSize: '12px', margin: 0, fontWeight: '600' }}>
+                        {option.cost}
                       </p>
                     </div>
                   </div>
-                  <p style={{ color: '#6b7280', fontSize: '13px', marginBottom: '0.75rem' }}>
+                  <p style={{ color: '#6b7280', fontSize: '14px', marginBottom: '1.25rem', lineHeight: '1.6' }}>
                     {option.description}
                   </p>
-                  <p style={{ color: '#1E6B4C', fontSize: '12px', fontWeight: '600', margin: 0 }}>
-                    Best for: {option.ideal}
-                  </p>
+                  <div style={{
+                    padding: '1rem',
+                    background: '#f0fdf4',
+                    borderRadius: '8px',
+                    borderLeft: '3px solid #1E6B4C'
+                  }}>
+                    <p style={{ color: '#166534', fontSize: '13px', fontWeight: '600', margin: 0 }}>
+                      ✓ {option.ideal}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Required Documents */}
-          <div className="mb-10">
-            <h2 className="text-2xl font-bold mb-6" style={{ color: '#0B1F3A', fontWeight: '800' }}>
-              📄 Required Documentation
-            </h2>
+          <div className="mb-16">
+            <div style={{ marginBottom: '3rem' }}>
+              <h2 className="text-3xl font-bold mb-2" style={{ color: '#0B1F3A', fontWeight: '800' }}>
+                📄 Required Documentation
+              </h2>
+              <div className="section-divider"></div>
+            </div>
             <div style={{
-              background: 'white',
-              border: '1px solid #e5e7eb',
-              borderRadius: '10px',
-              padding: '2rem'
+              background: 'linear-gradient(135deg, #f8fafc 0%, #f0fdf4 100%)',
+              border: '2px solid #e2e8f0',
+              borderRadius: '12px',
+              padding: '3rem'
             }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
                 {requiredDocs.map((doc, i) => (
-                  <div key={i} style={{ display: 'flex', gap: '0.75rem' }}>
-                    <span style={{ color: '#1E6B4C', fontWeight: '700', fontSize: '16px' }}>✓</span>
-                    <span style={{ color: '#4b5563', fontSize: '14px' }}>{doc}</span>
+                  <div key={i} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+                    <span style={{ color: '#1E6B4C', fontWeight: '800', fontSize: '18px', flexShrink: 0, marginTop: '2px' }}>✓</span>
+                    <span style={{ color: '#4b5563', fontSize: '15px', lineHeight: '1.5', fontWeight: '500' }}>{doc}</span>
                   </div>
                 ))}
               </div>
-              <p style={{
-                marginTop: '1.5rem',
-                padding: '1rem',
-                background: '#f0fdf4',
-                border: '1px solid #dcfce7',
-                borderRadius: '8px',
-                color: '#166534',
-                fontSize: '13px',
-                margin: '0'
+              <div style={{
+                padding: '1.5rem',
+                background: 'white',
+                border: '2px solid #dcfce7',
+                borderRadius: '10px',
+                borderLeft: '4px solid #1E6B4C'
               }}>
-                ℹ️ Additional country-specific documents may be required based on destination. Our team will advise during the quotation process.
-              </p>
+                <p style={{
+                  color: '#166534',
+                  fontSize: '14px',
+                  lineHeight: '1.6',
+                  margin: 0,
+                  fontWeight: '500'
+                }}>
+                  ℹ️ <strong>Additional country-specific documents</strong> may be required based on destination. Our team will advise during the quotation process and guide you through the requirements.
+                </p>
+              </div>
             </div>
           </div>
 
           {/* Why Choose AfriBridge */}
-          <div className="mb-10">
-            <h2 className="text-2xl font-bold mb-6" style={{ color: '#0B1F3A', fontWeight: '800' }}>
-              🌟 Why Choose AfriBridge for Vehicle Export?
-            </h2>
-            <div className="grid md:grid-cols-2 gap-4">
+          <div className="mb-16">
+            <div style={{ marginBottom: '3rem' }}>
+              <h2 className="text-3xl font-bold mb-2" style={{ color: '#0B1F3A', fontWeight: '800' }}>
+                🌟 Why Choose AfriBridge?
+              </h2>
+              <div className="section-divider"></div>
+              <p style={{ color: '#6b7280', fontSize: '16px', marginTop: '1rem', lineHeight: '1.6' }}>
+                Premium vehicle export services backed by expertise, transparency, and 24/7 support
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
               {[
                 { title: 'Expert Customs Clearance', desc: 'SARS-certified specialists with 15+ years in automotive logistics' },
                 { title: 'Transparent All-In Pricing', desc: 'No hidden fees. CIF quotes include all costs upfront' },
@@ -390,16 +555,26 @@ export default function VehicleExportPage() {
                 { title: 'Dealership Network', desc: 'Access to verified dealers across South Africa' },
                 { title: 'Trusted Courier Partners', desc: 'Safe delivery of originals and valuables with tracking' }
               ].map((item, i) => (
-                <div key={i} style={{
+                <div key={i} className="premium-card" style={{
                   background: 'white',
-                  border: '1px solid #e5e7eb',
-                  borderRadius: '10px',
-                  padding: '1.5rem'
+                  border: '2px solid #e5e7eb',
+                  borderRadius: '12px',
+                  padding: '2rem',
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}>
-                  <h4 style={{ color: '#0B1F3A', fontWeight: '700', fontSize: '14px', marginBottom: '0.5rem' }}>
+                  <div style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '4px',
+                    height: '100%',
+                    background: 'linear-gradient(180deg, #1E6B4C 0%, #0B1F3A 100%)'
+                  }}></div>
+                  <h4 style={{ color: '#0B1F3A', fontWeight: '700', fontSize: '16px', marginBottom: '0.75rem', paddingLeft: '0.5rem' }}>
                     ✓ {item.title}
                   </h4>
-                  <p style={{ color: '#6b7280', fontSize: '13px', margin: 0, lineHeight: '1.6' }}>
+                  <p style={{ color: '#6b7280', fontSize: '14px', margin: 0, lineHeight: '1.6', paddingLeft: '0.5rem' }}>
                     {item.desc}
                   </p>
                 </div>
@@ -408,10 +583,13 @@ export default function VehicleExportPage() {
           </div>
 
           {/* FAQ */}
-          <div className="mb-10">
-            <h2 className="text-2xl font-bold mb-6" style={{ color: '#0B1F3A', fontWeight: '800' }}>
-              ❓ Frequently Asked Questions
-            </h2>
+          <div className="mb-16">
+            <div style={{ marginBottom: '3rem' }}>
+              <h2 className="text-3xl font-bold mb-2" style={{ color: '#0B1F3A', fontWeight: '800' }}>
+                ❓ Frequently Asked Questions
+              </h2>
+              <div className="section-divider"></div>
+            </div>
             <div className="space-y-3">
               {[
                 { q: 'How long does the export process take?', a: 'Typically 4-6 weeks from vehicle selection to dispatch, depending on freight option and destination.' },
@@ -421,17 +599,19 @@ export default function VehicleExportPage() {
                 { q: 'What if customs delays my shipment?', a: 'Our team monitors all shipments 24/7. We proactively handle delays and keep you informed via email and WhatsApp.' },
                 { q: 'Can I track my vehicle in real-time?', a: 'Yes, all shipments have AI-powered real-time tracking with predictive arrival estimates.' }
               ].map((item, i) => (
-                <div key={i} style={{
+                <div key={i} className="premium-card" style={{
                   background: 'white',
-                  border: '1px solid #e5e7eb',
-                  borderRadius: '10px',
-                  padding: '1.5rem'
+                  border: '2px solid #e5e7eb',
+                  borderRadius: '12px',
+                  padding: '2rem',
+                  transition: 'all 0.3s ease'
                 }}>
-                  <h4 style={{ color: '#0B1F3A', fontWeight: '700', fontSize: '14px', marginBottom: '0.75rem' }}>
-                    Q: {item.q}
+                  <h4 style={{ color: '#1E6B4C', fontWeight: '700', fontSize: '15px', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                    <span>❓</span>
+                    {item.q}
                   </h4>
-                  <p style={{ color: '#6b7280', fontSize: '13px', margin: 0, lineHeight: '1.6' }}>
-                    A: {item.a}
+                  <p style={{ color: '#6b7280', fontSize: '14px', margin: 0, lineHeight: '1.7', paddingLeft: '1.75rem' }}>
+                    {item.a}
                   </p>
                 </div>
               ))}
@@ -441,43 +621,72 @@ export default function VehicleExportPage() {
           {/* CTA */}
           <div style={{
             background: 'linear-gradient(135deg, #1E6B4C 0%, #0B1F3A 100%)',
-            borderRadius: '12px',
-            padding: '2.5rem',
+            borderRadius: '16px',
+            padding: '4rem 3rem',
             textAlign: 'center',
-            color: 'white'
+            color: 'white',
+            position: 'relative',
+            overflow: 'hidden',
+            boxShadow: '0 20px 50px rgba(30, 107, 76, 0.3)'
           }}>
-            <h2 style={{ fontSize: '24px', fontWeight: '800', marginBottom: '1rem', margin: '0 0 1rem 0' }}>
-              Ready to Export Your Vehicle?
-            </h2>
-            <p style={{ fontSize: '16px', marginBottom: '1.5rem', margin: '0 0 1.5rem 0', lineHeight: '1.6' }}>
-              Get a transparent CIF quote in minutes. Our experts handle everything from vehicle selection to delivery.
-            </p>
-            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Link href="/quote" style={{
-                display: 'inline-block',
-                padding: '0.875rem 2rem',
-                background: '#F5B041',
-                color: '#0B1F3A',
-                textDecoration: 'none',
-                borderRadius: '8px',
-                fontWeight: '700',
-                fontSize: '14px'
-              }}>
-                📋 Get Quote Now
-              </Link>
-              <Link href="/contact" style={{
-                display: 'inline-block',
-                padding: '0.875rem 2rem',
-                background: 'rgba(255, 255, 255, 0.2)',
-                color: 'white',
-                textDecoration: 'none',
-                borderRadius: '8px',
-                fontWeight: '700',
-                fontSize: '14px',
-                border: '2px solid white'
-              }}>
-                💬 Contact Us
-              </Link>
+            <div style={{ position: 'absolute', top: '-50%', right: '-10%', width: '400px', height: '400px', background: 'rgba(245, 176, 65, 0.1)', borderRadius: '50%' }}></div>
+            <div style={{ position: 'relative', zIndex: 1 }}>
+              <h2 style={{ fontSize: '32px', fontWeight: '800', marginBottom: '1.5rem', margin: '0 0 1.5rem 0', lineHeight: '1.3' }}>
+                Ready to Export Your Vehicle?
+              </h2>
+              <p style={{ fontSize: '17px', marginBottom: '2.5rem', margin: '0 0 2.5rem 0', lineHeight: '1.7', maxWidth: '500px', margin: '0 auto 2.5rem auto' }}>
+                Get a transparent CIF quote in minutes. Our expert team handles everything from vehicle selection to delivery with precision and care.
+              </p>
+              <div style={{ display: 'flex', gap: '1.25rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <Link href="/quote" style={{
+                  display: 'inline-block',
+                  padding: '1rem 2.5rem',
+                  background: '#F5B041',
+                  color: '#0B1F3A',
+                  textDecoration: 'none',
+                  borderRadius: '10px',
+                  fontWeight: '800',
+                  fontSize: '15px',
+                  boxShadow: '0 8px 20px rgba(245, 176, 65, 0.4)',
+                  transition: 'all 0.3s ease',
+                  border: 'none'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-3px)';
+                  e.currentTarget.style.boxShadow = '0 12px 28px rgba(245, 176, 65, 0.5)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 8px 20px rgba(245, 176, 65, 0.4)';
+                }}>
+                  📋 Get Quote Now
+                </Link>
+                <Link href="/contact" style={{
+                  display: 'inline-block',
+                  padding: '1rem 2.5rem',
+                  background: 'rgba(255, 255, 255, 0.15)',
+                  color: 'white',
+                  textDecoration: 'none',
+                  borderRadius: '10px',
+                  fontWeight: '800',
+                  fontSize: '15px',
+                  border: '2px solid rgba(255, 255, 255, 0.5)',
+                  transition: 'all 0.3s ease',
+                  backdropFilter: 'blur(10px)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.25)';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.8)';
+                  e.currentTarget.style.transform = 'translateY(-3px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.5)';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}>
+                  💬 Contact Us
+                </Link>
+              </div>
             </div>
           </div>
 
