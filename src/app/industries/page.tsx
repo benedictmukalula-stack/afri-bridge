@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import CTAStrip from '@/components/CTAStrip';
-import ImagePlaceholder from '@/components/ImagePlaceholder';
 
 export default function IndustriesPage() {
   const industries = [
@@ -80,11 +79,11 @@ export default function IndustriesPage() {
       <section style={{ padding: '4rem 2rem' }}>
         <div className="container-max">
           {/* Featured Image */}
-          <ImagePlaceholder
-            type="section"
+          <img
+            src="https://images.pexels.com/photos/17765440/pexels-photo-17765440.jpeg"
             alt="Logistics industry overview"
             className="fade-in-up"
-            style={{ marginBottom: '2.5rem', height: '260px' }}
+            style={{ marginBottom: '2.5rem', height: '260px', width: '100%', objectFit: 'cover', borderRadius: '0.5rem' }}
           />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>
             {industries.map((industry, i) => (

@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import TrustStrip from '@/components/TrustStrip';
 import CTAStrip from '@/components/CTAStrip';
-import ImagePlaceholder from '@/components/ImagePlaceholder';
 
 export default function Home() {
   return (
@@ -73,10 +72,11 @@ export default function Home() {
               </div>
             </div>
             <div className="hidden md:block">
-              <ImagePlaceholder
-                type="hero"
+              <img
+                src="https://images.pexels.com/photos/36060451/pexels-photo-36060451.jpeg"
                 alt="African port with container cranes at sunset"
                 className="shadow-2xl"
+                style={{ width: '100%', height: 'auto', borderRadius: '0.5rem', objectFit: 'cover' }}
               />
             </div>
           </div>
@@ -112,11 +112,11 @@ export default function Home() {
       {/* Services Overview */}
       <section style={{ padding: '4rem 2rem' }}>
         <div className="container-max">
-          <ImagePlaceholder
-            type="section"
+          <img
+            src="https://images.pexels.com/photos/4487363/pexels-photo-4487363.jpeg"
             alt="Warehouse logistics and cargo storage facility"
             className="fade-in-up"
-            style={{ marginBottom: '2.5rem', height: '240px' }}
+            style={{ marginBottom: '2.5rem', height: '240px', width: '100%', objectFit: 'cover', borderRadius: '0.5rem' }}
           />
           <h2 style={{ fontSize: '1.75rem', fontWeight: '700', textAlign: 'center', marginBottom: '0.75rem', color: '#111827' }}>
             Our Services
@@ -175,11 +175,11 @@ export default function Home() {
       {/* Trade Corridors Preview */}
       <section style={{ padding: '4rem 2rem' }}>
         <div className="container-max">
-          <ImagePlaceholder
-            type="map"
+          <img
+            src="https://images.pexels.com/photos/6680149/pexels-photo-6680149.jpeg"
             alt="African trade corridors and regional logistics network map"
             className="fade-in-up"
-            style={{ marginBottom: '2.5rem', height: '240px' }}
+            style={{ marginBottom: '2.5rem', height: '240px', width: '100%', objectFit: 'cover', borderRadius: '0.5rem' }}
           />
           <h2 style={{ fontSize: '1.75rem', fontWeight: '700', textAlign: 'center', marginBottom: '2.5rem', color: '#111827' }}>
             Africa Trade Corridors

@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import CTAStrip from '@/components/CTAStrip';
-import ImagePlaceholder from '@/components/ImagePlaceholder';
 import { useState } from 'react';
 
 export default function ServicesPage() {
@@ -122,11 +121,11 @@ export default function ServicesPage() {
                 </Link>
               </div>
               <div className="hidden md:block">
-                <ImagePlaceholder
-                  type="service"
+                <img
+                  src={service.image}
                   alt={service.title}
                   className="fade-in-up"
-                  style={{ height: '280px' }}
+                  style={{ height: '280px', width: '100%', objectFit: 'cover', borderRadius: '0.5rem' }}
                 />
               </div>
             </div>

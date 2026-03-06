@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import ImagePlaceholder from '@/components/ImagePlaceholder';
 import { useState } from 'react';
 
 export default function QuotePage() {
@@ -115,10 +114,10 @@ export default function QuotePage() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
           {/* Left: Trust Content */}
           <div>
-            <ImagePlaceholder
-              type="section"
+            <img
+              src="https://images.pexels.com/photos/8441820/pexels-photo-8441820.jpeg"
               alt="Business professionals discussing logistics"
-              className="mb-6 h-80"
+              className="mb-6 h-80 w-full object-cover rounded"
             />
             <h2 className="text-2xl font-bold mb-6">Why Choose AfriBridge?</h2>
             <ul className="space-y-4 mb-8">
