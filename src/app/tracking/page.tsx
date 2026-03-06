@@ -152,6 +152,7 @@ export default function TrackingPage() {
     <>
       {/* Premium Hero */}
       <section className="relative py-16 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0B1F3A 0%, #1e3a5f 100%)' }}>
+        <div className="absolute inset-0" style={{ backgroundImage: `url('/afribridge-logistics-control-tower.webp')`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.3 }}></div>
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/15 via-transparent to-transparent"></div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h1 className="text-3xl md:text-4xl font-bold mb-4" style={{

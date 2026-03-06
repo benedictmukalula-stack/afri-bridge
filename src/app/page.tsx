@@ -19,7 +19,7 @@ export default function Home() {
     <>
       {/* Premium Hero Section - Enterprise Logistics Design */}
       <section className="relative py-20 md:py-40 px-4 sm:px-6 lg:px-8 overflow-hidden flex items-center" style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #0B1F3A 0%, #1e3a5f 100%)' }}>
-        <div className="absolute inset-0 opacity-40" style={{ backgroundImage: `url('https://images.pexels.com/photos/15346128/pexels-photo-15346128.jpeg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+        <div className="absolute inset-0 opacity-40" style={{ backgroundImage: `url('/afribridge-hero-pan-african-trade.webp')`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-transparent"></div>
         <div className="absolute top-20 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
 
@@ -230,25 +230,24 @@ export default function Home() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
             {[
-              { icon: '📋', title: 'Customs Clearing', desc: 'Expert HS coding, documentation, duty & VAT guidance', color: '#1E6B4C' },
-              { icon: '✈️', title: 'Air Freight', desc: 'Urgent shipments, consolidation, real-time tracking', color: '#0F5132' },
-              { icon: '🚢', title: 'Ocean Freight', desc: 'FCL/LCL solutions, carrier management, cost optimization', color: '#1E6B4C' },
-              { icon: '🚚', title: 'Road & Cross-Border', desc: 'SADC corridor expertise, border processing, compliance', color: '#0F5132' },
-              { icon: '🏭', title: 'Warehousing', desc: 'Bonded storage, pick & pack, last-mile delivery', color: '#1E6B4C' },
-              { icon: '⚙️', title: 'Project Cargo', desc: 'Oversized shipments, mining, energy sector solutions', color: '#0F5132' },
+              { icon: '📋', title: 'Customs Clearing', desc: 'Expert HS coding, documentation, duty & VAT guidance', color: '#1E6B4C', image: '/afribridge-customs-clearing.webp' },
+              { icon: '✈️', title: 'Air Freight', desc: 'Urgent shipments, consolidation, real-time tracking', color: '#0F5132', image: '/afribridge-air-freight.webp' },
+              { icon: '🚢', title: 'Ocean Freight', desc: 'FCL/LCL solutions, carrier management, cost optimization', color: '#1E6B4C', image: '/afribridge-ocean-freight.webp' },
+              { icon: '🚚', title: 'Road & Cross-Border', desc: 'SADC corridor expertise, border processing, compliance', color: '#0F5132', image: '/afribridge-road-freight.webp' },
+              { icon: '🏭', title: 'Warehousing', desc: 'Bonded storage, pick & pack, last-mile delivery', color: '#1E6B4C', image: '/afribridge-warehouse.webp' },
+              { icon: '⚙️', title: 'Project Cargo', desc: 'Oversized shipments, mining, energy sector solutions', color: '#0F5132', image: '/afribridge-trade-corridor.webp' },
             ].map((service, i) => (
               <div key={i} style={{
                 background: 'white',
                 border: '2px solid #e5e7eb',
                 borderRadius: '12px',
-                padding: '2rem',
+                overflow: 'hidden',
                 display: 'flex',
                 flexDirection: 'column',
                 transition: 'all 0.3s ease',
                 animation: `fadeInUp 0.6s ease-out backwards`,
                 animationDelay: `${i * 0.08}s`,
-                position: 'relative',
-                overflow: 'hidden'
+                position: 'relative'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-6px)';
@@ -261,42 +260,59 @@ export default function Home() {
                 e.currentTarget.style.boxShadow = 'none';
               }}>
                 <div style={{
-                  width: '56px',
-                  height: '56px',
-                  background: `${service.color}15`,
-                  borderRadius: '10px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '28px',
-                  marginBottom: '1.5rem'
+                  width: '100%',
+                  height: '200px',
+                  backgroundImage: `url('${service.image}')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}>
-                  {service.icon}
+                  <div style={{
+                    position: 'absolute',
+                    inset: '0',
+                    background: `linear-gradient(135deg, rgba(11, 31, 58, 0.4) 0%, rgba(30, 107, 76, 0.2) 100%)`
+                  }}></div>
                 </div>
-                <h3 style={{ fontSize: '18px', fontWeight: '700', marginBottom: '0.75rem', color: '#0B1F3A', margin: '0 0 0.75rem 0' }}>
-                  {service.title}
-                </h3>
-                <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '15px', flex: '1', lineHeight: '1.6' }}>
-                  {service.desc}
-                </p>
-                <Link href="/quote" style={{
-                  color: service.color,
-                  fontWeight: '700',
-                  fontSize: '14px',
-                  textDecoration: 'none',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  transition: 'gap 0.2s ease'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.gap = '0.75rem';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.gap = '0.5rem';
-                }}>
-                  Get Quote →
-                </Link>
+                <div style={{ padding: '2rem' }}>
+                  <div style={{
+                    width: '56px',
+                    height: '56px',
+                    background: `${service.color}15`,
+                    borderRadius: '10px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '28px',
+                    marginBottom: '1.5rem'
+                  }}>
+                    {service.icon}
+                  </div>
+                  <h3 style={{ fontSize: '18px', fontWeight: '700', marginBottom: '0.75rem', color: '#0B1F3A', margin: '0 0 0.75rem 0' }}>
+                    {service.title}
+                  </h3>
+                  <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '15px', flex: '1', lineHeight: '1.6' }}>
+                    {service.desc}
+                  </p>
+                  <Link href="/quote" style={{
+                    color: service.color,
+                    fontWeight: '700',
+                    fontSize: '14px',
+                    textDecoration: 'none',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    transition: 'gap 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.gap = '0.75rem';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.gap = '0.5rem';
+                  }}>
+                    Get Quote →
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
@@ -378,15 +394,15 @@ export default function Home() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
             {[
-              { name: '🌍 SADC Region', countries: 'South Africa • Zambia • Zimbabwe • Botswana • Namibia • Mozambique • Malawi', routes: '15+ active routes', icon: '🔗' },
-              { name: '🌍 East Africa', countries: 'Kenya • Tanzania • Uganda • Ethiopia • Rwanda', routes: '8+ active routes', icon: '🔗' },
-              { name: '🌍 West Africa', countries: 'Nigeria • Ghana • Ivory Coast • Senegal • Benin', routes: '6+ active routes', icon: '🔗' },
+              { name: '🌍 SADC Region', countries: 'South Africa • Zambia • Zimbabwe • Botswana • Namibia • Mozambique • Malawi', routes: '15+ active routes', icon: '🔗', image: '/afribridge-trade-corridor.webp' },
+              { name: '🌍 East Africa', countries: 'Kenya • Tanzania • Uganda • Ethiopia • Rwanda', routes: '8+ active routes', icon: '🔗', image: '/afribridge-pan-african-ports.webp' },
+              { name: '🌍 West Africa', countries: 'Nigeria • Ghana • Ivory Coast • Senegal • Benin', routes: '6+ active routes', icon: '🔗', image: '/afribridge-road-freight.webp' },
             ].map((corridor, i) => (
               <Link href="/coverage" key={i} style={{
                 background: 'white',
                 border: '2px solid #e5e7eb',
                 borderRadius: '12px',
-                padding: '2.5rem',
+                overflow: 'hidden',
                 display: 'flex',
                 flexDirection: 'column',
                 textDecoration: 'none',
@@ -394,8 +410,7 @@ export default function Home() {
                 transition: 'all 0.3s ease',
                 animation: `fadeInUp 0.6s ease-out backwards`,
                 animationDelay: `${i * 0.1}s`,
-                position: 'relative',
-                overflow: 'hidden'
+                position: 'relative'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-8px)';
@@ -407,50 +422,69 @@ export default function Home() {
                 e.currentTarget.style.borderColor = '#e5e7eb';
                 e.currentTarget.style.boxShadow = 'none';
               }}>
-                {/* Accent bar */}
+                {/* Corridor Image */}
                 <div style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
                   width: '100%',
-                  height: '4px',
-                  background: 'linear-gradient(90deg, #1E6B4C 0%, #0B1F3A 100%)'
-                }}></div>
-
-                <h3 style={{ fontSize: '20px', fontWeight: '800', marginBottom: '1rem', color: '#0B1F3A', marginTop: '0.5rem' }}>
-                  {corridor.name}
-                </h3>
-
-                <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '15px', lineHeight: '1.6', flex: '1' }}>
-                  {corridor.countries}
-                </p>
-
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.75rem',
-                  padding: '1rem',
-                  background: '#f0fdf4',
-                  borderRadius: '8px',
-                  marginBottom: '1.5rem',
-                  borderLeft: '4px solid #1E6B4C'
+                  height: '180px',
+                  backgroundImage: `url('${corridor.image}')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}>
-                  <span style={{ fontSize: '16px' }}>🛣️</span>
-                  <span style={{ color: '#166534', fontWeight: '700', fontSize: '14px' }}>
-                    {corridor.routes}
-                  </span>
+                  <div style={{
+                    position: 'absolute',
+                    inset: '0',
+                    background: `linear-gradient(135deg, rgba(11, 31, 58, 0.5) 0%, rgba(30, 107, 76, 0.3) 100%)`
+                  }}></div>
                 </div>
 
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  color: '#1E6B4C',
-                  fontWeight: '700',
-                  fontSize: '14px',
-                  transition: 'gap 0.2s ease'
-                }}>
-                  Explore Corridor →
+                <div style={{ padding: '2.5rem', position: 'relative' }}>
+                  {/* Accent bar */}
+                  <div style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '4px',
+                    background: 'linear-gradient(90deg, #1E6B4C 0%, #0B1F3A 100%)'
+                  }}></div>
+
+                  <h3 style={{ fontSize: '20px', fontWeight: '800', marginBottom: '1rem', color: '#0B1F3A', marginTop: '0.5rem' }}>
+                    {corridor.name}
+                  </h3>
+
+                  <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '15px', lineHeight: '1.6', flex: '1' }}>
+                    {corridor.countries}
+                  </p>
+
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.75rem',
+                    padding: '1rem',
+                    background: '#f0fdf4',
+                    borderRadius: '8px',
+                    marginBottom: '1.5rem',
+                    borderLeft: '4px solid #1E6B4C'
+                  }}>
+                    <span style={{ fontSize: '16px' }}>🛣️</span>
+                    <span style={{ color: '#166534', fontWeight: '700', fontSize: '14px' }}>
+                      {corridor.routes}
+                    </span>
+                  </div>
+
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    color: '#1E6B4C',
+                    fontWeight: '700',
+                    fontSize: '14px',
+                    transition: 'gap 0.2s ease'
+                  }}>
+                    Explore Corridor →
+                  </div>
                 </div>
               </Link>
             ))}
