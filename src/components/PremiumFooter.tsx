@@ -112,7 +112,7 @@ export default function PremiumFooter() {
         {/* Bottom border */}
         <div style={{ borderTop: '1px solid #1f2937', paddingTop: '24px' }}>
           {/* Copyright and trust statement */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', md: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' } }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', justifyContent: 'space-between', alignItems: 'flex-start' }}>
             <p style={{ fontSize: '12px', color: '#6b7280', margin: 0 }}>
               &copy; 2025 AfriBridge. All rights reserved. | <Link href="#" style={{ color: '#a1a5b1', textDecoration: 'none', marginLeft: '8px' }}>Privacy</Link> | <Link href="#" style={{ color: '#a1a5b1', textDecoration: 'none', marginLeft: '8px' }}>Terms</Link>
             </p>

@@ -56,7 +56,7 @@ export default async function CatchAllPage({
     <BuilderContentWrapper
       model="page"
       content={content}
-      apiKey={apiKey}
+      apiKey={apiKey as string}
     />
   );
 }
