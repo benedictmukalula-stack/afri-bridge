@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import TrustStrip from '@/components/TrustStrip';
 import CTAStrip from '@/components/CTAStrip';
