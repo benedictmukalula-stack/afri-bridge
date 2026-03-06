@@ -53,7 +53,7 @@ export default function PremiumHeader() {
             {navLinks.map((link) => (
               <div
                 key={link.href}
-                style={{ position: 'relative' }}
+                style={{ position: 'relative', display: 'inline-block' }}
                 onMouseEnter={() => link.submenu && setOpenDropdown(link.label)}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
@@ -104,10 +104,13 @@ export default function PremiumHeader() {
                       borderRadius: '8px',
                       boxShadow: '0 10px 25px rgba(0, 0, 0, 0.1)',
                       minWidth: '220px',
-                      marginTop: '8px',
+                      marginTop: '2px',
+                      paddingTop: '4px',
                       zIndex: 1000,
                       overflow: 'hidden',
                     }}
+                    onMouseEnter={() => setOpenDropdown(link.label)}
+                    onMouseLeave={() => setOpenDropdown(null)}
                   >
                     {link.submenu.map((item) => (
                       <Link
