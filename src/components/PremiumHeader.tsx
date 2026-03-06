@@ -5,11 +5,30 @@ import { useState } from 'react';
 
 export default function PremiumHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const navLinks = [
     { label: 'Home', href: '/' },
-    { label: 'Services', href: '/services' },
-    { label: 'Industries', href: '/industries' },
+    {
+      label: 'Services',
+      href: '/services',
+      submenu: [
+        { label: 'Customs Clearing', href: '/customs-clearing' },
+        { label: 'Freight Forwarding', href: '/freight-forwarding' },
+        { label: 'Cross-Border Logistics', href: '/cross-border-logistics' },
+        { label: 'Warehousing', href: '/services' },
+      ],
+    },
+    {
+      label: 'Industries',
+      href: '/industries',
+      submenu: [
+        { label: 'Mining', href: '/industries' },
+        { label: 'Oil & Gas', href: '/industries' },
+        { label: 'FMCG', href: '/industries' },
+        { label: 'Automotive', href: '/industries' },
+      ],
+    },
     { label: 'Tracking', href: '/tracking' },
     { label: 'Quote', href: '/quote' },
     { label: 'Contact', href: '/contact' },
@@ -32,28 +51,94 @@ export default function PremiumHeader() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-12">
             {navLinks.map((link) => (
-              <Link
+              <div
                 key={link.href}
-                href={link.href}
-                style={{
-                  fontSize: '14px',
-                  fontWeight: '500',
-                  color: '#6b7280',
-                  textDecoration: 'none',
-                  transition: 'all 0.3s ease',
-                  letterSpacing: '0.3px',
-                  position: 'relative',
-                  paddingBottom: '4px',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#0B1F3A';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = '#6b7280';
-                }}
+                style={{ position: 'relative' }}
+                onMouseEnter={() => link.submenu && setOpenDropdown(link.label)}
+                onMouseLeave={() => setOpenDropdown(null)}
               >
-                {link.label}
-              </Link>
+                <Link
+                  href={link.href}
+                  style={{
+                    fontSize: '14px',
+                    fontWeight: '500',
+                    color: '#6b7280',
+                    textDecoration: 'none',
+                    transition: 'all 0.3s ease',
+                    letterSpacing: '0.3px',
+                    position: 'relative',
+                    paddingBottom: '4px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '4px',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = '#0B1F3A';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = '#6b7280';
+                  }}
+                >
+                  {link.label}
+                  {link.submenu && (
+                    <span
+                      style={{
+                        transition: 'transform 0.3s ease',
+                        transform: openDropdown === link.label ? 'rotate(180deg)' : 'rotate(0)',
+                      }}
+                    >
+                      ▼
+                    </span>
+                  )}
+                </Link>
+
+                {/* Dropdown Menu */}
+                {link.submenu && openDropdown === link.label && (
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: '100%',
+                      left: '0',
+                      background: 'white',
+                      border: '1px solid #e5e7eb',
+                      borderRadius: '8px',
+                      boxShadow: '0 10px 25px rgba(0, 0, 0, 0.1)',
+                      minWidth: '220px',
+                      marginTop: '8px',
+                      zIndex: 1000,
+                      overflow: 'hidden',
+                    }}
+                  >
+                    {link.submenu.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        style={{
+                          display: 'block',
+                          padding: '12px 16px',
+                          fontSize: '14px',
+                          color: '#4b5563',
+                          textDecoration: 'none',
+                          transition: 'all 0.2s ease',
+                          borderLeft: '3px solid transparent',
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.background = '#f9fafb';
+                          e.currentTarget.style.color = '#0B1F3A';
+                          e.currentTarget.style.borderLeftColor = '#1E6B4C';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.background = 'white';
+                          e.currentTarget.style.color = '#4b5563';
+                          e.currentTarget.style.borderLeftColor = 'transparent';
+                        }}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </nav>
 
@@ -129,19 +214,40 @@ export default function PremiumHeader() {
         >
           <nav className="flex flex-col gap-4">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                style={{
-                  fontSize: '14px',
-                  fontWeight: '500',
-                  color: '#4b5563',
-                  textDecoration: 'none',
-                  padding: '8px 0',
-                }}
-              >
-                {link.label}
-              </Link>
+              <div key={link.href}>
+                <Link
+                  href={link.href}
+                  style={{
+                    fontSize: '14px',
+                    fontWeight: '500',
+                    color: '#4b5563',
+                    textDecoration: 'none',
+                    padding: '8px 0',
+                    display: 'block',
+                  }}
+                >
+                  {link.label}
+                </Link>
+                {link.submenu && (
+                  <div style={{ marginLeft: '16px', marginTop: '8px' }}>
+                    {link.submenu.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        style={{
+                          fontSize: '13px',
+                          color: '#6b7280',
+                          textDecoration: 'none',
+                          padding: '6px 0',
+                          display: 'block',
+                        }}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
             <div style={{ borderTop: '1px solid #e5e7eb', marginTop: '16px', paddingTop: '16px' }}>
               <Link
