@@ -90,18 +90,22 @@ export default function ServicesPage() {
       </section>
 
       {/* Services - Alternating Layout */}
-      <section className="section-spacing px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto space-y-16">
+      <section style={{ padding: '5rem 2rem' }}>
+        <div className="container-max" style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
           {services.map((service, i) => (
-            <div key={i} className={`grid md:grid-cols-2 gap-8 items-center ${i % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-              <div className={i % 2 === 1 ? 'md:col-start-2' : ''}>
-                <h2 className="text-3xl font-bold mb-4">{service.title}</h2>
-                <p className="text-gray-600 mb-6 text-lg">{service.desc}</p>
-                <ul className="space-y-3 mb-8">
+            <div key={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', alignItems: 'center' }}>
+              <div>
+                <h2 style={{ fontSize: '1.875rem', fontWeight: '700', marginBottom: '1rem', color: '#111827' }}>
+                  {service.title}
+                </h2>
+                <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '1.0625rem', lineHeight: '1.7' }}>
+                  {service.desc}
+                </p>
+                <ul style={{ marginBottom: '2rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                   {service.details.map((detail, j) => (
-                    <li key={j} className="flex items-start gap-3">
-                      <span style={{ color: '#10b981' }} className="font-bold mt-1">✓</span>
-                      <span className="text-gray-700">{detail}</span>
+                    <li key={j} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', color: '#4b5563', fontSize: '0.9375rem' }}>
+                      <span style={{ color: 'var(--emerald)', fontWeight: '700', marginTop: '0.25rem', flexShrink: 0 }}>✓</span>
+                      <span>{detail}</span>
                     </li>
                   ))}
                 </ul>
@@ -113,7 +117,8 @@ export default function ServicesPage() {
                 <ImagePlaceholder
                   type="service"
                   alt={service.title}
-                  className="h-64 w-full"
+                  className="fade-in-up"
+                  style={{ height: '280px' }}
                 />
               </div>
             </div>
@@ -122,21 +127,71 @@ export default function ServicesPage() {
       </section>
 
       {/* FAQ */}
-      <section className="section-spacing px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-          <div className="space-y-4">
+      <section style={{ padding: '5rem 2rem', background: '#F9FAFB' }}>
+        <div className="container-sm">
+          <h2 style={{ fontSize: '2rem', fontWeight: '700', textAlign: 'center', marginBottom: '3rem', color: '#111827' }}>
+            Frequently Asked Questions
+          </h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {faqs.map((faq, i) => (
-              <div key={i} className="bg-white rounded border border-gray-200 premium-card fade-in-up" style={{ animationDelay: `${i * 0.05}s` }}>
+              <div
+                key={i}
+                className="card-premium fade-in-up"
+                style={{
+                  animationDelay: `${i * 0.05}s`,
+                  padding: '0',
+                  overflow: 'hidden',
+                }}
+              >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full text-left p-6 font-semibold flex justify-between items-center hover:bg-gray-50 transition"
+                  style={{
+                    width: '100%',
+                    textAlign: 'left',
+                    padding: '1.5rem',
+                    fontWeight: '600',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    background: 'transparent',
+                    border: 'none',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    color: '#111827',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'rgba(30, 107, 76, 0.05)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'transparent';
+                  }}
                 >
                   {faq.q}
-                  <span className="text-emerald-600 font-bold text-xl transition-transform" style={{ transform: openFaq === i ? 'rotate(45deg)' : 'rotate(0)' }}>{openFaq === i ? '−' : '+'}</span>
+                  <span
+                    style={{
+                      color: 'var(--emerald)',
+                      fontWeight: '700',
+                      fontSize: '1.25rem',
+                      transition: 'transform 0.3s ease',
+                      transform: openFaq === i ? 'rotate(45deg)' : 'rotate(0)',
+                      flexShrink: 0,
+                    }}
+                  >
+                    {openFaq === i ? '−' : '+'}
+                  </span>
                 </button>
                 {openFaq === i && (
-                  <div className="px-6 pb-6 pt-0 text-gray-600 border-t border-gray-200 fade-in">
+                  <div
+                    style={{
+                      padding: '0 1.5rem 1.5rem 1.5rem',
+                      color: '#6b7280',
+                      borderTop: '1px solid var(--border-color)',
+                      fontSize: '0.9375rem',
+                      lineHeight: '1.7',
+                      animation: 'fadeIn 0.3s ease',
+                    }}
+                    className="fade-in"
+                  >
                     {faq.a}
                   </div>
                 )}
