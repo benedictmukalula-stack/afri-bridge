@@ -1,0 +1,101 @@
+[
+  {
+    "name": "hero-port-sunset",
+    "prompt": "Professional cinematic shot of an industrial African container port at golden hour sunset...",
+    "size": "1024x1024",
+    "style": "cinematic",
+    "url": "https://images.pexels.com/photos/36060451/pexels-photo-36060451.jpeg",
+    "source": "Pexels (Fallback)",
+    "generated_at": "2025-03-06T13:45:00.000Z"
+  },
+  {
+    "name": "service-customs-clearing",
+    "prompt": "Modern professional customs office at an African border checkpoint...",
+    "size": "1024x1024",
+    "style": "professional",
+    "url": "https://images.pexels.com/photos/34570226/pexels-photo-34570226.jpeg",
+    "source": "Pexels (Fallback)",
+    "generated_at": "2025-03-06T13:45:00.000Z"
+  },
+  {
+    "name": "service-ocean-freight",
+    "prompt": "Wide cinematic shot of a massive container cargo ship at sea with golden sunrise lighting...",
+    "size": "1024x1024",
+    "style": "cinematic",
+    "url": "https://images.pexels.com/photos/32399138/pexels-photo-32399138.jpeg",
+    "source": "Pexels (Fallback)",
+    "generated_at": "2025-03-06T13:45:00.000Z"
+  },
+  {
+    "name": "service-air-freight",
+    "prompt": "Professional shot of a large cargo aircraft (Boeing 747 freighter) at airport loading dock...",
+    "size": "1024x1024",
+    "style": "professional",
+    "url": "https://images.pexels.com/photos/34272372/pexels-photo-34272372.jpeg",
+    "source": "Pexels (Fallback)",
+    "generated_at": "2025-03-06T13:45:00.000Z"
+  },
+  {
+    "name": "service-road-freight",
+    "prompt": "Cinematic aerial shot of professional long-haul trucks traveling on modern African highway...",
+    "size": "1024x1024",
+    "style": "cinematic",
+    "url": "https://images.pexels.com/photos/13961752/pexels-photo-13961752.jpeg",
+    "source": "Pexels (Fallback)",
+    "generated_at": "2025-03-06T13:45:00.000Z"
+  },
+  {
+    "name": "service-warehouse",
+    "prompt": "Modern bright warehouse interior with organized shelving, pallets, and storage racks...",
+    "size": "1024x1024",
+    "style": "professional",
+    "url": "https://images.pexels.com/photos/4487363/pexels-photo-4487363.jpeg",
+    "source": "Pexels (Fallback)",
+    "generated_at": "2025-03-06T13:45:00.000Z"
+  },
+  {
+    "name": "industry-mining",
+    "prompt": "Dynamic cinematic shot of African mining operation with heavy excavation equipment on rocky terrain...",
+    "size": "1024x1024",
+    "style": "cinematic",
+    "url": "https://images.pexels.com/photos/16567021/pexels-photo-16567021.jpeg",
+    "source": "Pexels (Fallback)",
+    "generated_at": "2025-03-06T13:45:00.000Z"
+  },
+  {
+    "name": "industry-agriculture",
+    "prompt": "Wide cinematic shot of large-scale African agricultural landscape during harvest season...",
+    "size": "1024x1024",
+    "style": "cinematic",
+    "url": "https://images.pexels.com/photos/6680149/pexels-photo-6680149.jpeg",
+    "source": "Pexels (Fallback)",
+    "generated_at": "2025-03-06T13:45:00.000Z"
+  },
+  {
+    "name": "industry-manufacturing",
+    "prompt": "Modern manufacturing facility floor with industrial production equipment and machinery...",
+    "size": "1024x1024",
+    "style": "professional",
+    "url": "https://images.pexels.com/photos/17765440/pexels-photo-17765440.jpeg",
+    "source": "Pexels (Fallback)",
+    "generated_at": "2025-03-06T13:45:00.000Z"
+  },
+  {
+    "name": "tracking-control-center",
+    "prompt": "Modern logistics control center with multiple monitoring screens displaying real-time cargo tracking data...",
+    "size": "1024x1024",
+    "style": "professional",
+    "url": "https://images.pexels.com/photos/32529341/pexels-photo-32529341.jpeg",
+    "source": "Pexels (Fallback)",
+    "generated_at": "2025-03-06T13:45:00.000Z"
+  },
+  {
+    "name": "quote-consultation",
+    "prompt": "Professional business consultation meeting between logistics experts and clients...",
+    "size": "1024x1024",
+    "style": "professional",
+    "url": "https://images.pexels.com/photos/8441820/pexels-photo-8441820.jpeg",
+    "source": "Pexels (Fallback)",
+    "generated_at": "2025-03-06T13:45:00.000Z"
+  }
+]
