@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-20 md:py-40 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex items-center" style={{ backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2Fdc61da1f09234263a84e25f305acc6be%2F478a2d42a1c94c47b6ab76c57a333b69?format=webp&width=800&height=1200')`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
+      <section className="relative py-16 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex items-center" style={{ backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2Fdc61da1f09234263a84e25f305acc6be%2F478a2d42a1c94c47b6ab76c57a333b69?format=webp&width=800&height=1200')`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
         {/* Enhanced Dark Overlay - Left to Right for better text visibility */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/45 to-black/25"></div>
         {/* Bottom Gradient to ensure text area visibility */}
@@ -16,14 +16,14 @@ export default function Home() {
         <div className="max-w-6xl mx-auto w-full relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div style={{ position: 'relative' }}>
-              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight" style={{
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight" style={{
                 textShadow: '0 4px 12px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.4)',
                 filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))',
                 letterSpacing: '-0.02em'
               }}>
                 Premium Clearing & Logistics Across Africa
               </h1>
-              <p className="text-xl text-white mb-8" style={{
+              <p className="text-lg text-white mb-8" style={{
                 textShadow: '0 3px 8px rgba(0, 0, 0, 0.45), 0 1px 3px rgba(0, 0, 0, 0.3)',
                 lineHeight: '1.8'
               }}>
@@ -87,7 +87,7 @@ export default function Home() {
       <TrustStrip />
 
       {/* Certifications & Trust Badges */}
-      <section style={{ padding: '4rem 2rem', background: '#F9FAFB' }}>
+      <section style={{ padding: '3rem 2rem', background: '#F9FAFB' }}>
         <div className="container-max">
           <p style={{ textAlign: 'center', color: '#6b7280', fontWeight: '600', marginBottom: '2rem', textTransform: 'uppercase', fontSize: '12px', letterSpacing: '0.8px' }}>
             Industry Certifications & Memberships
@@ -110,18 +110,18 @@ export default function Home() {
       </section>
 
       {/* Services Overview */}
-      <section style={{ padding: '5rem 2rem' }}>
+      <section style={{ padding: '4rem 2rem' }}>
         <div className="container-max">
           <ImagePlaceholder
             type="section"
             alt="Warehouse logistics and cargo storage facility"
             className="fade-in-up"
-            style={{ marginBottom: '3rem', height: '280px' }}
+            style={{ marginBottom: '2.5rem', height: '240px' }}
           />
-          <h2 style={{ fontSize: '2.25rem', fontWeight: '700', textAlign: 'center', marginBottom: '1rem', color: '#111827' }}>
+          <h2 style={{ fontSize: '1.75rem', fontWeight: '700', textAlign: 'center', marginBottom: '0.75rem', color: '#111827' }}>
             Our Services
           </h2>
-          <p style={{ textAlign: 'center', color: '#6b7280', marginBottom: '3rem', maxWidth: '700px', margin: '0 auto', fontSize: '1.0625rem' }}>
+          <p style={{ textAlign: 'center', color: '#6b7280', marginBottom: '2.5rem', maxWidth: '700px', margin: '0 auto', fontSize: '1rem' }}>
             Comprehensive logistics solutions across all modes and corridors
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
@@ -149,9 +149,9 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section style={{ padding: '5rem 2rem', background: '#F9FAFB' }}>
+      <section style={{ padding: '4rem 2rem', background: '#F9FAFB' }}>
         <div className="container-max">
-          <h2 style={{ fontSize: '2.25rem', fontWeight: '700', textAlign: 'center', marginBottom: '3rem', color: '#111827' }}>
+          <h2 style={{ fontSize: '1.75rem', fontWeight: '700', textAlign: 'center', marginBottom: '2.5rem', color: '#111827' }}>
             How It Works
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
@@ -173,15 +173,15 @@ export default function Home() {
       </section>
 
       {/* Trade Corridors Preview */}
-      <section style={{ padding: '5rem 2rem' }}>
+      <section style={{ padding: '4rem 2rem' }}>
         <div className="container-max">
           <ImagePlaceholder
             type="map"
             alt="African trade corridors and regional logistics network map"
             className="fade-in-up"
-            style={{ marginBottom: '3rem', height: '280px' }}
+            style={{ marginBottom: '2.5rem', height: '240px' }}
           />
-          <h2 style={{ fontSize: '2.25rem', fontWeight: '700', textAlign: 'center', marginBottom: '3rem', color: '#111827' }}>
+          <h2 style={{ fontSize: '1.75rem', fontWeight: '700', textAlign: 'center', marginBottom: '2.5rem', color: '#111827' }}>
             Africa Trade Corridors
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
@@ -203,12 +203,12 @@ export default function Home() {
       </section>
 
       {/* Testimonials & Stats */}
-      <section style={{ padding: '5rem 2rem', background: 'var(--gradient-primary)', color: 'white' }}>
+      <section style={{ padding: '4rem 2rem', background: 'var(--gradient-primary)', color: 'white' }}>
         <div className="container-max">
-          <h2 style={{ fontSize: '2.25rem', fontWeight: '700', textAlign: 'center', marginBottom: '1rem', color: 'white' }}>
+          <h2 style={{ fontSize: '1.75rem', fontWeight: '700', textAlign: 'center', marginBottom: '0.75rem', color: 'white' }}>
             Trusted by African Logistics Leaders
           </h2>
-          <p style={{ textAlign: 'center', color: 'rgba(255, 255, 255, 0.85)', marginBottom: '3rem', maxWidth: '700px', margin: '0 auto', fontSize: '1rem' }}>
+          <p style={{ textAlign: 'center', color: 'rgba(255, 255, 255, 0.85)', marginBottom: '2.5rem', maxWidth: '700px', margin: '0 auto', fontSize: '0.9375rem' }}>
             Our track record speaks for itself. Built on years of regional expertise and regional partnerships.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '2rem', textAlign: 'center' }}>
@@ -229,11 +229,11 @@ export default function Home() {
                   transition: 'all 0.3s ease',
                 }}
               >
-                <div style={{ fontSize: '3.5rem', fontWeight: '700', marginBottom: '0.75rem', color: '#F5B041' }}>
+                <div style={{ fontSize: '2.75rem', fontWeight: '700', marginBottom: '0.5rem', color: '#F5B041' }}>
                   {item.stat}
                 </div>
-                <p style={{ fontSize: '1rem', fontWeight: '600', color: 'white', marginBottom: '0.5rem' }}>{item.label}</p>
-                <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.7)' }}>{item.desc}</p>
+                <p style={{ fontSize: '0.9375rem', fontWeight: '600', color: 'white', marginBottom: '0.375rem' }}>{item.label}</p>
+                <p style={{ fontSize: '0.8125rem', color: 'rgba(255, 255, 255, 0.7)' }}>{item.desc}</p>
               </div>
             ))}
           </div>
