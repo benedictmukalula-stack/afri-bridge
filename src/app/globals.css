@@ -325,6 +325,107 @@ p {
   opacity: 0;
 }
 
+/* Premium Hero Animation */
+@keyframes heroFadeInScale {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hero-fade-in {
+  animation: heroFadeInScale 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  opacity: 0;
+}
+
+/* Gold Underline Animation */
+@keyframes slideInGold {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+.gold-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.gold-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #F5B041 0%, #f5c066 100%);
+  border-radius: 2px;
+  animation: slideInGold 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s forwards;
+  opacity: 0;
+}
+
+/* Card Hover Effects */
+@keyframes cardLift {
+  from {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  to {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 16px 32px rgba(30, 107, 76, 0.2);
+  }
+}
+
+@keyframes cardGlow {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: #F5B041;
+    box-shadow: 0 0 20px rgba(245, 176, 65, 0.3);
+  }
+}
+
+.card-premium {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 2px solid transparent;
+}
+
+.card-premium:hover {
+  animation: cardLift 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  border-color: #F5B041;
+  box-shadow: 0 12px 32px rgba(30, 107, 76, 0.25), 0 0 20px rgba(245, 176, 65, 0.2);
+}
+
+/* Counter Animation */
+@keyframes countUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.stat-counter {
+  animation: countUp 0.8s ease-out forwards;
+}
+
+/* Gradient Text */
+.gradient-heading {
+  background: linear-gradient(135deg, #F5B041 0%, #1E6B4C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* Stagger animation delays */
 .delay-100 { animation-delay: 0.1s; }
 .delay-200 { animation-delay: 0.2s; }
