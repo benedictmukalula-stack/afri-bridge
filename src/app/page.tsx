@@ -6,79 +6,62 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-16 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex items-center" style={{ backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2Fdc61da1f09234263a84e25f305acc6be%2F478a2d42a1c94c47b6ab76c57a333b69?format=webp&width=800&height=1200')`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
-        {/* Enhanced Dark Overlay - Left to Right for better text visibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/40"></div>
-        {/* Bottom Gradient to ensure text area visibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/40"></div>
+      <section className="relative py-16 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex items-center" style={{ background: 'linear-gradient(135deg, #0B1F3A 0%, #1a3a52 50%, #0f2438 100%)' }}>
 
         <div className="max-w-6xl mx-auto w-full relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div style={{ position: 'relative' }}>
-              <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight" style={{
-                color: '#F5B041',
-                textShadow: '0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.6)',
-                filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.6))',
-                letterSpacing: '-0.02em'
+          <div style={{ maxWidth: '800px' }}>
+            <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight" style={{
+              color: '#F5B041',
+              letterSpacing: '-0.02em'
+            }}>
+              Premium Clearing & Logistics Across Africa
+            </h1>
+            <p className="text-lg text-white mb-8" style={{
+              lineHeight: '1.8'
+            }}>
+              Customs compliance, freight forwarding, and cross-border logistics built for SADC trade corridors.
+            </p>
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2rem' }}>
+              <Link href="/quote" className="btn btn-gradient" style={{ boxShadow: '0 8px 24px rgba(30, 107, 76, 0.4)' }}>
+                Request a Quote
+              </Link>
+              <Link href="/tracking" className="btn" style={{
+                background: 'rgba(255, 255, 255, 0.2)',
+                color: 'white',
+                backdropFilter: 'blur(12px)',
+                border: '2px solid rgba(255, 255, 255, 0.4)',
+                boxShadow: '0 4px 16px rgba(0, 0, 0, 0.2)',
+                textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
               }}>
-                Premium Clearing & Logistics Across Africa
-              </h1>
-              <p className="text-lg text-white mb-8" style={{
-                textShadow: '0 4px 10px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.5)',
-                lineHeight: '1.8'
-              }}>
-                Customs compliance, freight forwarding, and cross-border logistics built for SADC trade corridors.
-              </p>
-              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2rem' }}>
-                <Link href="/quote" className="btn btn-gradient" style={{ boxShadow: '0 8px 24px rgba(30, 107, 76, 0.4)' }}>
-                  Request a Quote
-                </Link>
-                <Link href="/tracking" className="btn" style={{
-                  background: 'rgba(255, 255, 255, 0.2)',
-                  color: 'white',
-                  backdropFilter: 'blur(12px)',
-                  border: '2px solid rgba(255, 255, 255, 0.4)',
-                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.2)',
-                  textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
-                }}>
-                  Track Shipment
-                </Link>
-              </div>
-
-              {/* Value Chips */}
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginTop: '3rem' }}>
-                {[
-                  '✓ Customs Compliance',
-                  '✓ End-to-End Visibility',
-                  '✓ SADC Expertise',
-                ].map((chip, i) => (
-                  <div
-                    key={i}
-                    style={{
-                      background: 'rgba(11, 31, 58, 0.75)',
-                      backdropFilter: 'blur(16px)',
-                      color: 'white',
-                      padding: '0.875rem 1.5rem',
-                      borderRadius: '9999px',
-                      fontSize: '0.9rem',
-                      fontWeight: '600',
-                      textShadow: '0 2px 4px rgba(0,0,0,0.3)',
-                      border: '1.5px solid rgba(255, 255, 255, 0.2)',
-                      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
-                    }}
-                  >
-                    {chip}
-                  </div>
-                ))}
-              </div>
+                Track Shipment
+              </Link>
             </div>
-            <div className="hidden md:block">
-              <img
-                src="https://images.pexels.com/photos/36060451/pexels-photo-36060451.jpeg"
-                alt="African port with container cranes at sunset"
-                className="shadow-2xl"
-                style={{ width: '100%', height: 'auto', borderRadius: '0.5rem', objectFit: 'cover' }}
-              />
+
+            {/* Value Chips */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginTop: '3rem' }}>
+              {[
+                '✓ Customs Compliance',
+                '✓ End-to-End Visibility',
+                '✓ SADC Expertise',
+              ].map((chip, i) => (
+                <div
+                  key={i}
+                  style={{
+                    background: 'rgba(11, 31, 58, 0.75)',
+                    backdropFilter: 'blur(16px)',
+                    color: 'white',
+                    padding: '0.875rem 1.5rem',
+                    borderRadius: '9999px',
+                    fontSize: '0.9rem',
+                    fontWeight: '600',
+                    textShadow: '0 2px 4px rgba(0,0,0,0.3)',
+                    border: '1.5px solid rgba(255, 255, 255, 0.2)',
+                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                  }}
+                >
+                  {chip}
+                </div>
+              ))}
             </div>
           </div>
         </div>
