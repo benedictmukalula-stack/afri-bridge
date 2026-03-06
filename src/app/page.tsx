@@ -8,22 +8,22 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative py-16 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex items-center" style={{ backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2Fdc61da1f09234263a84e25f305acc6be%2F478a2d42a1c94c47b6ab76c57a333b69?format=webp&width=800&height=1200')`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
         {/* Enhanced Dark Overlay - Left to Right for better text visibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/45 to-black/25"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/40"></div>
         {/* Bottom Gradient to ensure text area visibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/40"></div>
 
         <div className="max-w-6xl mx-auto w-full relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div style={{ position: 'relative' }}>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight" style={{
-                textShadow: '0 4px 12px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.4)',
-                filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))',
+                textShadow: '0 6px 16px rgba(0, 0, 0, 0.7), 0 3px 6px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.5)',
+                filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.5))',
                 letterSpacing: '-0.02em'
               }}>
                 Premium Clearing & Logistics Across Africa
               </h1>
               <p className="text-lg text-white mb-8" style={{
-                textShadow: '0 3px 8px rgba(0, 0, 0, 0.45), 0 1px 3px rgba(0, 0, 0, 0.3)',
+                textShadow: '0 4px 10px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.5)',
                 lineHeight: '1.8'
               }}>
                 Customs compliance, freight forwarding, and cross-border logistics built for SADC trade corridors.
