@@ -83,7 +83,7 @@ export default function ContactPage() {
       </section>
 
       {/* Two Column Layout */}
-      <section className="section-spacing px-4 sm:px-6 lg:px-8">
+      <section style={{ padding: '3.5rem 2rem' }} className="px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
           {/* Left: Contact Info */}
           <div>

@@ -77,14 +77,14 @@ export default function IndustriesPage() {
       </section>
 
       {/* Industries Grid */}
-      <section style={{ padding: '5rem 2rem' }}>
+      <section style={{ padding: '4rem 2rem' }}>
         <div className="container-max">
           {/* Featured Image */}
           <ImagePlaceholder
             type="section"
             alt="Logistics industry overview"
             className="fade-in-up"
-            style={{ marginBottom: '3rem', height: '320px' }}
+            style={{ marginBottom: '2.5rem', height: '260px' }}
           />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>
             {industries.map((industry, i) => (

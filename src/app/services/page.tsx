@@ -96,8 +96,8 @@ export default function ServicesPage() {
       </section>
 
       {/* Services - Alternating Layout */}
-      <section style={{ padding: '5rem 2rem' }}>
-        <div className="container-max" style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
+      <section style={{ padding: '4rem 2rem' }}>
+        <div className="container-max" style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
           {services.map((service, i) => (
             <div key={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', alignItems: 'center' }}>
               <div>
@@ -133,9 +133,9 @@ export default function ServicesPage() {
       </section>
 
       {/* FAQ */}
-      <section style={{ padding: '5rem 2rem', background: '#F9FAFB' }}>
+      <section style={{ padding: '4rem 2rem', background: '#F9FAFB' }}>
         <div className="container-sm">
-          <h2 style={{ fontSize: '2rem', fontWeight: '700', textAlign: 'center', marginBottom: '3rem', color: '#111827' }}>
+          <h2 style={{ fontSize: '1.75rem', fontWeight: '700', textAlign: 'center', marginBottom: '2.5rem', color: '#111827' }}>
             Frequently Asked Questions
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
