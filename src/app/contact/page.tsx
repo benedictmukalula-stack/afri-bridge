@@ -279,6 +279,161 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Smart Assistants Section */}
+      <section style={{ padding: '4rem 2rem', background: '#F9FAFB' }}>
+        <div className="container-max">
+          <h2 style={{ fontSize: '1.75rem', fontWeight: '700', textAlign: 'center', marginBottom: '0.75rem', color: '#111827' }}>
+            Need Quick Help?
+          </h2>
+          <p style={{ textAlign: 'center', color: '#6b7280', marginBottom: '2.5rem', maxWidth: '700px', margin: '0 auto', fontSize: '1rem' }}>
+            Get instant assistance from our intelligent support systems
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+            {/* Smart Assistant Card */}
+            <div className="card-premium" style={{ textAlign: 'center', padding: '2rem' }}>
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🤖</div>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: '#111827' }}>
+                AI Smart Assistant
+              </h3>
+              <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '0.9375rem' }}>
+                Ask our intelligent chatbot anything about our services, pricing, or logistics processes. Available 24/7.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <p style={{ fontSize: '12px', fontWeight: '600', color: '#1E6B4C', margin: '0', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Quick Topics:</p>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '13px', color: '#6b7280' }}>
+                  <li>✓ Get a quote</li>
+                  <li>✓ Track shipment</li>
+                  <li>✓ Service details</li>
+                </ul>
+              </div>
+              <button
+                onClick={() => {
+                  const chatButton = document.querySelector('[title="Chat with AI Assistant"]') as HTMLButtonElement;
+                  if (chatButton) chatButton.click();
+                }}
+                style={{
+                  marginTop: '1.5rem',
+                  padding: '0.75rem 1.75rem',
+                  background: 'linear-gradient(135deg, #1E6B4C 0%, #0B1F3A 100%)',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '6px',
+                  fontWeight: '600',
+                  fontSize: '0.9375rem',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = '0 8px 20px rgba(30, 107, 76, 0.35)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+              >
+                Start Chat
+              </button>
+            </div>
+
+            {/* WhatsApp Assistant Card */}
+            <div className="card-premium" style={{ textAlign: 'center', padding: '2rem' }}>
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>💬</div>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: '#111827' }}>
+                WhatsApp Support
+              </h3>
+              <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '0.9375rem' }}>
+                Connect with our team directly on WhatsApp for personalized assistance and immediate responses.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <p style={{ fontSize: '12px', fontWeight: '600', color: '#25D366', margin: '0', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Available:</p>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '13px', color: '#6b7280' }}>
+                  <li>✓ Instant responses</li>
+                  <li>✓ Personal attention</li>
+                  <li>✓ 24/7 availability</li>
+                </ul>
+              </div>
+              <a
+                href="https://wa.me/27833910863?text=Hi%20AfriBridge!%20I%20have%20a%20question%20about%20your%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-block',
+                  marginTop: '1.5rem',
+                  padding: '0.75rem 1.75rem',
+                  background: 'linear-gradient(135deg, #25D366 0%, #20BA5A 100%)',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '6px',
+                  fontWeight: '600',
+                  fontSize: '0.9375rem',
+                  cursor: 'pointer',
+                  textDecoration: 'none',
+                  transition: 'all 0.2s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = '0 8px 20px rgba(37, 211, 102, 0.35)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+              >
+                Open WhatsApp
+              </a>
+            </div>
+
+            {/* Phone Support Card */}
+            <div className="card-premium" style={{ textAlign: 'center', padding: '2rem' }}>
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>☎️</div>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: '#111827' }}>
+                Call Support
+              </h3>
+              <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '0.9375rem' }}>
+                Speak directly with our logistics experts during business hours for complex inquiries.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <p style={{ fontSize: '12px', fontWeight: '600', color: '#0B1F3A', margin: '0', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Phone Lines:</p>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '13px', color: '#6b7280' }}>
+                  <li>📞 +27 11 568 6712</li>
+                  <li>📱 +27 83 391 0863</li>
+                  <li>Mon-Fri 8:00-18:00 SAST</li>
+                </ul>
+              </div>
+              <a
+                href="tel:+27115686712"
+                style={{
+                  display: 'inline-block',
+                  marginTop: '1.5rem',
+                  padding: '0.75rem 1.75rem',
+                  background: '#0B1F3A',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '6px',
+                  fontWeight: '600',
+                  fontSize: '0.9375rem',
+                  cursor: 'pointer',
+                  textDecoration: 'none',
+                  transition: 'all 0.2s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = '0 8px 20px rgba(11, 31, 58, 0.35)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+              >
+                Call Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Regional Offices */}
       <section className="section-spacing px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">

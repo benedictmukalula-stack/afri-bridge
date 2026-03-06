@@ -250,6 +250,56 @@ export default function AIChat() {
             </div>
           </div>
         )}
+        {messages.length === 1 && (
+          <div style={{
+            padding: '16px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '8px',
+          }}>
+            <p style={{
+              fontSize: '11px',
+              fontWeight: '600',
+              color: '#6b7280',
+              margin: '0 0 8px 0',
+              textTransform: 'uppercase',
+              letterSpacing: '0.5px',
+            }}>Quick Actions</p>
+            {[
+              { emoji: '📦', text: 'Request a Quote' },
+              { emoji: '🚚', text: 'Track Shipment' },
+              { emoji: '💼', text: 'Our Services' },
+              { emoji: '📞', text: 'Contact Support' },
+            ].map((action) => (
+              <button
+                key={action.text}
+                onClick={() => setInput(action.text)}
+                style={{
+                  background: 'rgba(30, 107, 76, 0.1)',
+                  border: '1px solid rgba(30, 107, 76, 0.3)',
+                  borderRadius: '6px',
+                  padding: '8px 12px',
+                  fontSize: '13px',
+                  color: '#374151',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  textAlign: 'left',
+                  fontWeight: '500',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'rgba(30, 107, 76, 0.2)';
+                  e.currentTarget.style.borderColor = 'rgba(30, 107, 76, 0.6)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'rgba(30, 107, 76, 0.1)';
+                  e.currentTarget.style.borderColor = 'rgba(30, 107, 76, 0.3)';
+                }}
+              >
+                {action.emoji} {action.text}
+              </button>
+            ))}
+          </div>
+        )}
         <div ref={messagesEndRef} />
       </div>
 
