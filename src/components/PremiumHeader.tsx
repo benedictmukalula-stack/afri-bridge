@@ -21,8 +21,25 @@ export default function PremiumHeader() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo/Wordmark */}
-          <Link href="/" className="flex items-center">
-            <span style={{ fontSize: '20px', fontWeight: '700', color: '#0f172a', letterSpacing: '-0.5px' }}>
+          <Link href="/" className="flex items-center gap-3">
+            {/* Logo Icon */}
+            <div style={{
+              width: '40px',
+              height: '40px',
+              background: 'linear-gradient(135deg, #1E6B4C 0%, #0B1F3A 100%)',
+              borderRadius: '8px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontWeight: '700',
+              color: 'white',
+              fontSize: '20px',
+              boxShadow: '0 2px 8px rgba(30, 107, 76, 0.25)'
+            }}>
+              A
+            </div>
+            {/* Logo Text */}
+            <span style={{ fontSize: '22px', fontWeight: '700', color: '#0f172a', letterSpacing: '-0.5px' }}>
               AfriBridge
             </span>
           </Link>
