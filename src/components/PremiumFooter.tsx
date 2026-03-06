@@ -84,7 +84,7 @@ export default function PremiumFooter() {
                 { label: 'Press Kit', href: '#' },
                 { label: 'Newsroom', href: '#' },
               ].map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <Link
                     href={link.href}
                     style={{
