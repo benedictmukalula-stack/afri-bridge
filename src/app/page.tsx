@@ -8,25 +8,39 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="relative py-20 md:py-40 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex items-center" style={{ backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2Fdc61da1f09234263a84e25f305acc6be%2F478a2d42a1c94c47b6ab76c57a333b69?format=webp&width=800&height=1200')`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
-        {/* Subtle Gradient Overlay - Left to Right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-black/20 to-black/5"></div>
-        {/* Soft Bottom Gradient for Better Text Area */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/15"></div>
+        {/* Enhanced Dark Overlay - Left to Right for better text visibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/45 to-black/25"></div>
+        {/* Bottom Gradient to ensure text area visibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/30"></div>
 
         <div className="max-w-6xl mx-auto w-full relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)', filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.2))' }}>
+            <div style={{ position: 'relative' }}>
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight" style={{
+                textShadow: '0 4px 12px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.4)',
+                filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))',
+                letterSpacing: '-0.02em'
+              }}>
                 Premium Clearing & Logistics Across Africa
               </h1>
-              <p className="text-xl text-white mb-8" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.25)' }}>
+              <p className="text-xl text-white mb-8" style={{
+                textShadow: '0 3px 8px rgba(0, 0, 0, 0.45), 0 1px 3px rgba(0, 0, 0, 0.3)',
+                lineHeight: '1.8'
+              }}>
                 Customs compliance, freight forwarding, and cross-border logistics built for SADC trade corridors.
               </p>
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2rem' }}>
-                <Link href="/quote" className="btn btn-gradient">
+                <Link href="/quote" className="btn btn-gradient" style={{ boxShadow: '0 8px 24px rgba(30, 107, 76, 0.4)' }}>
                   Request a Quote
                 </Link>
-                <Link href="/tracking" className="btn" style={{ background: 'rgba(255, 255, 255, 0.15)', color: 'white', backdropFilter: 'blur(8px)', border: '1px solid rgba(255, 255, 255, 0.3)' }}>
+                <Link href="/tracking" className="btn" style={{
+                  background: 'rgba(255, 255, 255, 0.2)',
+                  color: 'white',
+                  backdropFilter: 'blur(12px)',
+                  border: '2px solid rgba(255, 255, 255, 0.4)',
+                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.2)',
+                  textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
+                }}>
                   Track Shipment
                 </Link>
               </div>
@@ -41,15 +55,16 @@ export default function Home() {
                   <div
                     key={i}
                     style={{
-                      background: 'rgba(30, 107, 76, 0.85)',
-                      backdropFilter: 'blur(12px)',
+                      background: 'rgba(11, 31, 58, 0.75)',
+                      backdropFilter: 'blur(16px)',
                       color: 'white',
-                      padding: '0.75rem 1.25rem',
+                      padding: '0.875rem 1.5rem',
                       borderRadius: '9999px',
-                      fontSize: '0.875rem',
+                      fontSize: '0.9rem',
                       fontWeight: '600',
-                      textShadow: '0 1px 2px rgba(0,0,0,0.2)',
-                      border: '1px solid rgba(255, 255, 255, 0.1)',
+                      textShadow: '0 2px 4px rgba(0,0,0,0.3)',
+                      border: '1.5px solid rgba(255, 255, 255, 0.2)',
+                      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
                     }}
                   >
                     {chip}

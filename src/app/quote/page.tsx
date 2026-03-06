@@ -94,8 +94,19 @@ export default function QuotePage() {
       <section className="relative py-16 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1f2937 100%)', color: 'white' }}>
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-transparent"></div>
         <div className="max-w-6xl mx-auto relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Request a Freight Quote</h1>
-          <p className="text-xl text-gray-300">Get a custom shipping quote from AfriBridge in under 24 hours</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{
+            textShadow: '0 2px 8px rgba(0, 0, 0, 0.4)',
+            letterSpacing: '-0.02em'
+          }}>
+            Request a Freight Quote
+          </h1>
+          <p className="text-xl" style={{
+            color: '#E5E7EB',
+            textShadow: '0 1px 4px rgba(0, 0, 0, 0.3)',
+            lineHeight: '1.8'
+          }}>
+            Get a custom shipping quote from AfriBridge in under 24 hours
+          </p>
         </div>
       </section>
 
