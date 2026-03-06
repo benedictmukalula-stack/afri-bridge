@@ -19,11 +19,11 @@ export default function WhatsAppButton() {
       style={{
         position: 'fixed',
         bottom: '24px',
-        left: '24px',
+        right: '104px',
         zIndex: '40',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'flex-start',
+        alignItems: 'flex-end',
         gap: '12px',
       }}
       onMouseEnter={() => setShowMenu(true)}
