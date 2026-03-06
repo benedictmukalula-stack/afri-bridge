@@ -86,17 +86,7 @@ export default function ContactPage() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
           {/* Left: Contact Info */}
           <div>
-            <h2 className="text-3xl font-bold mb-8">SADC Operations</h2>
-
-            {/* Office */}
-            <div className="mb-10">
-              <h4 className="font-bold text-sm uppercase tracking-wide text-gray-600 mb-2">Headquarters</h4>
-              <p className="text-lg text-gray-800">
-                AfriBridge Logistics<br />
-                123 Trade Street, Johannesburg<br />
-                South Africa 2000
-              </p>
-            </div>
+            <h2 className="text-3xl font-bold mb-8">Contact AfriBridge</h2>
 
             {/* Contact */}
             <div className="mb-10">
@@ -104,20 +94,26 @@ export default function ContactPage() {
               <div className="space-y-4">
                 <div>
                   <p className="text-sm text-gray-600 mb-1">Email</p>
-                  <a href="mailto:info@afribridge.com" className="text-lg text-emerald-600 font-semibold hover:underline">
-                    info@afribridge.com
+                  <a href="mailto:info@afribridge.co.za" className="text-lg text-emerald-600 font-semibold hover:underline">
+                    info@afribridge.co.za
                   </a>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600 mb-1">Phone</p>
-                  <a href="tel:+27123456789" className="text-lg text-emerald-600 font-semibold hover:underline">
-                    +27 (11) 345-6789
+                  <p className="text-sm text-gray-600 mb-1">Office Phone</p>
+                  <a href="tel:+27115686712" className="text-lg text-emerald-600 font-semibold hover:underline">
+                    +27 11 568 6712
                   </a>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-600 mb-1">WhatsApp (Preferred)</p>
-                  <a href="https://wa.me/27123456789" target="_blank" rel="noopener noreferrer" className="text-lg text-emerald-600 font-semibold hover:underline">
-                    +27 (71) 234-5678 ✓
+                  <p className="text-sm text-gray-600 mb-1">Mobile / WhatsApp (Preferred)</p>
+                  <a href="https://wa.me/27833910863" target="_blank" rel="noopener noreferrer" className="text-lg text-emerald-600 font-semibold hover:underline">
+                    +27 83 391 0863 ✓
+                  </a>
+                </div>
+                <div>
+                  <p className="text-sm text-gray-600 mb-1">Website</p>
+                  <a href="https://www.afribridge.co.za" target="_blank" rel="noopener noreferrer" className="text-lg text-emerald-600 font-semibold hover:underline">
+                    www.afribridge.co.za
                   </a>
                 </div>
               </div>
@@ -283,7 +279,7 @@ export default function ContactPage() {
               {
                 region: 'SADC Hub',
                 city: 'Johannesburg, South Africa',
-                contact: '+27 11 345 6789',
+                contact: '+27 11 568 6712',
               },
               {
                 region: 'East Africa',

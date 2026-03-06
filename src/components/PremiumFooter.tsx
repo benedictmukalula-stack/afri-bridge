@@ -201,6 +201,111 @@ export default function PremiumFooter() {
               ))}
             </ul>
           </div>
+
+          {/* Column 5: Contact */}
+          <div>
+            <h4
+              style={{
+                fontSize: '11px',
+                fontWeight: '700',
+                marginBottom: '20px',
+                color: '#ffffff',
+                textTransform: 'uppercase',
+                letterSpacing: '0.8px',
+              }}
+            >
+              Contact
+            </h4>
+            <ul
+              style={{
+                listStyle: 'none',
+                padding: 0,
+                margin: 0,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '12px',
+              }}
+            >
+              <li>
+                <a
+                  href="tel:+27115686712"
+                  style={{
+                    fontSize: '14px',
+                    color: '#a1a5b1',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s ease',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#1E6B4C')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#a1a5b1')}
+                >
+                  <span style={{ color: 'var(--emerald)' }}>📞</span>
+                  +27 11 568 6712
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+27833910863"
+                  style={{
+                    fontSize: '14px',
+                    color: '#a1a5b1',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s ease',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#1E6B4C')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#a1a5b1')}
+                >
+                  <span style={{ color: 'var(--emerald)' }}>📱</span>
+                  +27 83 391 0863
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:info@afribridge.co.za"
+                  style={{
+                    fontSize: '14px',
+                    color: '#a1a5b1',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s ease',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#1E6B4C')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#a1a5b1')}
+                >
+                  <span style={{ color: 'var(--emerald)' }}>✉️</span>
+                  info@afribridge.co.za
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.afribridge.co.za"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    fontSize: '14px',
+                    color: '#a1a5b1',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s ease',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#1E6B4C')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#a1a5b1')}
+                >
+                  <span style={{ color: 'var(--emerald)' }}>🌐</span>
+                  www.afribridge.co.za
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
         {/* Bottom border and copyright */}

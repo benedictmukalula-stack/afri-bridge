@@ -72,7 +72,7 @@ export default function AIChat() {
     } catch (error) {
       const errorMessage: Message = {
         id: (Date.now() + 2).toString(),
-        text: 'Sorry, I encountered an error. Please try again or contact our team directly at support@afribridge.com',
+        text: 'Sorry, I encountered an error. Please try again or contact our team at info@afribridge.co.za or +27 83 391 0863',
         sender: 'ai',
         timestamp: new Date(),
       };
@@ -312,7 +312,7 @@ export default function AIChat() {
           </button>
         </div>
         <p style={{ fontSize: '11px', color: '#6b7280', margin: '0' }}>
-          Powered by AI. For urgent issues, call +27 71 234 5678
+          Powered by AI. For urgent issues, WhatsApp +27 83 391 0863
         </p>
         <style>{`
           @keyframes bounce {
