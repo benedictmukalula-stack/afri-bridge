@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import TrustStrip from '@/components/TrustStrip';
 import CTAStrip from '@/components/CTAStrip';
+import ImagePlaceholder from '@/components/ImagePlaceholder';
 
 export default function Home() {
   return (
@@ -43,7 +44,13 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="hidden md:block"></div>
+            <div className="hidden md:block">
+              <ImagePlaceholder
+                type="hero"
+                alt="African port with container cranes at sunset"
+                className="shadow-2xl"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -85,12 +92,11 @@ export default function Home() {
       {/* Services Overview */}
       <section className="section-spacing px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div
-            className="w-full h-72 rounded-lg mb-12 bg-gradient-to-r from-gray-200 to-gray-300 flex items-center justify-center"
-            style={{ background: 'linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%)' }}
-          >
-            <p className="text-gray-600 font-semibold">Warehouse Logistics</p>
-          </div>
+          <ImagePlaceholder
+            type="section"
+            alt="Warehouse logistics and cargo storage facility"
+            className="mb-12 h-72"
+          />
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Our Services</h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
             Comprehensive logistics solutions across all modes and corridors
@@ -144,12 +150,11 @@ export default function Home() {
       {/* Trade Corridors Preview */}
       <section className="section-spacing px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div
-            className="w-full h-72 rounded-lg mb-12 flex items-center justify-center"
-            style={{ background: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)' }}
-          >
-            <p className="text-blue-600 font-semibold">African Trade Infrastructure</p>
-          </div>
+          <ImagePlaceholder
+            type="map"
+            alt="African trade corridors and regional logistics network map"
+            className="mb-12 h-72"
+          />
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Africa Trade Corridors</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[

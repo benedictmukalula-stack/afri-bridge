@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import CTAStrip from '@/components/CTAStrip';
+import ImagePlaceholder from '@/components/ImagePlaceholder';
 
 export default function IndustriesPage() {
   const industries = [
@@ -70,10 +71,10 @@ export default function IndustriesPage() {
       <section className="section-spacing px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Featured Image */}
-          <img
-            src="https://images.pexels.com/photos/13961752/pexels-photo-13961752.jpeg"
+          <ImagePlaceholder
+            type="section"
             alt="Logistics industry overview"
-            className="w-full h-80 object-cover rounded-lg mb-12"
+            className="mb-12 h-80"
           />
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {industries.map((industry, i) => (

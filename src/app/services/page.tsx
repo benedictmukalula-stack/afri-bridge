@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import CTAStrip from '@/components/CTAStrip';
+import ImagePlaceholder from '@/components/ImagePlaceholder';
 import { useState } from 'react';
 
 export default function ServicesPage() {
@@ -109,11 +110,10 @@ export default function ServicesPage() {
                 </Link>
               </div>
               <div className="hidden md:block">
-                <img
-                  src={service.image}
+                <ImagePlaceholder
+                  type="service"
                   alt={service.title}
-                  className="h-64 w-full object-cover rounded-lg"
-                  loading="lazy"
+                  className="h-64 w-full"
                 />
               </div>
             </div>

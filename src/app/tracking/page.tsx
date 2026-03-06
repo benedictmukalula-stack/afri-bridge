@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import ImagePlaceholder from '@/components/ImagePlaceholder';
 import { useState } from 'react';
 
 export default function TrackingPage() {
@@ -128,10 +129,10 @@ export default function TrackingPage() {
           </div>
 
           {/* Tracking Image */}
-          <img
-            src="https://images.pexels.com/photos/3582392/pexels-photo-3582392.jpeg"
-            alt="Logistics control center"
-            className="w-full h-96 object-cover rounded-lg mb-12"
+          <ImagePlaceholder
+            type="map"
+            alt="Logistics control center with real-time tracking dashboard"
+            className="mb-12 h-96"
           />
 
           {/* Help Section */}

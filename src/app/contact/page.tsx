@@ -1,5 +1,6 @@
 'use client';
 
+import ImagePlaceholder from '@/components/ImagePlaceholder';
 import { useState } from 'react';
 
 export default function ContactPage() {
@@ -301,10 +302,10 @@ export default function ContactPage() {
       {/* Partnership Image */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto mb-16">
-          <img
-            src="https://images.pexels.com/photos/7653971/pexels-photo-7653971.jpeg"
+          <ImagePlaceholder
+            type="section"
             alt="Business partnership handshake"
-            className="w-full h-96 object-cover rounded-lg"
+            className="h-96"
           />
         </div>
       </section>
