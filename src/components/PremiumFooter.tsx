@@ -22,7 +22,7 @@ export default function PremiumFooter() {
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2Fdc61da1f09234263a84e25f305acc6be%2F6d65564945c34d529d336d8c04265a4f?format=webp&width=800&height=1200"
                 alt="AfriBridge Logistics"
-                style={{ height: '52px', width: 'auto', objectFit: 'contain' }}
+                style={{ height: '65px', width: 'auto', objectFit: 'contain' }}
               />
             </Link>
             <h3
