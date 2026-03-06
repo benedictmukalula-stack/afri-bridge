@@ -5,207 +5,259 @@ import SocialMediaIcons from './SocialMediaIcons';
 
 export default function PremiumFooter() {
   return (
-    <footer style={{ background: 'var(--navy)', color: '#f3f4f6' }}>
-      {/* Main footer content */}
-      <div className="container-max py-16">
+    <footer style={{ background: '#0B1F3A', color: '#f3f4f6' }}>
+      {/* Main footer grid */}
+      <div className="container-max" style={{ paddingTop: '4rem', paddingBottom: '3rem' }}>
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: '1fr 1fr 1fr',
-            gap: '3rem',
-            marginBottom: '3rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gap: '3.5rem',
+            marginBottom: '4rem',
           }}
         >
-          {/* Column 1: Brand (Left) */}
+          {/* Column 1: Brand */}
           <div>
-            <Link href="/" style={{ display: 'inline-block', marginBottom: '12px' }}>
+            <Link href="/" style={{ display: 'inline-block', marginBottom: '1.5rem' }}>
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2Fdc61da1f09234263a84e25f305acc6be%2F6d65564945c34d529d336d8c04265a4f?format=webp&width=800&height=1200"
                 alt="AfriBridge Logistics"
-                style={{ height: '75px', width: 'auto', objectFit: 'contain' }}
+                style={{ height: '60px', width: 'auto', objectFit: 'contain' }}
               />
             </Link>
-            <h3
-              style={{
-                fontSize: '18px',
-                fontWeight: '700',
-                marginBottom: '16px',
-                color: '#ffffff',
-                letterSpacing: '-0.5px',
-              }}
-            >
+            <h3 style={{
+              fontSize: '18px',
+              fontWeight: '800',
+              marginBottom: '1rem',
+              color: '#F5B041',
+              letterSpacing: '-0.5px',
+              margin: '0 0 1rem 0'
+            }}>
               AfriBridge
             </h3>
-            <p
-              style={{
-                fontSize: '14px',
-                color: '#a1a5b1',
-                lineHeight: '1.6',
-                marginBottom: '16px',
-              }}
-            >
-              Premium customs clearing, freight forwarding, and cross-border logistics across Africa.
+            <p style={{
+              fontSize: '14px',
+              color: '#9ca3af',
+              lineHeight: '1.7',
+              marginBottom: '1.5rem'
+            }}>
+              Pan-African trade infrastructure. Enterprise logistics for SADC, East Africa, West Africa, and beyond.
             </p>
-            <p
-              style={{
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+              <div style={{ width: '3px', height: '3px', background: '#1E6B4C', borderRadius: '50%' }}></div>
+              <p style={{
                 fontSize: '12px',
                 color: '#6b7280',
                 fontStyle: 'italic',
-              }}
-            >
-              Trusted by leading logistics companies across SADC.
-            </p>
-          </div>
-
-          {/* Column 2: Navigation & Services (Middle) */}
-          <div>
-            <div style={{ marginBottom: '2rem' }}>
-              <h4
-                style={{
-                  fontSize: '11px',
-                  fontWeight: '700',
-                  marginBottom: '20px',
-                  color: '#ffffff',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.8px',
-                }}
-              >
-                Navigation
-              </h4>
-              <ul
-                style={{
-                  listStyle: 'none',
-                  padding: 0,
-                  margin: 0,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '12px',
-                }}
-              >
-                {[
-                  { label: 'Home', href: '/' },
-                  { label: 'Services', href: '/services' },
-                  { label: 'Industries', href: '/industries' },
-                  { label: 'Tracking', href: '/tracking' },
-                  { label: 'Quote', href: '/quote' },
-                  { label: 'Contact', href: '/contact' },
-                ].map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      style={{
-                        fontSize: '14px',
-                        color: '#a1a5b1',
-                        textDecoration: 'none',
-                        transition: 'all 0.3s ease',
-                        position: 'relative',
-                        display: 'inline-block',
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.color = '#1E6B4C';
-                        e.currentTarget.style.transform = 'translateX(4px)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.color = '#a1a5b1';
-                        e.currentTarget.style.transform = 'translateX(0)';
-                      }}
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)', paddingTop: '2rem' }}>
-              <h4
-                style={{
-                  fontSize: '11px',
-                  fontWeight: '700',
-                  marginBottom: '20px',
-                  color: '#ffffff',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.8px',
-                }}
-              >
-                Services
-              </h4>
-              <ul
-                style={{
-                  listStyle: 'none',
-                  padding: 0,
-                  margin: 0,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '12px',
-                }}
-              >
-                {[
-                  'Customs Clearing',
-                  'Freight Forwarding',
-                  'Cross-Border Logistics',
-                  'Warehousing',
-                  'Distribution',
-                ].map((service) => (
-                  <li key={service}>
-                    <span
-                      style={{
-                        fontSize: '14px',
-                        color: '#a1a5b1',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                      }}
-                    >
-                      <span style={{ color: 'var(--emerald)', fontWeight: '600' }}>→</span>
-                      {service}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+                margin: 0
+              }}>
+                Trusted by African logistics leaders
+              </p>
             </div>
           </div>
 
-          {/* Column 3: Contact & Regions (Right) */}
+          {/* Column 2: Company */}
           <div>
-            <h4
-              style={{
-                fontSize: '11px',
-                fontWeight: '700',
-                marginBottom: '20px',
-                color: '#ffffff',
-                textTransform: 'uppercase',
-                letterSpacing: '0.8px',
-              }}
-            >
+            <h4 style={{
+              fontSize: '12px',
+              fontWeight: '800',
+              marginBottom: '1.5rem',
+              color: '#ffffff',
+              textTransform: 'uppercase',
+              letterSpacing: '1px',
+              margin: '0 0 1.5rem 0'
+            }}>
+              Company
+            </h4>
+            <ul style={{
+              listStyle: 'none',
+              padding: 0,
+              margin: 0,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1rem',
+            }}>
+              {[
+                { label: 'About Us', href: '#' },
+                { label: 'Careers', href: '#' },
+                { label: 'Blog & Resources', href: '/resources' },
+                { label: 'Press Kit', href: '#' },
+                { label: 'Newsroom', href: '#' },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    style={{
+                      fontSize: '14px',
+                      color: '#9ca3af',
+                      textDecoration: 'none',
+                      transition: 'all 0.3s ease',
+                      position: 'relative',
+                      display: 'inline-block',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.color = '#1E6B4C';
+                      e.currentTarget.style.paddingLeft = '4px';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.color = '#9ca3af';
+                      e.currentTarget.style.paddingLeft = '0';
+                    }}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Services */}
+          <div>
+            <h4 style={{
+              fontSize: '12px',
+              fontWeight: '800',
+              marginBottom: '1.5rem',
+              color: '#ffffff',
+              textTransform: 'uppercase',
+              letterSpacing: '1px',
+              margin: '0 0 1.5rem 0'
+            }}>
+              Services
+            </h4>
+            <ul style={{
+              listStyle: 'none',
+              padding: 0,
+              margin: 0,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1rem',
+            }}>
+              {[
+                { label: 'Customs Clearing', href: '/services' },
+                { label: 'Freight Forwarding', href: '/services' },
+                { label: 'Air & Ocean Freight', href: '/services' },
+                { label: 'Cross-Border Logistics', href: '/services' },
+                { label: 'Vehicle Export', href: '/vehicle-export' },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    style={{
+                      fontSize: '14px',
+                      color: '#9ca3af',
+                      textDecoration: 'none',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.75rem',
+                      transition: 'all 0.3s ease',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.color = '#1E6B4C';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.color = '#9ca3af';
+                    }}
+                  >
+                    <span style={{ color: '#1E6B4C', fontWeight: '700' }}>→</span>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Technology & Tools */}
+          <div>
+            <h4 style={{
+              fontSize: '12px',
+              fontWeight: '800',
+              marginBottom: '1.5rem',
+              color: '#ffffff',
+              textTransform: 'uppercase',
+              letterSpacing: '1px',
+              margin: '0 0 1.5rem 0'
+            }}>
+              Technology
+            </h4>
+            <ul style={{
+              listStyle: 'none',
+              padding: 0,
+              margin: 0,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1rem',
+            }}>
+              {[
+                { label: 'Tracking Portal', href: '/tracking' },
+                { label: 'Freight Quote', href: '/quote' },
+                { label: 'Learning Center', href: '/learn' },
+                { label: 'Coverage Map', href: '/coverage' },
+                { label: 'Tools Hub', href: '/tools' },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    style={{
+                      fontSize: '14px',
+                      color: '#9ca3af',
+                      textDecoration: 'none',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.75rem',
+                      transition: 'all 0.3s ease',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.color = '#1E6B4C';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.color = '#9ca3af';
+                    }}
+                  >
+                    <span style={{ color: '#1E6B4C', fontWeight: '700' }}>→</span>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 5: Contact & Support */}
+          <div>
+            <h4 style={{
+              fontSize: '12px',
+              fontWeight: '800',
+              marginBottom: '1.5rem',
+              color: '#ffffff',
+              textTransform: 'uppercase',
+              letterSpacing: '1px',
+              margin: '0 0 1.5rem 0'
+            }}>
               Contact
             </h4>
-            <ul
-              style={{
-                listStyle: 'none',
-                padding: 0,
-                margin: 0,
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '12px',
-              }}
-            >
+            <ul style={{
+              listStyle: 'none',
+              padding: 0,
+              margin: 0,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1.25rem',
+            }}>
               <li>
                 <a
                   href="tel:+27115686712"
                   style={{
                     fontSize: '14px',
-                    color: '#a1a5b1',
+                    color: '#9ca3af',
                     textDecoration: 'none',
                     transition: 'color 0.2s ease',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '8px',
+                    gap: '0.75rem',
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = '#1E6B4C')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = '#a1a5b1')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#9ca3af')}
                 >
-                  <span style={{ color: 'var(--emerald)' }}>📞</span>
+                  <span>📞</span>
                   +27 11 568 6712
                 </a>
               </li>
@@ -214,18 +266,18 @@ export default function PremiumFooter() {
                   href="tel:+27833910863"
                   style={{
                     fontSize: '14px',
-                    color: '#a1a5b1',
+                    color: '#9ca3af',
                     textDecoration: 'none',
                     transition: 'color 0.2s ease',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '8px',
+                    gap: '0.75rem',
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = '#1E6B4C')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = '#a1a5b1')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#9ca3af')}
                 >
-                  <span style={{ color: 'var(--emerald)' }}>📱</span>
-                  +27 83 391 0863
+                  <span>📱</span>
+                  WhatsApp: +27 83 391 0863
                 </a>
               </li>
               <li>
@@ -233,190 +285,135 @@ export default function PremiumFooter() {
                   href="mailto:info@afribridge.co.za"
                   style={{
                     fontSize: '14px',
-                    color: '#a1a5b1',
+                    color: '#9ca3af',
                     textDecoration: 'none',
                     transition: 'color 0.2s ease',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '8px',
+                    gap: '0.75rem',
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = '#1E6B4C')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = '#a1a5b1')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#9ca3af')}
                 >
-                  <span style={{ color: 'var(--emerald)' }}>✉️</span>
+                  <span>✉️</span>
                   info@afribridge.co.za
                 </a>
               </li>
-              <li>
-                <a
-                  href="https://www.afribridge.co.za"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    fontSize: '14px',
-                    color: '#a1a5b1',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#1E6B4C')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = '#a1a5b1')}
-                >
-                  <span style={{ color: 'var(--emerald)' }}>🌐</span>
-                  www.afribridge.co.za
-                </a>
-              </li>
             </ul>
-
-            <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)', marginTop: '2rem', paddingTop: '2rem' }}>
-              <h4
-                style={{
-                  fontSize: '11px',
-                  fontWeight: '700',
-                  marginBottom: '20px',
-                  color: '#ffffff',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.8px',
-                }}
-              >
-                Regions
-              </h4>
-              <ul
-                style={{
-                  listStyle: 'none',
-                  padding: 0,
-                  margin: 0,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '12px',
-                }}
-              >
-                {[
-                  'South Africa',
-                  'Zambia',
-                  'Zimbabwe',
-                  'SADC Region',
-                  'Pan-African Trade',
-                ].map((region) => (
-                  <li key={region}>
-                    <span
-                      style={{
-                        fontSize: '14px',
-                        color: '#a1a5b1',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                      }}
-                    >
-                      <span style={{ color: 'var(--emerald)', fontWeight: '600' }}>•</span>
-                      {region}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
         </div>
 
-        {/* Social Media Section */}
-        <div
-          style={{
-            paddingTop: '2rem',
-            paddingBottom: '1rem',
-            borderTop: '1px solid rgba(255, 255, 255, 0.1)',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            flexWrap: 'wrap',
-            gap: '2rem',
-          }}
-        >
+        {/* Divider */}
+        <div style={{
+          height: '1px',
+          background: 'linear-gradient(90deg, rgba(30, 107, 76, 0) 0%, rgba(30, 107, 76, 0.4) 50%, rgba(30, 107, 76, 0) 100%)',
+          marginBottom: '3rem',
+        }}></div>
+
+        {/* Social & Legal Section */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'auto 1fr auto',
+          gap: '2rem',
+          alignItems: 'center',
+          marginBottom: '2rem',
+        }}>
+          {/* Social */}
           <div>
-            <p
-              style={{
-                fontSize: '13px',
-                fontWeight: '600',
-                color: '#ffffff',
-                margin: '0 0 8px 0',
-                textTransform: 'uppercase',
-                letterSpacing: '0.8px',
-              }}
-            >
-              Follow Us
+            <p style={{
+              fontSize: '12px',
+              fontWeight: '700',
+              color: '#ffffff',
+              margin: '0 0 0.75rem 0',
+              textTransform: 'uppercase',
+              letterSpacing: '0.5px',
+            }}>
+              Follow AfriBridge
             </p>
-            <p style={{ fontSize: '12px', color: '#a1a5b1', margin: '0' }}>
-              Connect with AfriBridge on social media
+            <SocialMediaIcons variant="inline" />
+          </div>
+
+          {/* Compliance */}
+          <div style={{ textAlign: 'center' }}>
+            <p style={{
+              fontSize: '12px',
+              color: '#6b7280',
+              margin: 0,
+              fontStyle: 'italic',
+              lineHeight: '1.6'
+            }}>
+              🏆 Compliance First. Trust Always. Excellence Every Time.
             </p>
           </div>
-          <SocialMediaIcons variant="inline" />
+
+          {/* Legal Links */}
+          <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'flex-end' }}>
+            <Link
+              href="#"
+              style={{
+                fontSize: '12px',
+                color: '#9ca3af',
+                textDecoration: 'none',
+                transition: 'color 0.2s ease',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#1E6B4C')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#9ca3af')}
+            >
+              Privacy
+            </Link>
+            <Link
+              href="#"
+              style={{
+                fontSize: '12px',
+                color: '#9ca3af',
+                textDecoration: 'none',
+                transition: 'color 0.2s ease',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#1E6B4C')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#9ca3af')}
+            >
+              Terms
+            </Link>
+            <Link
+              href="#"
+              style={{
+                fontSize: '12px',
+                color: '#9ca3af',
+                textDecoration: 'none',
+                transition: 'color 0.2s ease',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#1E6B4C')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#9ca3af')}
+            >
+              Cookies
+            </Link>
+          </div>
         </div>
 
-        {/* Bottom border and copyright */}
-        <div
-          style={{
-            borderTop: '1px solid rgba(255, 255, 255, 0.1)',
-            paddingTop: '24px',
-          }}
-        >
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '12px',
-              justifyContent: 'space-between',
-              alignItems: 'flex-start',
-            }}
-          >
-            <p
-              style={{
-                fontSize: '12px',
-                color: '#6b7280',
-                margin: 0,
-              }}
-            >
-              &copy; 2025 AfriBridge. All rights reserved. |{' '}
-              <Link
-                href="#"
-                style={{
-                  color: '#a1a5b1',
-                  textDecoration: 'none',
-                  marginLeft: '8px',
-                  transition: 'color 0.2s ease',
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#1E6B4C')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#a1a5b1')}
-              >
-                Privacy
-              </Link>{' '}
-              |{' '}
-              <Link
-                href="#"
-                style={{
-                  color: '#a1a5b1',
-                  textDecoration: 'none',
-                  marginLeft: '8px',
-                  transition: 'color 0.2s ease',
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#1E6B4C')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#a1a5b1')}
-              >
-                Terms
-              </Link>
-            </p>
-            <p
-              style={{
-                fontSize: '12px',
-                color: '#6b7280',
-                margin: 0,
-                fontStyle: 'italic',
-              }}
-            >
-              Compliance First. Trust Always. Excellence Every Time.
-            </p>
-          </div>
+        {/* Copyright */}
+        <div style={{
+          borderTop: '1px solid rgba(30, 107, 76, 0.2)',
+          paddingTop: '2rem',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '1.5rem',
+        }}>
+          <p style={{
+            fontSize: '12px',
+            color: '#6b7280',
+            margin: 0,
+          }}>
+            © 2025 AfriBridge Clearing & Logistics. All rights reserved.
+          </p>
+          <p style={{
+            fontSize: '12px',
+            color: '#6b7280',
+            margin: 0,
+          }}>
+            Built for African trade. Trusted across 25+ countries.
+          </p>
         </div>
       </div>
     </footer>

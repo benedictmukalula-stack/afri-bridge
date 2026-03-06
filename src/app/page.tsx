@@ -17,73 +17,168 @@ export default function Home() {
   }, [setCurrentPage]);
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative py-16 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex items-center" style={{ backgroundImage: `url('https://images.pexels.com/photos/15346128/pexels-photo-15346128.jpeg')`, backgroundSize: 'cover', backgroundPosition: 'left center', backgroundAttachment: 'fixed' }}>
-        {/* Premium Dark Overlay - Enhanced for text visibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/65 to-black/50"></div>
-        {/* Bottom Gradient for depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/25 to-black/45"></div>
+      {/* Premium Hero Section - Enterprise Logistics Design */}
+      <section className="relative py-20 md:py-40 px-4 sm:px-6 lg:px-8 overflow-hidden flex items-center" style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #0B1F3A 0%, #1e3a5f 100%)' }}>
+        <div className="absolute inset-0 opacity-40" style={{ backgroundImage: `url('https://images.pexels.com/photos/15346128/pexels-photo-15346128.jpeg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-transparent"></div>
+        <div className="absolute top-20 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
 
-        <div className="max-w-6xl mx-auto w-full relative z-10">
-          <div style={{ maxWidth: '800px' }}>
-            <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight hero-fade-in gold-underline" style={{
-              color: '#F5B041',
-              letterSpacing: '-0.02em',
-              textShadow: '0 6px 16px rgba(0, 0, 0, 0.8), 0 3px 6px rgba(0, 0, 0, 0.7)'
+        <div className="max-w-7xl mx-auto w-full relative z-10 grid md:grid-cols-2 gap-12 items-center">
+          {/* Left: Text Content */}
+          <div style={{ maxWidth: '600px', animation: 'fadeInUp 0.8s ease-out' }}>
+            <p style={{
+              color: '#C8A74E',
+              fontSize: '14px',
+              fontWeight: '700',
+              letterSpacing: '1px',
+              textTransform: 'uppercase',
+              marginBottom: '1.5rem'
             }}>
-              Premium Clearing & Logistics Across Africa
-            </h1>
-            <p className="text-lg text-white mb-8 hero-fade-in" style={{
-              lineHeight: '1.8',
-              textShadow: '0 4px 10px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.6)',
-              animationDelay: '0.1s'
-            }}>
-              Customs compliance, freight forwarding, and cross-border logistics built for SADC trade corridors.
+              🌍 Pan-African Logistics Network
             </p>
-            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2rem' }}>
-              <Link href="/quote" className="btn btn-gradient" style={{ boxShadow: '0 8px 24px rgba(30, 107, 76, 0.4)' }}>
-                Request a Quote
-              </Link>
-              <Link href="/tracking" className="btn" style={{
-                background: 'rgba(255, 255, 255, 0.2)',
+
+            <h1 style={{
+              fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+              fontWeight: '800',
+              color: '#F5B041',
+              lineHeight: '1.2',
+              marginBottom: '1.5rem',
+              textShadow: '0 8px 24px rgba(0, 0, 0, 0.6)',
+              letterSpacing: '-0.02em'
+            }}>
+              Trade Infrastructure for Africa
+            </h1>
+
+            <p style={{
+              fontSize: '18px',
+              color: '#E5E7EB',
+              lineHeight: '1.8',
+              marginBottom: '2.5rem',
+              maxWidth: '500px'
+            }}>
+              Reliable freight forwarding, customs clearing, and cross-border logistics connecting Africa's major trade corridors. Enterprise-grade solutions with 24/7 operations support.
+            </p>
+
+            {/* Key Features */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2.5rem' }}>
+              {[
+                { icon: '✓', text: 'Customs Expertise', color: '#1E6B4C' },
+                { icon: '✓', text: '25+ Countries', color: '#1E6B4C' },
+                { icon: '✓', text: '24/7 Support', color: '#1E6B4C' },
+                { icon: '✓', text: 'Real-Time Tracking', color: '#1E6B4C' },
+              ].map((feature, i) => (
+                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                  <span style={{ fontSize: '20px', color: feature.color, fontWeight: '900' }}>{feature.icon}</span>
+                  <span style={{ color: '#E5E7EB', fontSize: '15px', fontWeight: '600' }}>{feature.text}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA Buttons */}
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              <Link href="/quote" style={{
+                display: 'inline-block',
+                padding: '1rem 2.5rem',
+                background: 'linear-gradient(135deg, #1E6B4C 0%, #0B1F3A 100%)',
                 color: 'white',
-                backdropFilter: 'blur(12px)',
-                border: '2px solid rgba(255, 255, 255, 0.4)',
-                boxShadow: '0 4px 16px rgba(0, 0, 0, 0.2)',
-                textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
+                textDecoration: 'none',
+                borderRadius: '10px',
+                fontWeight: '800',
+                fontSize: '15px',
+                boxShadow: '0 12px 32px rgba(30, 107, 76, 0.4)',
+                transition: 'all 0.3s ease',
+                border: 'none',
+                cursor: 'pointer'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 16px 40px rgba(30, 107, 76, 0.6)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 12px 32px rgba(30, 107, 76, 0.4)';
+              }}>
+                Get Freight Quote
+              </Link>
+              <Link href="/tracking" style={{
+                display: 'inline-block',
+                padding: '1rem 2.5rem',
+                background: 'rgba(255, 255, 255, 0.1)',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '10px',
+                fontWeight: '800',
+                fontSize: '15px',
+                border: '2px solid rgba(255, 255, 255, 0.3)',
+                transition: 'all 0.3s ease',
+                backdropFilter: 'blur(10px)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.6)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)';
               }}>
                 Track Shipment
               </Link>
             </div>
+          </div>
 
-            {/* Value Chips */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginTop: '3rem' }}>
-              {[
-                '✓ Customs Compliance',
-                '✓ End-to-End Visibility',
-                '✓ SADC Expertise',
-              ].map((chip, i) => (
-                <div
-                  key={i}
-                  style={{
-                    background: 'rgba(11, 31, 58, 0.75)',
-                    backdropFilter: 'blur(16px)',
-                    color: 'white',
-                    padding: '0.875rem 1.5rem',
-                    borderRadius: '9999px',
-                    fontSize: '0.9rem',
-                    fontWeight: '600',
-                    textShadow: '0 2px 4px rgba(0,0,0,0.3)',
-                    border: '1.5px solid rgba(255, 255, 255, 0.2)',
-                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
-                  }}
-                >
-                  {chip}
+          {/* Right: Stats/Stats Grid */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', animation: 'slideInRight 0.8s ease-out 0.2s backwards' }}>
+            {[
+              { stat: '98.5%', label: 'On-Time Delivery', subtitle: 'Across all corridors' },
+              { stat: '25+', label: 'Countries', subtitle: 'Active presence' },
+              { stat: '40+', label: 'Trade Routes', subtitle: 'Pan-African' },
+              { stat: '24/7', label: 'Operations', subtitle: 'Round-the-clock support' },
+            ].map((item, i) => (
+              <div key={i} style={{
+                background: 'rgba(255, 255, 255, 0.05)',
+                border: '2px solid rgba(30, 107, 76, 0.3)',
+                borderRadius: '12px',
+                padding: '2rem',
+                backdropFilter: 'blur(10px)',
+                textAlign: 'center'
+              }}>
+                <div style={{ fontSize: '2.5rem', fontWeight: '900', color: '#C8A74E', marginBottom: '0.5rem' }}>
+                  {item.stat}
                 </div>
-              ))}
-            </div>
+                <div style={{ fontSize: '15px', fontWeight: '700', color: 'white', marginBottom: '0.35rem' }}>
+                  {item.label}
+                </div>
+                <div style={{ fontSize: '12px', color: '#9ca3af' }}>
+                  {item.subtitle}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
+
+        <style>{`
+          @keyframes fadeInUp {
+            from {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          @keyframes slideInRight {
+            from {
+              opacity: 0;
+              transform: translateX(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
+        `}</style>
       </section>
 
       {/* Trust Strip */}
@@ -112,38 +207,95 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Overview */}
-      <section style={{ padding: '4rem 2rem' }}>
+      {/* Services Overview - Enterprise Grid */}
+      <section style={{ padding: '4rem 2rem', background: '#fafbfc' }}>
         <div className="container-max">
-          <img
-            src="https://images.pexels.com/photos/4487363/pexels-photo-4487363.jpeg"
-            alt="Warehouse logistics and cargo storage facility"
-            className="fade-in-up"
-            style={{ marginBottom: '2.5rem', height: '240px', width: '100%', objectFit: 'cover', borderRadius: '0.5rem' }}
-          />
-          <h2 style={{ fontSize: '1.5rem', fontWeight: '800', textAlign: 'center', marginBottom: '0.75rem', color: '#111827' }}>
-            Our Services
-          </h2>
-          <p style={{ textAlign: 'center', color: '#6b7280', marginBottom: '2.5rem', maxWidth: '700px', margin: '0 auto', fontSize: '0.875rem' }}>
-            Comprehensive logistics solutions across all modes and corridors
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+            <p style={{
+              color: '#1E6B4C',
+              fontSize: '14px',
+              fontWeight: '700',
+              letterSpacing: '1px',
+              textTransform: 'uppercase',
+              marginBottom: '1.5rem'
+            }}>
+              INTEGRATED SERVICES
+            </p>
+            <h2 style={{ fontSize: '2.5rem', fontWeight: '800', marginBottom: '1rem', color: '#0B1F3A', letterSpacing: '-0.01em' }}>
+              Complete Logistics Solutions
+            </h2>
+            <p style={{ textAlign: 'center', color: '#6b7280', maxWidth: '600px', margin: '0 auto', fontSize: '16px', lineHeight: '1.6' }}>
+              Enterprise-grade services covering all modes of transport and African trade corridors
+            </p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
             {[
-              { icon: (svg) => <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>, title: 'Customs Clearing', desc: 'Expert HS coding, documentation, duty & VAT guidance' },
-              { icon: (svg) => <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17.3 13.61a4 4 0 0 0-5.66 0"></path><path d="M9.59 9.59a8 8 0 0 1 11.31 0"></path><path d="M7.97 7.97a12.04 12.04 0 0 1 16.97 0"></path><path d="M2.05 2.05a16 16 0 0 1 22.63 0"></path><circle cx="12" cy="12" r="2"></circle></svg>, title: 'Air Freight', desc: 'Urgent shipments, consolidation, real-time tracking' },
-              { icon: (svg) => <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2 14c0-1 .895-3 7-5 6.025-1.999 8.983-2 10-1 .983.997.983 3-3 5-3.982 2-9 2.997-9 3.5 0 .553 4.018 1.5 9 3.5 3.983 2 3.983 4.003 3 5-1.017 1-3.975 1.001-10-1-6.105-1.999-7-4-7-5"></path><ellipse cx="12" cy="8" rx="7" ry="3"></ellipse></svg>, title: 'Ocean Freight', desc: 'FCL/LCL solutions, carrier management, cost optimization' },
-              { icon: (svg) => <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="18" cy="15" r="3"></circle><circle cx="9" cy="15" r="3"></circle><path d="M5 8h14M7 8V6a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v2m6 0V6a2 2 0 0 0-2-2h0a2 2 0 0 0-2 2v2M3 16h18v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>, title: 'Road & Cross-Border', desc: 'SADC corridor expertise, border processing, compliance' },
-              { icon: (svg) => <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8m-6.85.15V4m0 10.854V20"></path><path d="M12 2v2M2 12h2m18 0h2"></path></svg>, title: 'Warehousing', desc: 'Bonded storage, pick & pack, last-mile delivery' },
-              { icon: (svg) => <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20M2 12h20M3.51 6.63l13.86-2M3.51 17.37l13.86 2M6.5 5.5L4.5 20m13 0l-2-14.5"></path></svg>, title: 'Project Cargo', desc: 'Oversized shipments, mining, energy sector solutions' },
+              { icon: '📋', title: 'Customs Clearing', desc: 'Expert HS coding, documentation, duty & VAT guidance', color: '#1E6B4C' },
+              { icon: '✈️', title: 'Air Freight', desc: 'Urgent shipments, consolidation, real-time tracking', color: '#0F5132' },
+              { icon: '🚢', title: 'Ocean Freight', desc: 'FCL/LCL solutions, carrier management, cost optimization', color: '#1E6B4C' },
+              { icon: '🚚', title: 'Road & Cross-Border', desc: 'SADC corridor expertise, border processing, compliance', color: '#0F5132' },
+              { icon: '🏭', title: 'Warehousing', desc: 'Bonded storage, pick & pack, last-mile delivery', color: '#1E6B4C' },
+              { icon: '⚙️', title: 'Project Cargo', desc: 'Oversized shipments, mining, energy sector solutions', color: '#0F5132' },
             ].map((service, i) => (
-              <div key={i} className="card-premium fade-in-up" style={{ animationDelay: `${i * 0.1}s`, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                <div style={{ marginBottom: '1rem', width: '100%', textAlign: 'center', color: 'var(--emerald)' }}>{service.icon()}</div>
-                <h3 style={{ fontSize: '1.1rem', fontWeight: '700', marginBottom: '0.75rem', color: '#111827' }}>
+              <div key={i} style={{
+                background: 'white',
+                border: '2px solid #e5e7eb',
+                borderRadius: '12px',
+                padding: '2rem',
+                display: 'flex',
+                flexDirection: 'column',
+                transition: 'all 0.3s ease',
+                animation: `fadeInUp 0.6s ease-out backwards`,
+                animationDelay: `${i * 0.08}s`,
+                position: 'relative',
+                overflow: 'hidden'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-6px)';
+                e.currentTarget.style.borderColor = service.color;
+                e.currentTarget.style.boxShadow = `0 16px 32px ${service.color}20`;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.borderColor = '#e5e7eb';
+                e.currentTarget.style.boxShadow = 'none';
+              }}>
+                <div style={{
+                  width: '56px',
+                  height: '56px',
+                  background: `${service.color}15`,
+                  borderRadius: '10px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '28px',
+                  marginBottom: '1.5rem'
+                }}>
+                  {service.icon}
+                </div>
+                <h3 style={{ fontSize: '18px', fontWeight: '700', marginBottom: '0.75rem', color: '#0B1F3A', margin: '0 0 0.75rem 0' }}>
                   {service.title}
                 </h3>
-                <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '0.9375rem', flex: '1' }}>{service.desc}</p>
-                <Link href="/quote" className="premium-link" style={{ marginTop: 'auto' }}>
-                  Get a Quote →
+                <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '15px', flex: '1', lineHeight: '1.6' }}>
+                  {service.desc}
+                </p>
+                <Link href="/quote" style={{
+                  color: service.color,
+                  fontWeight: '700',
+                  fontSize: '14px',
+                  textDecoration: 'none',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  transition: 'gap 0.2s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.gap = '0.75rem';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.gap = '0.5rem';
+                }}>
+                  Get Quote →
                 </Link>
               </div>
             ))}
@@ -202,34 +354,121 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trade Corridors Preview */}
-      <section style={{ padding: '4rem 2rem' }}>
+      {/* Trade Corridors Preview - Enterprise Design */}
+      <section style={{ padding: '4rem 2rem', background: 'linear-gradient(135deg, #f0fdf4 0%, #f8fafc 100%)' }}>
         <div className="container-max">
-          <img
-            src="https://images.pexels.com/photos/6680149/pexels-photo-6680149.jpeg"
-            alt="African trade corridors and regional logistics network map"
-            className="fade-in-up"
-            style={{ marginBottom: '2.5rem', height: '240px', width: '100%', objectFit: 'cover', borderRadius: '0.5rem' }}
-          />
-          <h2 style={{ fontSize: '1.5rem', fontWeight: '800', textAlign: 'center', marginBottom: '2.5rem', color: '#111827' }}>
-            Africa Trade Corridors
-          </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+            <p style={{
+              color: '#1E6B4C',
+              fontSize: '14px',
+              fontWeight: '700',
+              letterSpacing: '1px',
+              textTransform: 'uppercase',
+              marginBottom: '1.5rem'
+            }}>
+              REGIONAL EXPERTISE
+            </p>
+            <h2 style={{ fontSize: '2.5rem', fontWeight: '800', marginBottom: '1rem', color: '#0B1F3A', letterSpacing: '-0.01em' }}>
+              Africa Trade Corridors
+            </h2>
+            <p style={{ textAlign: 'center', color: '#6b7280', maxWidth: '600px', margin: '0 auto', fontSize: '16px', lineHeight: '1.6' }}>
+              Strategic logistics networks across major African trade routes with established relationships and regulatory expertise
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
             {[
-              { name: 'SADC', countries: 'SA, Zambia, DRC, Botswana, Namibia, Mozambique, Zimbabwe' },
-              { name: 'East Africa', countries: 'Kenya, Tanzania, Uganda, Ethiopia' },
-              { name: 'West Africa', countries: 'Ghana, Nigeria, Ivory Coast, Senegal' },
+              { name: '🌍 SADC Region', countries: 'South Africa • Zambia • Zimbabwe • Botswana • Namibia • Mozambique • Malawi', routes: '15+ active routes', icon: '🔗' },
+              { name: '🌍 East Africa', countries: 'Kenya • Tanzania • Uganda • Ethiopia • Rwanda', routes: '8+ active routes', icon: '🔗' },
+              { name: '🌍 West Africa', countries: 'Nigeria • Ghana • Ivory Coast • Senegal • Benin', routes: '6+ active routes', icon: '🔗' },
             ].map((corridor, i) => (
-              <Link href="/trade-corridors" key={i} className="card-premium" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: '#111827' }}>
+              <Link href="/coverage" key={i} style={{
+                background: 'white',
+                border: '2px solid #e5e7eb',
+                borderRadius: '12px',
+                padding: '2.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                textDecoration: 'none',
+                color: 'inherit',
+                transition: 'all 0.3s ease',
+                animation: `fadeInUp 0.6s ease-out backwards`,
+                animationDelay: `${i * 0.1}s`,
+                position: 'relative',
+                overflow: 'hidden'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-8px)';
+                e.currentTarget.style.borderColor = '#1E6B4C';
+                e.currentTarget.style.boxShadow = '0 20px 40px rgba(30, 107, 76, 0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.borderColor = '#e5e7eb';
+                e.currentTarget.style.boxShadow = 'none';
+              }}>
+                {/* Accent bar */}
+                <div style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '4px',
+                  background: 'linear-gradient(90deg, #1E6B4C 0%, #0B1F3A 100%)'
+                }}></div>
+
+                <h3 style={{ fontSize: '20px', fontWeight: '800', marginBottom: '1rem', color: '#0B1F3A', marginTop: '0.5rem' }}>
                   {corridor.name}
                 </h3>
-                <p style={{ color: '#6b7280', marginBottom: '1rem', fontSize: '0.9375rem', flex: '1' }}>{corridor.countries}</p>
-                <span className="premium-link" style={{ marginTop: 'auto' }}>Explore Corridor →</span>
+
+                <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '15px', lineHeight: '1.6', flex: '1' }}>
+                  {corridor.countries}
+                </p>
+
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.75rem',
+                  padding: '1rem',
+                  background: '#f0fdf4',
+                  borderRadius: '8px',
+                  marginBottom: '1.5rem',
+                  borderLeft: '4px solid #1E6B4C'
+                }}>
+                  <span style={{ fontSize: '16px' }}>🛣️</span>
+                  <span style={{ color: '#166534', fontWeight: '700', fontSize: '14px' }}>
+                    {corridor.routes}
+                  </span>
+                </div>
+
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  color: '#1E6B4C',
+                  fontWeight: '700',
+                  fontSize: '14px',
+                  transition: 'gap 0.2s ease'
+                }}>
+                  Explore Corridor →
+                </div>
               </Link>
             ))}
           </div>
         </div>
+
+        <style>{`
+          @keyframes fadeInUp {
+            from {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        `}</style>
       </section>
 
       {/* Testimonials & Stats */}
