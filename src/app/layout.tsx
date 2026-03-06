@@ -4,6 +4,7 @@ import PremiumHeader from "@/components/PremiumHeader";
 import PremiumFooter from "@/components/PremiumFooter";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import AIChat from "@/components/AIChat";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
   title: "AfriBridge - Premium Clearing & Logistics Across Africa",
   description: "Expert customs clearing, freight forwarding, and cross-border logistics for SADC trade corridors. 98% on-time delivery, 25+ countries served.",
   keywords: "customs clearing, freight forwarding, logistics, SADC, Africa, cross-border, cargo, shipping",
+  manifest: "/manifest.json",
   openGraph: {
     title: "AfriBridge - Premium Clearing & Logistics",
     description: "Expert logistics solutions for African trade corridors",
@@ -44,6 +46,7 @@ export default function RootLayout({
         <PremiumFooter />
         <WhatsAppButton />
         <AIChat />
+        <ExitIntentPopup />
       </body>
     </html>
   );

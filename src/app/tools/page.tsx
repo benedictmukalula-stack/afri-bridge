@@ -37,19 +37,19 @@ export default function ToolsHub() {
       color: '#1E6B4C'
     },
     {
-      icon: '🌍',
-      title: 'Trade Corridor Finder',
-      desc: 'Find the best route and optimal shipping method.',
-      features: ['15+ corridors', 'Cost analysis', 'Time estimates'],
-      href: '/tools/corridor-finder',
+      icon: '📚',
+      title: 'Resource Library',
+      desc: 'Free guides, templates, checklists, and industry resources.',
+      features: ['12+ guides', 'Download templates', 'Best practices'],
+      href: '/resources',
       color: '#0B1F3A'
     },
     {
-      icon: '📱',
-      title: 'Mobile Rate Quicker',
-      desc: 'Get instant quotes on the go with mobile optimization.',
-      features: ['3-field form', 'Instant response', 'SMS confirmation'],
-      href: '/quote',
+      icon: '🎓',
+      title: 'Learning Center',
+      desc: 'Video tutorials on customs, compliance, and international logistics.',
+      features: ['40+ videos', 'Expert instructors', 'Case studies'],
+      href: '/learn',
       color: '#F5B041'
     },
   ];

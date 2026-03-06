@@ -31,7 +31,16 @@ export default function PremiumHeader() {
       ],
     },
     { label: 'Tracking', href: '/tracking' },
-    { label: 'Tools', href: '/tools' },
+    {
+      label: 'Resources',
+      href: '/resources',
+      submenu: [
+        { label: 'Tools & Calculators', href: '/tools' },
+        { label: 'Learning Center', href: '/learn' },
+        { label: 'Resource Library', href: '/resources' },
+        { label: 'Coverage Map', href: '/coverage' },
+      ],
+    },
     { label: 'Quote', href: '/quote' },
     { label: 'Contact', href: '/contact' },
   ];
