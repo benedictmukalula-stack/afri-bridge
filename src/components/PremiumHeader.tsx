@@ -16,6 +16,7 @@ export default function PremiumHeader() {
         { label: 'Customs Clearing', href: '/customs-clearing' },
         { label: 'Freight Forwarding', href: '/freight-forwarding' },
         { label: 'Cross-Border Logistics', href: '/cross-border-logistics' },
+        { label: 'Vehicle Export', href: '/vehicle-export' },
         { label: 'Warehousing', href: '/services' },
       ],
     },

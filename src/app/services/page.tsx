@@ -44,6 +44,12 @@ export default function ServicesPage() {
       details: ['Oversized handling', 'Mining solutions', 'Energy sector', 'Infrastructure projects'],
       image: 'https://images.pexels.com/photos/29899416/pexels-photo-29899416.jpeg',
     },
+    {
+      title: 'Vehicle Export',
+      desc: 'End-to-end vehicle export solutions from South Africa. Dealership coordination, documentation handling, multiple freight options, and insurance included.',
+      details: ['Dealership network', 'CIF quotations', 'Export permits', 'Multi-modal shipping', 'Insurance coverage', 'Real-time tracking'],
+      image: 'https://images.pexels.com/photos/3803932/pexels-photo-3803932.jpeg',
+    },
   ];
 
   const faqs = [
