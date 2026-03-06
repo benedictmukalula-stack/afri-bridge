@@ -207,7 +207,7 @@ export default function QuotePage() {
   return (
     <>
       {/* Premium Hero */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0B1F3A 0%, #1e3a5f 100%)' }}>
+      <section className="relative py-16 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0B1F3A 0%, #1e3a5f 100%)' }}>
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/15 via-transparent to-transparent"></div>
         <div className="max-w-6xl mx-auto relative z-10">
           <h1 className="text-3xl md:text-4xl font-bold mb-4" style={{
@@ -231,7 +231,7 @@ export default function QuotePage() {
       </section>
 
       {/* Tab Navigation */}
-      <section style={{ padding: '2rem', background: 'white', borderBottom: '1px solid #e5e7eb', position: 'sticky', top: '120px', zIndex: 40 }}>
+      <section style={{ padding: '1.25rem 2rem', background: 'white', borderBottom: '1px solid #e5e7eb', position: 'sticky', top: '120px', zIndex: 40 }}>
         <div className="max-w-6xl mx-auto">
           <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
             {[
@@ -271,37 +271,37 @@ export default function QuotePage() {
       </section>
 
       {/* Main Content */}
-      <section style={{ padding: '4rem 2rem', background: '#fafbfc', minHeight: '600px' }} className="px-4 sm:px-6 lg:px-8">
+      <section style={{ padding: '3rem 2rem', background: '#fafbfc', minHeight: '600px' }} className="px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           
           {/* Tab 1: Quote Form */}
           {currentTab === 'quote' && (
-            <div className="grid md:grid-cols-2 gap-16">
+            <div className="grid md:grid-cols-2 gap-12">
               {/* AI Smart Quote Info */}
               <div>
                 <h2 className="text-2xl font-bold mb-6" style={{ color: '#0B1F3A', fontWeight: '800' }}>
                   How AI Smart Quote Works
                 </h2>
-                <div className="space-y-4">
-                  <div style={{ background: 'white', padding: '1.5rem', borderRadius: '10px', border: '1px solid #e5e7eb' }}>
+                <div className="space-y-3">
+                  <div style={{ background: 'white', padding: '1.25rem', borderRadius: '10px', border: '1px solid #e5e7eb' }}>
                     <h4 style={{ fontSize: '14px', fontWeight: '700', color: '#1E6B4C', marginBottom: '0.5rem' }}>🤖 AI Analysis</h4>
                     <p style={{ fontSize: '13px', color: '#6b7280', margin: 0 }}>
                       Our machine learning engine analyzes your shipment to calculate the most competitive rate based on real-time market data.
                     </p>
                   </div>
-                  <div style={{ background: 'white', padding: '1.5rem', borderRadius: '10px', border: '1px solid #e5e7eb' }}>
+                  <div style={{ background: 'white', padding: '1.25rem', borderRadius: '10px', border: '1px solid #e5e7eb' }}>
                     <h4 style={{ fontSize: '14px', fontWeight: '700', color: '#1E6B4C', marginBottom: '0.5rem' }}>⚡ Instant Pricing</h4>
                     <p style={{ fontSize: '13px', color: '#6b7280', margin: 0 }}>
                       Get immediate quotes without waiting. All-inclusive pricing with no hidden fees. Compare air, sea, and road options instantly.
                     </p>
                   </div>
-                  <div style={{ background: 'white', padding: '1.5rem', borderRadius: '10px', border: '1px solid #e5e7eb' }}>
+                  <div style={{ background: 'white', padding: '1.25rem', borderRadius: '10px', border: '1px solid #e5e7eb' }}>
                     <h4 style={{ fontSize: '14px', fontWeight: '700', color: '#1E6B4C', marginBottom: '0.5rem' }}>💰 Smart Suggestions</h4>
                     <p style={{ fontSize: '13px', color: '#6b7280', margin: 0 }}>
                       AI recommends consolidation, timing, and routing strategies to save you money and reduce delivery time.
                     </p>
                   </div>
-                  <div style={{ background: '#f0fdf4', border: '2px solid #1E6B4C', padding: '1.5rem', borderRadius: '10px' }}>
+                  <div style={{ background: '#f0fdf4', border: '2px solid #1E6B4C', padding: '1.25rem', borderRadius: '10px' }}>
                     <h4 style={{ fontSize: '14px', fontWeight: '700', color: '#1E6B4C', marginBottom: '0.5rem' }}>✓ Transparent Breakdown</h4>
                     <p style={{ fontSize: '13px', color: '#166534', margin: 0 }}>
                       See exactly what you're paying for: base freight, handling, customs, taxes, and all service fees clearly itemized.
@@ -312,13 +312,13 @@ export default function QuotePage() {
 
               {/* Quote Form */}
               <div>
-                <form className="space-y-6">
+                <form className="space-y-5">
                   <h2 className="text-2xl font-bold" style={{ color: '#0B1F3A', fontWeight: '800' }}>
                     Shipment Details
                   </h2>
 
                   {/* Basic Info */}
-                  <div className="space-y-4">
+                  <div className="space-y-3">
                     <input
                       type="text"
                       name="fullName"
@@ -358,7 +358,7 @@ export default function QuotePage() {
                   </div>
 
                   {/* Shipment Type & Incoterm */}
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-3">
                     <select
                       name="shipmentType"
                       value={formData.shipmentType}
@@ -386,7 +386,7 @@ export default function QuotePage() {
                   </div>
 
                   {/* Route */}
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-3">
                     <input
                       type="text"
                       name="originCountry"
@@ -418,7 +418,7 @@ export default function QuotePage() {
                   ></textarea>
 
                   {/* Weight & Dimensions */}
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-3">
                     <input
                       type="number"
                       name="weight"
@@ -493,7 +493,7 @@ export default function QuotePage() {
                 </div>
               ) : (
                 <>
-                  <div className="space-y-4 mb-8">
+                  <div className="space-y-3 mb-6">
                     {cart.map((item) => (
                       <div key={item.id} style={{
                         background: 'white',
@@ -586,10 +586,10 @@ export default function QuotePage() {
                 background: 'white',
                 border: '2px solid #e5e7eb',
                 borderRadius: '12px',
-                padding: '2.5rem',
+                padding: '2rem',
               }}>
                 {/* Header */}
-                <div style={{ marginBottom: '2rem', borderBottom: '2px solid #1E6B4C', paddingBottom: '2rem' }}>
+                <div style={{ marginBottom: '1.5rem', borderBottom: '2px solid #1E6B4C', paddingBottom: '1.5rem' }}>
                   <h2 style={{ color: '#1E6B4C', fontSize: '28px', fontWeight: '800', margin: '0 0 0.5rem 0' }}>
                     PROFORMA INVOICE
                   </h2>
@@ -599,7 +599,7 @@ export default function QuotePage() {
                 </div>
 
                 {/* Customer Info */}
-                <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="grid grid-cols-2 gap-4 mb-5">
                   <div>
                     <p style={{ color: '#6b7280', fontSize: '12px', textTransform: 'uppercase', fontWeight: '700', marginBottom: '0.25rem' }}>Bill To</p>
                     <p style={{ color: '#0B1F3A', fontSize: '15px', fontWeight: '700', margin: 0 }}>{formData.fullName}</p>
@@ -615,7 +615,7 @@ export default function QuotePage() {
                 </div>
 
                 {/* Line Items */}
-                <table style={{ width: '100%', marginBottom: '2rem', borderCollapse: 'collapse' }}>
+                <table style={{ width: '100%', marginBottom: '1.5rem', borderCollapse: 'collapse' }}>
                   <thead>
                     <tr style={{ borderBottom: '2px solid #e5e7eb' }}>
                       <th style={{ textAlign: 'left', padding: '0.75rem 0', color: '#0B1F3A', fontWeight: '700', fontSize: '13px' }}>Service</th>
@@ -641,7 +641,7 @@ export default function QuotePage() {
                 </table>
 
                 {/* Totals */}
-                <div style={{ background: '#f9fafb', padding: '1.5rem', borderRadius: '8px', marginBottom: '2rem' }}>
+                <div style={{ background: '#f9fafb', padding: '1.25rem', borderRadius: '8px', marginBottom: '1.5rem' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.75rem', fontSize: '14px' }}>
                     <span style={{ color: '#6b7280' }}>Subtotal:</span>
                     <span style={{ color: '#0B1F3A', fontWeight: '700' }}>R{quote.subtotal.toLocaleString()}</span>
@@ -737,16 +737,16 @@ export default function QuotePage() {
                 Checkout & Payment
               </h2>
 
-              <div className="space-y-6">
+              <div className="space-y-5">
                 {/* Order Summary */}
                 <div style={{
                   background: 'white',
                   border: '1px solid #e5e7eb',
                   borderRadius: '10px',
-                  padding: '1.5rem',
+                  padding: '1.25rem',
                 }}>
-                  <h4 style={{ color: '#0B1F3A', fontWeight: '700', marginBottom: '1rem' }}>Order Summary</h4>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem', fontSize: '14px' }}>
+                  <h4 style={{ color: '#0B1F3A', fontWeight: '700', marginBottom: '0.75rem' }}>Order Summary</h4>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.375rem', fontSize: '14px' }}>
                     <span style={{ color: '#6b7280' }}>Items ({cart.length}):</span>
                     <span style={{ fontWeight: '700', color: '#0B1F3A' }}>R{quote.subtotal.toLocaleString()}</span>
                   </div>
@@ -765,7 +765,7 @@ export default function QuotePage() {
                   background: 'white',
                   border: '1px solid #e5e7eb',
                   borderRadius: '10px',
-                  padding: '1.5rem',
+                  padding: '1.25rem',
                 }}>
                   <h4 style={{ color: '#0B1F3A', fontWeight: '700', marginBottom: '1.5rem' }}>Select Payment Method</h4>
                   <div className="space-y-3">
@@ -810,7 +810,7 @@ export default function QuotePage() {
                   background: 'white',
                   border: '1px solid #e5e7eb',
                   borderRadius: '10px',
-                  padding: '1.5rem',
+                  padding: '1.25rem',
                 }}>
                   <label style={{ display: 'flex', gap: '0.75rem', cursor: 'pointer' }}>
                     <input
@@ -861,14 +861,14 @@ export default function QuotePage() {
                 background: '#f0fdf4',
                 border: '3px solid #1E6B4C',
                 borderRadius: '12px',
-                padding: '2.5rem',
+                padding: '2rem',
                 textAlign: 'center',
               }}>
                 <div style={{ fontSize: '64px', marginBottom: '1rem' }}>✓</div>
                 <h2 style={{ color: '#1E6B4C', fontSize: '32px', fontWeight: '800', margin: '0 0 1rem 0' }}>
                   Order Confirmed!
                 </h2>
-                <p style={{ color: '#166534', fontSize: '16px', marginBottom: '2rem', lineHeight: '1.6' }}>
+                <p style={{ color: '#166534', fontSize: '16px', marginBottom: '1.5rem', lineHeight: '1.6' }}>
                   Your shipment quote has been processed and your invoice is ready. We've sent confirmation details to <span style={{ fontWeight: '700' }}>{formData.email}</span>
                 </p>
 
@@ -877,11 +877,11 @@ export default function QuotePage() {
                   background: 'white',
                   border: '1px solid #dcfce7',
                   borderRadius: '10px',
-                  padding: '2rem',
-                  marginBottom: '2rem',
+                  padding: '1.5rem',
+                  marginBottom: '1.5rem',
                   textAlign: 'left',
                 }}>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '2rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
                     <div>
                       <p style={{ color: '#6b7280', fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
                         Order ID
@@ -900,7 +900,7 @@ export default function QuotePage() {
                     </div>
                   </div>
 
-                  <div style={{ background: '#f9fafb', padding: '1rem', borderRadius: '8px', marginBottom: '1.5rem' }}>
+                  <div style={{ background: '#f9fafb', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
                     <h4 style={{ color: '#0B1F3A', fontWeight: '700', marginBottom: '1rem', fontSize: '14px' }}>
                       What Happens Next:
                     </h4>
@@ -921,7 +921,7 @@ export default function QuotePage() {
                   </div>
 
                   {/* Support & Quick Actions */}
-                  <div style={{ borderTop: '1px solid #dcfce7', paddingTop: '1.5rem' }}>
+                  <div style={{ borderTop: '1px solid #dcfce7', paddingTop: '1rem' }}>
                     <p style={{ color: '#6b7280', fontSize: '13px', marginBottom: '1rem' }}>
                       Need help? Contact our support team:
                     </p>
