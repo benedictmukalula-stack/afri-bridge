@@ -1,10 +1,16 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useAssistant } from '@/contexts/AssistantContext';
 
 export default function ResourcesHub() {
+  const { setCurrentPage } = useAssistant();
   const [selectedCategory, setSelectedCategory] = useState('all');
+
+  useEffect(() => {
+    setCurrentPage('resources');
+  }, [setCurrentPage]);
 
   const resources = [
     {

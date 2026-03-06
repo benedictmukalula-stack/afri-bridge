@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useAssistant } from '@/contexts/AssistantContext';
 
 interface TrackingData {
   trackingNumber: string;
@@ -26,11 +27,17 @@ interface AIInsight {
 }
 
 export default function TrackingPage() {
+  const { open, setCurrentPage } = useAssistant();
   const [trackingNumber, setTrackingNumber] = useState('');
   const [showDemo, setShowDemo] = useState(false);
   const [shipmentData, setShipmentData] = useState<TrackingData | null>(null);
   const [aiInsights, setAiInsights] = useState<AIInsight[]>([]);
   const [isSearching, setIsSearching] = useState(false);
+
+  // Set page context for AI
+  useEffect(() => {
+    setCurrentPage('tracking');
+  }, [setCurrentPage]);
 
   // AI Tracking Engine
   const generateAITracking = (refNumber: string): TrackingData => {
@@ -400,8 +407,7 @@ export default function TrackingPage() {
               <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                 <button
                   onClick={() => {
-                    const chatButton = document.querySelector('[title="Chat with AI Assistant"]') as HTMLButtonElement;
-                    if (chatButton) chatButton.click();
+                    open();
                   }}
                   style={{
                     padding: '0.75rem 1.5rem',

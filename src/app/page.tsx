@@ -1,13 +1,20 @@
 'use client';
 
+import { useEffect } from 'react';
 import Link from 'next/link';
 import TrustStrip from '@/components/TrustStrip';
 import CTAStrip from '@/components/CTAStrip';
 import TrustSignals from '@/components/TrustSignals';
 import TestimonialsCarousel from '@/components/TestimonialsCarousel';
 import SocialProof from '@/components/SocialProof';
+import { useAssistant } from '@/contexts/AssistantContext';
 
 export default function Home() {
+  const { setCurrentPage } = useAssistant();
+
+  useEffect(() => {
+    setCurrentPage('home');
+  }, [setCurrentPage]);
   return (
     <>
       {/* Hero Section */}

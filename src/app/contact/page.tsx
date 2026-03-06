@@ -1,11 +1,19 @@
 'use client';
 
 import SocialMediaIcons from '@/components/SocialMediaIcons';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useAssistant } from '@/contexts/AssistantContext';
 
 export default function ContactPage() {
+  const { open, setCurrentPage } = useAssistant();
   const [submitted, setSubmitted] = useState(false);
   const [currentTab, setCurrentTab] = useState<'contact' | 'schedule'>('contact');
+
+  // Set page context for AI
+  useEffect(() => {
+    setCurrentPage('contact');
+  }, [setCurrentPage]);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -642,8 +650,7 @@ export default function ContactPage() {
               </ul>
               <button
                 onClick={() => {
-                  const chatButton = document.querySelector('[title="Chat with AI Assistant"]') as HTMLButtonElement;
-                  if (chatButton) chatButton.click();
+                  open();
                 }}
                 style={{
                   padding: '0.75rem 1.6rem',

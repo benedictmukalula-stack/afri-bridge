@@ -1,11 +1,17 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import CTAStrip from '@/components/CTAStrip';
-import { useState } from 'react';
+import { useAssistant } from '@/contexts/AssistantContext';
 
 export default function ServicesPage() {
+  const { setCurrentPage } = useAssistant();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  useEffect(() => {
+    setCurrentPage('services');
+  }, [setCurrentPage]);
 
   const services = [
     {

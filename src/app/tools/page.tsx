@@ -1,8 +1,15 @@
 'use client';
 
+import { useEffect } from 'react';
 import Link from 'next/link';
+import { useAssistant } from '@/contexts/AssistantContext';
 
 export default function ToolsHub() {
+  const { setCurrentPage } = useAssistant();
+
+  useEffect(() => {
+    setCurrentPage('tools');
+  }, [setCurrentPage]);
   const tools = [
     {
       icon: '🔍',

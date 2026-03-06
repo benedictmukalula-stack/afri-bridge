@@ -1,91 +1,52 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useAssistant } from '@/contexts/AssistantContext';
+import { useMemo } from 'react';
 
-interface Message {
-  id: string;
-  text: string;
-  sender: 'user' | 'ai';
-  timestamp: Date;
-}
+const pageQuickActions: Record<string, Array<{ emoji: string; text: string }>> = {
+  home: [
+    { emoji: '📦', text: 'Request a Quote' },
+    { emoji: '🚚', text: 'Track Shipment' },
+    { emoji: '💼', text: 'Our Services' },
+  ],
+  quote: [
+    { emoji: '💰', text: 'Pricing Help' },
+    { emoji: '📋', text: 'Check Quote Details' },
+    { emoji: '✅', text: 'Finalize Quote' },
+  ],
+  tracking: [
+    { emoji: '📍', text: 'Track Status' },
+    { emoji: '⏱️', text: 'Delivery ETA' },
+    { emoji: '📞', text: 'Contact Support' },
+  ],
+  services: [
+    { emoji: '🚢', text: 'Shipping Options' },
+    { emoji: '📑', text: 'Documentation' },
+    { emoji: '💼', text: 'Service Details' },
+  ],
+  tools: [
+    { emoji: '🔍', text: 'HS Code Help' },
+    { emoji: '💳', text: 'Duty Calculator' },
+    { emoji: '📊', text: 'Rate Estimator' },
+  ],
+};
 
 export default function AIChat() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: '1',
-      text: 'Hello! I\'m AfriBridge\'s AI Assistant. How can I help you today? Ask about our services, shipping rates, or anything logistics-related!',
-      sender: 'ai',
-      timestamp: new Date(),
-    },
-  ]);
-  const [input, setInput] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const { isOpen, messages, isLoading, currentPage, open, close, sendMessage } = useAssistant();
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const quickActions = useMemo(() => {
+    const pageActions = pageQuickActions[currentPage] || pageQuickActions.home;
+    return [...pageActions, { emoji: '📞', text: 'Contact Support' }];
+  }, [currentPage]);
 
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
-
-  const handleSendMessage = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim()) return;
-
-    // Add user message
-    const userMessage: Message = {
-      id: Date.now().toString(),
-      text: input,
-      sender: 'user',
-      timestamp: new Date(),
-    };
-
-    setMessages((prev) => [...prev, userMessage]);
-    setInput('');
-    setIsLoading(true);
-
-    try {
-      const response = await fetch('/api/ai/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          message: input,
-          context: 'AfriBridge Clearing & Logistics - providing customs clearing, freight forwarding, and cross-border logistics across African trade corridors.',
-        }),
-      });
-
-      if (!response.ok) throw new Error('Chat failed');
-
-      const data = await response.json();
-
-      const aiMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        text: data.response,
-        sender: 'ai',
-        timestamp: new Date(),
-      };
-
-      setMessages((prev) => [...prev, aiMessage]);
-    } catch (error) {
-      const errorMessage: Message = {
-        id: (Date.now() + 2).toString(),
-        text: 'Sorry, I encountered an error. Please try again or contact our team at info@afribridge.co.za or +27 83 391 0863',
-        sender: 'ai',
-        timestamp: new Date(),
-      };
-      setMessages((prev) => [...prev, errorMessage]);
-    } finally {
-      setIsLoading(false);
-    }
+  const handleQuickAction = (text: string) => {
+    sendMessage(text);
   };
 
   if (!isOpen) {
     return (
       <button
-        onClick={() => setIsOpen(true)}
+        onClick={open}
         style={{
           position: 'fixed',
           bottom: '24px',
@@ -112,7 +73,7 @@ export default function AIChat() {
           e.currentTarget.style.transform = 'scale(1)';
           e.currentTarget.style.boxShadow = '0 8px 24px rgba(30, 107, 76, 0.35)';
         }}
-        title="Chat with AI Assistant"
+        title="Chat with AI Assistant (Cmd+K or Ctrl+K)"
       >
         <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
           <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12h-8v-2h8v2zm0-3h-8V9h8v2zm0-3H6V6h12v2z" />
@@ -153,7 +114,7 @@ export default function AIChat() {
           <p style={{ fontSize: '13px', margin: '0', opacity: '0.9' }}>Instant support available</p>
         </div>
         <button
-          onClick={() => setIsOpen(false)}
+          onClick={close}
           style={{
             background: 'rgba(255, 255, 255, 0.2)',
             color: 'white',
@@ -170,7 +131,7 @@ export default function AIChat() {
           onMouseLeave={(e) => {
             e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)';
           }}
-          title="Close chat"
+          title="Close chat (Escape or Cmd+K)"
         >
           ✕
         </button>
@@ -265,15 +226,10 @@ export default function AIChat() {
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
             }}>Quick Actions</p>
-            {[
-              { emoji: '📦', text: 'Request a Quote' },
-              { emoji: '🚚', text: 'Track Shipment' },
-              { emoji: '💼', text: 'Our Services' },
-              { emoji: '📞', text: 'Contact Support' },
-            ].map((action) => (
+            {quickActions.map((action) => (
               <button
                 key={action.text}
-                onClick={() => setInput(action.text)}
+                onClick={() => handleQuickAction(action.text)}
                 style={{
                   background: 'rgba(30, 107, 76, 0.1)',
                   border: '1px solid rgba(30, 107, 76, 0.3)',
@@ -300,21 +256,30 @@ export default function AIChat() {
             ))}
           </div>
         )}
-        <div ref={messagesEndRef} />
+        <div style={{ marginTop: 'auto' }} />
       </div>
 
       {/* Input */}
-      <form onSubmit={handleSendMessage} style={{
-        borderTop: '1px solid #e5e7eb',
-        padding: '16px',
-        background: 'white',
-        borderRadius: '0 0 16px 16px',
-      }}>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          const input = (e.currentTarget.elements.namedItem('message') as HTMLInputElement).value;
+          if (input.trim()) {
+            sendMessage(input);
+            (e.currentTarget.elements.namedItem('message') as HTMLInputElement).value = '';
+          }
+        }}
+        style={{
+          borderTop: '1px solid #e5e7eb',
+          padding: '16px',
+          background: 'white',
+          borderRadius: '0 0 16px 16px',
+        }}
+      >
         <div style={{ display: 'flex', gap: '8px', marginBottom: '8px' }}>
           <input
             type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
+            name="message"
             placeholder="Ask about shipping, quotes..."
             style={{
               flex: '1',
@@ -336,21 +301,21 @@ export default function AIChat() {
           />
           <button
             type="submit"
-            disabled={isLoading || !input.trim()}
+            disabled={isLoading}
             style={{
-              background: !isLoading && input.trim() ? 'linear-gradient(135deg, #1E6B4C 0%, #0B1F3A 100%)' : '#d1d5db',
+              background: !isLoading ? 'linear-gradient(135deg, #1E6B4C 0%, #0B1F3A 100%)' : '#d1d5db',
               color: 'white',
               border: 'none',
               borderRadius: '8px',
               padding: '10px 16px',
               fontWeight: '600',
-              cursor: isLoading || !input.trim() ? 'not-allowed' : 'pointer',
+              cursor: isLoading ? 'not-allowed' : 'pointer',
               fontSize: '13px',
               transition: 'all 0.2s ease',
-              opacity: isLoading || !input.trim() ? '0.6' : '1',
+              opacity: isLoading ? '0.6' : '1',
             }}
             onMouseEnter={(e) => {
-              if (!isLoading && input.trim()) {
+              if (!isLoading) {
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }
             }}
@@ -362,7 +327,7 @@ export default function AIChat() {
           </button>
         </div>
         <p style={{ fontSize: '11px', color: '#6b7280', margin: '0' }}>
-          Powered by AI. For urgent issues, WhatsApp +27 83 391 0863
+          💡 Tip: Press Cmd+K (or Ctrl+K) to toggle this chat anytime
         </p>
         <style>{`
           @keyframes bounce {

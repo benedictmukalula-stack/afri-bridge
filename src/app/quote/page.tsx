@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useAssistant } from '@/contexts/AssistantContext';
 
 interface CartItem {
   id: string;
@@ -25,9 +26,15 @@ interface Quote {
 }
 
 export default function QuotePage() {
+  const { setCurrentPage } = useAssistant();
   const [currentTab, setCurrentTab] = useState<'quote' | 'cart' | 'invoice' | 'checkout' | 'receipt'>('quote');
   const [submitted, setSubmitted] = useState(false);
-  
+
+  // Set page context for AI
+  useEffect(() => {
+    setCurrentPage('quote');
+  }, [setCurrentPage]);
+
   // Cart state
   const [cart, setCart] = useState<CartItem[]>([]);
   const [quote, setQuote] = useState<Quote | null>(null);

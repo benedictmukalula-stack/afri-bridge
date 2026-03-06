@@ -5,6 +5,7 @@ import PremiumFooter from "@/components/PremiumFooter";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import AIChat from "@/components/AIChat";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
+import { AssistantProvider } from "@/contexts/AssistantContext";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -39,14 +40,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <PremiumHeader />
-        <main>
-          {children}
-        </main>
-        <PremiumFooter />
-        <WhatsAppButton />
-        <AIChat />
-        <ExitIntentPopup />
+        <AssistantProvider>
+          <PremiumHeader />
+          <main>
+            {children}
+          </main>
+          <PremiumFooter />
+          <WhatsAppButton />
+          <AIChat />
+          <ExitIntentPopup />
+        </AssistantProvider>
       </body>
     </html>
   );

@@ -1,10 +1,16 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useAssistant } from '@/contexts/AssistantContext';
 
 export default function LearnHub() {
+  const { setCurrentPage } = useAssistant();
   const [selectedPlaylist, setSelectedPlaylist] = useState('getting-started');
+
+  useEffect(() => {
+    setCurrentPage('resources');
+  }, [setCurrentPage]);
 
   const playlists: { [key: string]: any[] } = {
     'getting-started': [
