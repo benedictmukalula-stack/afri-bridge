@@ -152,9 +152,9 @@ export default function QuotePage() {
             </ul>
 
             {/* Process */}
-            <div className="bg-gray-50 p-8 rounded-lg">
-              <h3 className="font-bold mb-4">Our Process</h3>
-              <div className="space-y-4 text-sm">
+            <div className="bg-gray-50 p-5 rounded-lg">
+              <h3 className="font-bold mb-3 text-sm">Our Process</h3>
+              <div className="space-y-3 text-xs">
                 <div className="flex gap-3">
                   <div className="text-emerald-600 font-bold w-6">1.</div>
                   <div>Submit your shipment details below</div>
@@ -201,7 +201,7 @@ export default function QuotePage() {
                       value={formData.fullName}
                       onChange={handleChange}
                       required
-                      className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
+                      className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-emerald-500 text-sm"
                     />
                     <input
                       type="text"
@@ -209,7 +209,7 @@ export default function QuotePage() {
                       placeholder="Company Name"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
+                      className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-emerald-500 text-sm"
                     />
                     <input
                       type="email"
@@ -218,7 +218,7 @@ export default function QuotePage() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
+                      className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-emerald-500 text-sm"
                     />
                     <input
                       type="tel"
@@ -227,7 +227,7 @@ export default function QuotePage() {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
+                      className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-emerald-500 text-sm"
                     />
                   </div>
                 </div>
@@ -240,7 +240,7 @@ export default function QuotePage() {
                       name="shipmentType"
                       value={formData.shipmentType}
                       onChange={handleChange}
-                      className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
+                      className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-emerald-500 text-sm"
                     >
                       <option>Air</option>
                       <option>Sea</option>
@@ -254,7 +254,7 @@ export default function QuotePage() {
                       name="incoterm"
                       value={formData.incoterm}
                       onChange={handleChange}
-                      className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
+                      className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-emerald-500 text-sm"
                     >
                       <option>EXW</option>
                       <option>FOB</option>
@@ -275,7 +275,7 @@ export default function QuotePage() {
                       value={formData.originCountry}
                       onChange={handleChange}
                       required
-                      className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
+                      className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-emerald-500 text-sm"
                     />
                     <input
                       type="text"
@@ -283,7 +283,7 @@ export default function QuotePage() {
                       placeholder="City"
                       value={formData.originCity}
                       onChange={handleChange}
-                      className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
+                      className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-emerald-500 text-sm"
                     />
                   </div>
                 </div>
@@ -298,7 +298,7 @@ export default function QuotePage() {
                       value={formData.destCountry}
                       onChange={handleChange}
                       required
-                      className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
+                      className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-emerald-500 text-sm"
                     />
                     <input
                       type="text"
@@ -306,7 +306,7 @@ export default function QuotePage() {
                       placeholder="City"
                       value={formData.destCity}
                       onChange={handleChange}
-                      className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-emerald-500"
+                      className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-emerald-500 text-sm"
                     />
                   </div>
                 </div>

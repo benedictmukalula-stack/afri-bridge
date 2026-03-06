@@ -101,7 +101,7 @@ export default function ServicesPage() {
             <div key={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', alignItems: 'stretch' }}>
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
-                  <h2 style={{ fontSize: '1.875rem', fontWeight: '700', marginBottom: '1rem', color: '#111827' }}>
+                  <h2 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '1rem', color: '#111827' }}>
                     {service.title}
                   </h2>
                   <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '1.0625rem', lineHeight: '1.7' }}>
@@ -136,7 +136,7 @@ export default function ServicesPage() {
       {/* FAQ */}
       <section style={{ padding: '4rem 2rem', background: '#F9FAFB' }}>
         <div className="container-sm">
-          <h2 style={{ fontSize: '1.75rem', fontWeight: '700', textAlign: 'center', marginBottom: '2.5rem', color: '#111827' }}>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: '800', textAlign: 'center', marginBottom: '2.5rem', color: '#111827' }}>
             Frequently Asked Questions
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>

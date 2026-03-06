@@ -118,10 +118,10 @@ export default function Home() {
             className="fade-in-up"
             style={{ marginBottom: '2.5rem', height: '240px', width: '100%', objectFit: 'cover', borderRadius: '0.5rem' }}
           />
-          <h2 style={{ fontSize: '1.75rem', fontWeight: '700', textAlign: 'center', marginBottom: '0.75rem', color: '#111827' }}>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: '800', textAlign: 'center', marginBottom: '0.75rem', color: '#111827' }}>
             Our Services
           </h2>
-          <p style={{ textAlign: 'center', color: '#6b7280', marginBottom: '2.5rem', maxWidth: '700px', margin: '0 auto', fontSize: '1rem' }}>
+          <p style={{ textAlign: 'center', color: '#6b7280', marginBottom: '2.5rem', maxWidth: '700px', margin: '0 auto', fontSize: '0.875rem' }}>
             Comprehensive logistics solutions across all modes and corridors
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
@@ -135,7 +135,7 @@ export default function Home() {
             ].map((service, i) => (
               <div key={i} className="card-premium fade-in-up" style={{ animationDelay: `${i * 0.1}s`, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                 <div style={{ marginBottom: '1rem', width: '100%', textAlign: 'center', color: 'var(--emerald)' }}>{service.icon()}</div>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: '#111827' }}>
+                <h3 style={{ fontSize: '1.1rem', fontWeight: '700', marginBottom: '0.75rem', color: '#111827' }}>
                   {service.title}
                 </h3>
                 <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '0.9375rem', flex: '1' }}>{service.desc}</p>
@@ -151,7 +151,7 @@ export default function Home() {
       {/* How It Works */}
       <section style={{ padding: '4rem 2rem', background: '#F9FAFB' }}>
         <div className="container-max">
-          <h2 style={{ fontSize: '1.75rem', fontWeight: '700', textAlign: 'center', marginBottom: '2.5rem', color: '#111827' }}>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: '800', textAlign: 'center', marginBottom: '2.5rem', color: '#111827' }}>
             How It Works
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
@@ -181,7 +181,7 @@ export default function Home() {
             className="fade-in-up"
             style={{ marginBottom: '2.5rem', height: '240px', width: '100%', objectFit: 'cover', borderRadius: '0.5rem' }}
           />
-          <h2 style={{ fontSize: '1.75rem', fontWeight: '700', textAlign: 'center', marginBottom: '2.5rem', color: '#111827' }}>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: '800', textAlign: 'center', marginBottom: '2.5rem', color: '#111827' }}>
             Africa Trade Corridors
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
@@ -191,7 +191,7 @@ export default function Home() {
               { name: 'West Africa', countries: 'Ghana, Nigeria, Ivory Coast, Senegal' },
             ].map((corridor, i) => (
               <Link href="/trade-corridors" key={i} className="card-premium" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '0.75rem', color: '#111827' }}>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: '#111827' }}>
                   {corridor.name}
                 </h3>
                 <p style={{ color: '#6b7280', marginBottom: '1rem', fontSize: '0.9375rem', flex: '1' }}>{corridor.countries}</p>
@@ -205,10 +205,10 @@ export default function Home() {
       {/* Testimonials & Stats */}
       <section style={{ padding: '4rem 2rem', background: 'var(--gradient-primary)', color: 'white' }}>
         <div className="container-max">
-          <h2 style={{ fontSize: '1.75rem', fontWeight: '700', textAlign: 'center', marginBottom: '0.75rem', color: 'white' }}>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: '800', textAlign: 'center', marginBottom: '0.75rem', color: 'white' }}>
             Trusted by African Logistics Leaders
           </h2>
-          <p style={{ textAlign: 'center', color: 'rgba(255, 255, 255, 0.85)', marginBottom: '2.5rem', maxWidth: '700px', margin: '0 auto', fontSize: '0.9375rem' }}>
+          <p style={{ textAlign: 'center', color: 'rgba(255, 255, 255, 0.85)', marginBottom: '2.5rem', maxWidth: '700px', margin: '0 auto', fontSize: '0.875rem' }}>
             Our track record speaks for itself. Built on years of regional expertise and regional partnerships.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '2rem', textAlign: 'center' }}>
