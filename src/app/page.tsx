@@ -3,6 +3,9 @@
 import Link from 'next/link';
 import TrustStrip from '@/components/TrustStrip';
 import CTAStrip from '@/components/CTAStrip';
+import TrustSignals from '@/components/TrustSignals';
+import TestimonialsCarousel from '@/components/TestimonialsCarousel';
+import SocialProof from '@/components/SocialProof';
 
 export default function Home() {
   return (
@@ -263,6 +266,76 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Premium Trust Signals & Certifications */}
+      <TrustSignals />
+
+      {/* Testimonials Carousel */}
+      <TestimonialsCarousel />
+
+      {/* Premium Tools Section */}
+      <section style={{ padding: '3rem 2rem', background: 'white' }} className="px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 style={{ textAlign: 'center', color: '#0B1F3A', fontSize: '24px', fontWeight: '800', marginBottom: '1rem' }}>
+            🛠️ Premium Tools & Resources
+          </h2>
+          <p style={{ textAlign: 'center', color: '#6b7280', fontSize: '15px', marginBottom: '2rem', maxWidth: '700px', margin: '0 auto', lineHeight: '1.6' }}>
+            Free tools to optimize your logistics. Calculate duties, get HS codes validated, find best trade corridors, and ensure compliance.
+          </p>
+          <div className="grid md:grid-cols-3 gap-4">
+            {[
+              { icon: '🔍', title: 'HS Code Validator', desc: 'AI-powered product classification', link: '/tools/hs-code-validator' },
+              { icon: '💰', title: 'Duty Calculator', desc: 'Calculate taxes and fees', link: '/tools/duty-calculator' },
+              { icon: '📊', title: 'Rate Estimator', desc: 'Compare shipping costs', link: '/tools/rate-estimator' },
+            ].map((tool, i) => (
+              <Link href={tool.link} key={i} style={{ textDecoration: 'none' }}>
+                <div style={{
+                  background: 'white',
+                  border: '1px solid #e5e7eb',
+                  borderRadius: '10px',
+                  padding: '1.5rem',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  textAlign: 'center'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = '#1E6B4C';
+                  e.currentTarget.style.boxShadow = '0 8px 16px rgba(30, 107, 76, 0.08)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = '#e5e7eb';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}>
+                  <div style={{ fontSize: '32px', marginBottom: '0.75rem' }}>{tool.icon}</div>
+                  <h4 style={{ color: '#0B1F3A', fontWeight: '700', fontSize: '14px', marginBottom: '0.5rem', margin: '0 0 0.5rem 0' }}>
+                    {tool.title}
+                  </h4>
+                  <p style={{ color: '#6b7280', fontSize: '12px', margin: 0 }}>
+                    {tool.desc}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+            <Link href="/tools" style={{
+              display: 'inline-block',
+              padding: '0.75rem 2rem',
+              background: '#1E6B4C',
+              color: 'white',
+              textDecoration: 'none',
+              borderRadius: '8px',
+              fontWeight: '700',
+              fontSize: '14px'
+            }}>
+              View All Tools →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof Notifications */}
+      <SocialProof />
 
       {/* Final CTA */}
       <CTAStrip

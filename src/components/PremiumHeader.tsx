@@ -31,6 +31,7 @@ export default function PremiumHeader() {
       ],
     },
     { label: 'Tracking', href: '/tracking' },
+    { label: 'Tools', href: '/tools' },
     { label: 'Quote', href: '/quote' },
     { label: 'Contact', href: '/contact' },
   ];
