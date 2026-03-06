@@ -1,0 +1,31 @@
+{
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm ci",
+  "env": {
+    "NEXT_PUBLIC_BUILDER_API_KEY": {
+      "description": "Builder.io API key for dynamic page generation",
+      "required": true
+    },
+    "NEXT_PUBLIC_SUPABASE_URL": {
+      "description": "Supabase project URL for database access",
+      "required": false
+    },
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": {
+      "description": "Supabase anonymous key for client-side database access",
+      "required": false
+    },
+    "SUPABASE_SERVICE_ROLE_KEY": {
+      "description": "Supabase service role key for API routes (server-side only)",
+      "required": false
+    },
+    "SENDGRID_API_KEY": {
+      "description": "SendGrid API key for email notifications",
+      "required": false
+    }
+  },
+  "regions": ["sjc1"],
+  "git": {
+    "silent": false
+  }
+}

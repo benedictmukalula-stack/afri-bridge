@@ -16,19 +16,46 @@ export default function ContactPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: '',
-        serviceType: 'General Inquiry',
+    setIsLoading(true);
+    setError('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
-      setSubmitted(false);
-    }, 3000);
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.error || 'Failed to send message');
+        setIsLoading(false);
+        return;
+      }
+
+      setSubmitted(true);
+      setIsLoading(false);
+
+      setTimeout(() => {
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          message: '',
+          serviceType: 'General Inquiry',
+        });
+        setSubmitted(false);
+      }, 3000);
+    } catch (err) {
+      setError('Network error. Please try again.');
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -189,11 +216,19 @@ export default function ContactPage() {
                   ></textarea>
                 </div>
 
+                {/* Error Message */}
+                {error && (
+                  <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
+                    <p className="text-sm">{error}</p>
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full btn btn-primary py-4 text-lg font-bold"
+                  disabled={isLoading}
+                  className="w-full btn btn-primary py-4 text-lg font-bold disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {isLoading ? 'Sending...' : 'Send Message'}
                 </button>
 
                 <p className="text-xs text-gray-500">

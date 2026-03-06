@@ -20,7 +20,7 @@ export default async function CatchAllPage({
     model: "page",
     apiKey: process.env.NEXT_PUBLIC_BUILDER_API_KEY!,
     userAttributes: { urlPath },
-    options: getBuilderSearchParams(sp),
+    options: getBuilderSearchParams(sp as any),
   });
 
   if (!content) {

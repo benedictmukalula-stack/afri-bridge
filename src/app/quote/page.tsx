@@ -28,36 +28,63 @@ export default function QuotePage() {
     specialHandling: '',
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelect | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setFormData({
-        fullName: '',
-        company: '',
-        email: '',
-        phone: '',
-        shipmentType: 'Sea',
-        incoterm: 'FOB',
-        originCountry: '',
-        originCity: '',
-        destCountry: '',
-        destCity: '',
-        cargoDesc: '',
-        hsCode: '',
-        weight: '',
-        dimensions: '',
-        packages: '',
-        readyDate: '',
-        specialHandling: '',
+    setIsLoading(true);
+    setError('');
+
+    try {
+      const response = await fetch('/api/quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
-      setSubmitted(false);
-    }, 3000);
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.error || 'Failed to submit quote');
+        setIsLoading(false);
+        return;
+      }
+
+      setSubmitted(true);
+      setIsLoading(false);
+
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setFormData({
+          fullName: '',
+          company: '',
+          email: '',
+          phone: '',
+          shipmentType: 'Sea',
+          incoterm: 'FOB',
+          originCountry: '',
+          originCity: '',
+          destCountry: '',
+          destCity: '',
+          cargoDesc: '',
+          hsCode: '',
+          weight: '',
+          dimensions: '',
+          packages: '',
+          readyDate: '',
+          specialHandling: '',
+        });
+        setSubmitted(false);
+      }, 3000);
+    } catch (err) {
+      setError('Network error. Please try again.');
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -350,6 +377,13 @@ export default function QuotePage() {
                   </select>
                 </div>
 
+                {/* Error Message */}
+                {error && (
+                  <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
+                    <p className="text-sm">{error}</p>
+                  </div>
+                )}
+
                 {/* Compliance Note */}
                 <p className="text-xs text-gray-500 bg-gray-50 p-3 rounded">
                   ⓘ Quotes subject to documentation review and customs compliance. We'll confirm all details before finalizing.
@@ -358,9 +392,10 @@ export default function QuotePage() {
                 {/* Submit */}
                 <button
                   type="submit"
-                  className="w-full btn btn-primary py-4 text-lg font-bold premium-card"
+                  disabled={isLoading}
+                  className="w-full btn btn-primary py-4 text-lg font-bold premium-card disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Submit Quote Request
+                  {isLoading ? 'Submitting...' : 'Submit Quote Request'}
                 </button>
               </form>
               </>

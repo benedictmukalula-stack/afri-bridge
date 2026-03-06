@@ -51,7 +51,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t" style={{ borderColor: '#1f2937' }} className="pt-8">
+        <div className="border-t pt-8" style={{ borderColor: '#1f2937' }}>
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
             <p>&copy; 2025 AfriBridge. All rights reserved.</p>
             <div className="flex gap-6 mt-4 md:mt-0">
