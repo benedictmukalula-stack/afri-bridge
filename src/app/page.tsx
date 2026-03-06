@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-16 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex items-center" style={{ backgroundImage: `url('https://images.pexels.com/photos/33870195/pexels-photo-33870195.jpeg')`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
+      <section className="relative py-16 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex items-center" style={{ backgroundImage: `url('https://images.pexels.com/photos/18609057/pexels-photo-18609057.jpeg')`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
         {/* Premium Dark Overlay - Enhanced for text visibility */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/65 to-black/50"></div>
         {/* Bottom Gradient for depth */}
