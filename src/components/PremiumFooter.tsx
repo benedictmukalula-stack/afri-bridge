@@ -11,12 +11,12 @@ export default function PremiumFooter() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gridTemplateColumns: '1fr 1fr 1fr',
             gap: '3rem',
             marginBottom: '3rem',
           }}
         >
-          {/* Column 1: Brand */}
+          {/* Column 1: Brand (Left) */}
           <div>
             <Link href="/" style={{ display: 'inline-block', marginBottom: '12px' }}>
               <img
@@ -57,160 +57,116 @@ export default function PremiumFooter() {
             </p>
           </div>
 
-          {/* Column 2: Quick Links */}
+          {/* Column 2: Navigation & Services (Middle) */}
           <div>
-            <h4
-              style={{
-                fontSize: '11px',
-                fontWeight: '700',
-                marginBottom: '20px',
-                color: '#ffffff',
-                textTransform: 'uppercase',
-                letterSpacing: '0.8px',
-              }}
-            >
-              Quick Links
-            </h4>
-            <ul
-              style={{
-                listStyle: 'none',
-                padding: 0,
-                margin: 0,
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '12px',
-              }}
-            >
-              {[
-                { label: 'Home', href: '/' },
-                { label: 'Services', href: '/services' },
-                { label: 'Industries', href: '/industries' },
-                { label: 'Tracking', href: '/tracking' },
-                { label: 'Quote', href: '/quote' },
-                { label: 'Contact', href: '/contact' },
-              ].map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    style={{
-                      fontSize: '14px',
-                      color: '#a1a5b1',
-                      textDecoration: 'none',
-                      transition: 'all 0.3s ease',
-                      position: 'relative',
-                      display: 'inline-block',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.color = '#1E6B4C';
-                      e.currentTarget.style.transform = 'translateX(4px)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.color = '#a1a5b1';
-                      e.currentTarget.style.transform = 'translateX(0)';
-                    }}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div style={{ marginBottom: '2rem' }}>
+              <h4
+                style={{
+                  fontSize: '11px',
+                  fontWeight: '700',
+                  marginBottom: '20px',
+                  color: '#ffffff',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.8px',
+                }}
+              >
+                Navigation
+              </h4>
+              <ul
+                style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: 0,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '12px',
+                }}
+              >
+                {[
+                  { label: 'Home', href: '/' },
+                  { label: 'Services', href: '/services' },
+                  { label: 'Industries', href: '/industries' },
+                  { label: 'Tracking', href: '/tracking' },
+                  { label: 'Quote', href: '/quote' },
+                  { label: 'Contact', href: '/contact' },
+                ].map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      style={{
+                        fontSize: '14px',
+                        color: '#a1a5b1',
+                        textDecoration: 'none',
+                        transition: 'all 0.3s ease',
+                        position: 'relative',
+                        display: 'inline-block',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.color = '#1E6B4C';
+                        e.currentTarget.style.transform = 'translateX(4px)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.color = '#a1a5b1';
+                        e.currentTarget.style.transform = 'translateX(0)';
+                      }}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)', paddingTop: '2rem' }}>
+              <h4
+                style={{
+                  fontSize: '11px',
+                  fontWeight: '700',
+                  marginBottom: '20px',
+                  color: '#ffffff',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.8px',
+                }}
+              >
+                Services
+              </h4>
+              <ul
+                style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: 0,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '12px',
+                }}
+              >
+                {[
+                  'Customs Clearing',
+                  'Freight Forwarding',
+                  'Cross-Border Logistics',
+                  'Warehousing',
+                  'Distribution',
+                ].map((service) => (
+                  <li key={service}>
+                    <span
+                      style={{
+                        fontSize: '14px',
+                        color: '#a1a5b1',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                      }}
+                    >
+                      <span style={{ color: 'var(--emerald)', fontWeight: '600' }}>→</span>
+                      {service}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          {/* Column 3: Core Services */}
-          <div>
-            <h4
-              style={{
-                fontSize: '11px',
-                fontWeight: '700',
-                marginBottom: '20px',
-                color: '#ffffff',
-                textTransform: 'uppercase',
-                letterSpacing: '0.8px',
-              }}
-            >
-              Services
-            </h4>
-            <ul
-              style={{
-                listStyle: 'none',
-                padding: 0,
-                margin: 0,
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '12px',
-              }}
-            >
-              {[
-                'Customs Clearing',
-                'Freight Forwarding',
-                'Cross-Border Logistics',
-                'Warehousing',
-                'Distribution',
-              ].map((service) => (
-                <li key={service}>
-                  <span
-                    style={{
-                      fontSize: '14px',
-                      color: '#a1a5b1',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                    }}
-                  >
-                    <span style={{ color: 'var(--emerald)', fontWeight: '600' }}>→</span>
-                    {service}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 4: Regional Focus */}
-          <div>
-            <h4
-              style={{
-                fontSize: '11px',
-                fontWeight: '700',
-                marginBottom: '20px',
-                color: '#ffffff',
-                textTransform: 'uppercase',
-                letterSpacing: '0.8px',
-              }}
-            >
-              Regions
-            </h4>
-            <ul
-              style={{
-                listStyle: 'none',
-                padding: 0,
-                margin: 0,
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '12px',
-              }}
-            >
-              {[
-                'South Africa',
-                'Zambia',
-                'Zimbabwe',
-                'SADC Region',
-                'Pan-African Trade',
-              ].map((region) => (
-                <li key={region}>
-                  <span
-                    style={{
-                      fontSize: '14px',
-                      color: '#a1a5b1',
-                    }}
-                  >
-                    {region}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 5: Contact */}
+          {/* Column 3: Contact & Regions (Right) */}
           <div>
             <h4
               style={{
@@ -313,6 +269,54 @@ export default function PremiumFooter() {
                 </a>
               </li>
             </ul>
+
+            <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)', marginTop: '2rem', paddingTop: '2rem' }}>
+              <h4
+                style={{
+                  fontSize: '11px',
+                  fontWeight: '700',
+                  marginBottom: '20px',
+                  color: '#ffffff',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.8px',
+                }}
+              >
+                Regions
+              </h4>
+              <ul
+                style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  margin: 0,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '12px',
+                }}
+              >
+                {[
+                  'South Africa',
+                  'Zambia',
+                  'Zimbabwe',
+                  'SADC Region',
+                  'Pan-African Trade',
+                ].map((region) => (
+                  <li key={region}>
+                    <span
+                      style={{
+                        fontSize: '14px',
+                        color: '#a1a5b1',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                      }}
+                    >
+                      <span style={{ color: 'var(--emerald)', fontWeight: '600' }}>•</span>
+                      {region}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
