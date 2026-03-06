@@ -16,18 +16,38 @@ export default async function CatchAllPage({
 
   const urlPath = "/" + page.join("/");
 
-  const content = await fetchOneEntry({
-    model: "page",
-    apiKey: process.env.NEXT_PUBLIC_BUILDER_API_KEY!,
-    userAttributes: { urlPath },
-    options: getBuilderSearchParams(sp as any),
-  });
+  // Only attempt Builder.io fetch if API key is configured
+  const apiKey = process.env.NEXT_PUBLIC_BUILDER_API_KEY;
+
+  let content = null;
+
+  if (apiKey) {
+    try {
+      content = await fetchOneEntry({
+        model: "page",
+        apiKey,
+        userAttributes: { urlPath },
+        options: getBuilderSearchParams(sp as any),
+      });
+    } catch (error) {
+      console.error("Builder.io fetch failed:", error);
+    }
+  }
 
   if (!content) {
     return (
-      <div style={{ padding: 24 }}>
-        <h1>AfriBridge Logistics Platform</h1>
-        <p>No Builder page for: {urlPath}</p>
+      <div style={{ padding: 40, textAlign: 'center', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div>
+          <h1 style={{ fontSize: '28px', fontWeight: 'bold', color: '#0f172a', marginBottom: '10px' }}>
+            AfriBridge Logistics
+          </h1>
+          <p style={{ color: '#666', marginBottom: '20px' }}>
+            Page not found: {urlPath}
+          </p>
+          <a href="/" style={{ color: '#10b981', textDecoration: 'none', fontWeight: '600' }}>
+            Return to Home
+          </a>
+        </div>
       </div>
     );
   }
@@ -36,7 +56,7 @@ export default async function CatchAllPage({
     <BuilderContentWrapper
       model="page"
       content={content}
-      apiKey={process.env.NEXT_PUBLIC_BUILDER_API_KEY!}
+      apiKey={apiKey}
     />
   );
 }
