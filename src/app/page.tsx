@@ -22,26 +22,39 @@ export default function Home() {
               <p className="text-xl text-white mb-8" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.25)' }}>
                 Customs compliance, freight forwarding, and cross-border logistics built for SADC trade corridors.
               </p>
-              <div className="flex gap-4 flex-wrap">
-                <Link href="/quote" className="btn btn-primary shadow-lg hover:shadow-xl">
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2rem' }}>
+                <Link href="/quote" className="btn btn-gradient">
                   Request a Quote
                 </Link>
-                <Link href="/tracking" className="btn btn-secondary" style={{ color: 'white', borderColor: 'white' }}>
+                <Link href="/tracking" className="btn" style={{ background: 'rgba(255, 255, 255, 0.15)', color: 'white', backdropFilter: 'blur(8px)', border: '1px solid rgba(255, 255, 255, 0.3)' }}>
                   Track Shipment
                 </Link>
               </div>
 
               {/* Value Chips */}
-              <div className="flex flex-wrap gap-3 mt-12">
-                <div className="bg-emerald-600/80 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>
-                  ✓ Customs Compliance
-                </div>
-                <div className="bg-emerald-600/80 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>
-                  ✓ End-to-End Visibility
-                </div>
-                <div className="bg-emerald-600/80 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>
-                  ✓ SADC Expertise
-                </div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginTop: '3rem' }}>
+                {[
+                  '✓ Customs Compliance',
+                  '✓ End-to-End Visibility',
+                  '✓ SADC Expertise',
+                ].map((chip, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      background: 'rgba(30, 107, 76, 0.85)',
+                      backdropFilter: 'blur(12px)',
+                      color: 'white',
+                      padding: '0.75rem 1.25rem',
+                      borderRadius: '9999px',
+                      fontSize: '0.875rem',
+                      fontWeight: '600',
+                      textShadow: '0 1px 2px rgba(0,0,0,0.2)',
+                      border: '1px solid rgba(255, 255, 255, 0.1)',
+                    }}
+                  >
+                    {chip}
+                  </div>
+                ))}
               </div>
             </div>
             <div className="hidden md:block">
@@ -59,49 +72,44 @@ export default function Home() {
       <TrustStrip />
 
       {/* Certifications & Trust Badges */}
-      <section className="section-spacing px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-center text-gray-600 font-semibold mb-8 uppercase text-sm tracking-wide">
+      <section style={{ padding: '4rem 2rem', background: '#F9FAFB' }}>
+        <div className="container-max">
+          <p style={{ textAlign: 'center', color: '#6b7280', fontWeight: '600', marginBottom: '2rem', textTransform: 'uppercase', fontSize: '12px', letterSpacing: '0.8px' }}>
             Industry Certifications & Memberships
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="flex flex-col items-center justify-center p-4 text-center">
-              <div className="text-4xl mb-2">🏛️</div>
-              <p className="text-sm font-semibold text-gray-700">Customs Clearing License</p>
-              <p className="text-xs text-gray-500">SADC Certified</p>
-            </div>
-            <div className="flex flex-col items-center justify-center p-4 text-center">
-              <div className="text-4xl mb-2">📦</div>
-              <p className="text-sm font-semibold text-gray-700">Freight Forwarder</p>
-              <p className="text-xs text-gray-500">IATA & FIATA Member</p>
-            </div>
-            <div className="flex flex-col items-center justify-center p-4 text-center">
-              <div className="text-4xl mb-2">✓</div>
-              <p className="text-sm font-semibold text-gray-700">ISO 9001:2015</p>
-              <p className="text-xs text-gray-500">Quality Assured</p>
-            </div>
-            <div className="flex flex-col items-center justify-center p-4 text-center">
-              <div className="text-4xl mb-2">🔒</div>
-              <p className="text-sm font-semibold text-gray-700">Compliance First</p>
-              <p className="text-xs text-gray-500">Full Regulatory Compliance</p>
-            </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem' }}>
+            {[
+              { icon: '🏛️', title: 'Customs Clearing License', subtitle: 'SADC Certified' },
+              { icon: '📦', title: 'Freight Forwarder', subtitle: 'IATA & FIATA Member' },
+              { icon: '✓', title: 'ISO 9001:2015', subtitle: 'Quality Assured' },
+              { icon: '🔒', title: 'Compliance First', subtitle: 'Full Regulatory Compliance' },
+            ].map((cert, i) => (
+              <div key={i} className="card-premium" style={{ textAlign: 'center', padding: '1.5rem' }}>
+                <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{cert.icon}</div>
+                <p style={{ fontSize: '15px', fontWeight: '600', color: '#111827', marginBottom: '0.5rem' }}>{cert.title}</p>
+                <p style={{ fontSize: '13px', color: '#6b7280' }}>{cert.subtitle}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Services Overview */}
-      <section className="section-spacing px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+      <section style={{ padding: '5rem 2rem' }}>
+        <div className="container-max">
           <ImagePlaceholder
             type="section"
             alt="Warehouse logistics and cargo storage facility"
-            className="mb-12 h-72"
+            className="fade-in-up"
+            style={{ marginBottom: '3rem', height: '280px' }}
           />
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Our Services</h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          <h2 style={{ fontSize: '2.25rem', fontWeight: '700', textAlign: 'center', marginBottom: '1rem', color: '#111827' }}>
+            Our Services
+          </h2>
+          <p style={{ textAlign: 'center', color: '#6b7280', marginBottom: '3rem', maxWidth: '700px', margin: '0 auto', fontSize: '1.0625rem' }}>
             Comprehensive logistics solutions across all modes and corridors
           </p>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             {[
               { icon: '🧾', title: 'Customs Clearing', desc: 'Expert HS coding, documentation, duty & VAT guidance' },
               { icon: '✈️', title: 'Air Freight', desc: 'Urgent shipments, consolidation, real-time tracking' },
@@ -110,13 +118,13 @@ export default function Home() {
               { icon: '📦', title: 'Warehousing', desc: 'Bonded storage, pick & pack, last-mile delivery' },
               { icon: '⚙️', title: 'Project Cargo', desc: 'Oversized shipments, mining, energy sector solutions' },
             ].map((service, i) => (
-              <div key={i} className="card premium-card fade-in-up" style={{ animationDelay: `${i * 0.1}s` }}>
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-bold mb-3" style={{ color: '#0f172a' }}>
+              <div key={i} className="card-premium fade-in-up" style={{ animationDelay: `${i * 0.1}s` }}>
+                <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{service.icon}</div>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: '#111827' }}>
                   {service.title}
                 </h3>
-                <p className="text-gray-600 mb-6 text-sm">{service.desc}</p>
-                <Link href="/quote" className="inline-block text-emerald-600 font-semibold hover:text-emerald-700 transition">
+                <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '0.9375rem' }}>{service.desc}</p>
+                <Link href="/quote" className="premium-link">
                   Get a Quote →
                 </Link>
               </div>
@@ -126,21 +134,23 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="section-spacing px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">How It Works</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+      <section style={{ padding: '5rem 2rem', background: '#F9FAFB' }}>
+        <div className="container-max">
+          <h2 style={{ fontSize: '2.25rem', fontWeight: '700', textAlign: 'center', marginBottom: '3rem', color: '#111827' }}>
+            How It Works
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
             {[
               { step: '01', title: 'Quote & Request', desc: 'Submit your shipment details and get a custom quote' },
               { step: '02', title: 'Ship & Track', desc: 'We handle all logistics with real-time visibility' },
               { step: '03', title: 'Deliver & Compliance', desc: 'Cargo cleared and delivered to destination' },
             ].map((item, i) => (
-              <div key={i} className="text-center">
-                <div className="text-5xl font-bold mb-4" style={{ color: '#10b981' }}>
+              <div key={i} style={{ textAlign: 'center', position: 'relative', paddingTop: '2rem' }}>
+                <div style={{ fontSize: '3.5rem', fontWeight: '700', marginBottom: '1rem', color: 'var(--emerald)', position: 'relative', zIndex: '1' }}>
                   {item.step}
                 </div>
-                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: '#111827' }}>{item.title}</h3>
+                <p style={{ color: '#6b7280', fontSize: '0.9375rem' }}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -148,26 +158,29 @@ export default function Home() {
       </section>
 
       {/* Trade Corridors Preview */}
-      <section className="section-spacing px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+      <section style={{ padding: '5rem 2rem' }}>
+        <div className="container-max">
           <ImagePlaceholder
             type="map"
             alt="African trade corridors and regional logistics network map"
-            className="mb-12 h-72"
+            className="fade-in-up"
+            style={{ marginBottom: '3rem', height: '280px' }}
           />
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Africa Trade Corridors</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <h2 style={{ fontSize: '2.25rem', fontWeight: '700', textAlign: 'center', marginBottom: '3rem', color: '#111827' }}>
+            Africa Trade Corridors
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
             {[
               { name: 'SADC', countries: 'SA, Zambia, DRC, Botswana, Namibia, Mozambique, Zimbabwe' },
               { name: 'East Africa', countries: 'Kenya, Tanzania, Uganda, Ethiopia' },
               { name: 'West Africa', countries: 'Ghana, Nigeria, Ivory Coast, Senegal' },
             ].map((corridor, i) => (
-              <Link href="/trade-corridors" key={i} className="card p-8 hover:shadow-lg transition">
-                <h3 className="text-2xl font-bold mb-2" style={{ color: '#0f172a' }}>
+              <Link href="/trade-corridors" key={i} className="card-premium">
+                <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '0.75rem', color: '#111827' }}>
                   {corridor.name}
                 </h3>
-                <p className="text-gray-600 mb-4">{corridor.countries}</p>
-                <span className="text-emerald-600 font-semibold">Explore Corridor →</span>
+                <p style={{ color: '#6b7280', marginBottom: '1rem', fontSize: '0.9375rem' }}>{corridor.countries}</p>
+                <span className="premium-link">Explore Corridor →</span>
               </Link>
             ))}
           </div>
@@ -175,41 +188,39 @@ export default function Home() {
       </section>
 
       {/* Testimonials & Stats */}
-      <section className="section-spacing px-4 sm:px-6 lg:px-8" style={{ background: '#0f172a', color: 'white' }}>
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Trusted by African Logistics Leaders</h2>
-          <p className="text-center text-gray-400 mb-16 max-w-2xl mx-auto">
+      <section style={{ padding: '5rem 2rem', background: 'var(--gradient-primary)', color: 'white' }}>
+        <div className="container-max">
+          <h2 style={{ fontSize: '2.25rem', fontWeight: '700', textAlign: 'center', marginBottom: '1rem', color: 'white' }}>
+            Trusted by African Logistics Leaders
+          </h2>
+          <p style={{ textAlign: 'center', color: 'rgba(255, 255, 255, 0.85)', marginBottom: '3rem', maxWidth: '700px', margin: '0 auto', fontSize: '1rem' }}>
             Our track record speaks for itself. Built on years of regional expertise and regional partnerships.
           </p>
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div className="bg-gray-900 bg-opacity-50 p-8 rounded-lg border border-gray-800 hover:border-emerald-500 transition">
-              <div className="text-6xl font-bold mb-3" style={{ color: '#10b981' }}>
-                98%
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '2rem', textAlign: 'center' }}>
+            {[
+              { stat: '98%', label: 'On-time Delivery', desc: 'Across all corridors' },
+              { stat: '12K+', label: 'Shipments Handled', desc: 'Successfully cleared' },
+              { stat: '25+', label: 'Countries Served', desc: 'Across Africa' },
+              { stat: '24/7', label: 'Operations Support', desc: 'Always available' },
+            ].map((item, i) => (
+              <div
+                key={i}
+                style={{
+                  background: 'rgba(255, 255, 255, 0.08)',
+                  padding: '2rem',
+                  borderRadius: '0.875rem',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  backdropFilter: 'blur(10px)',
+                  transition: 'all 0.3s ease',
+                }}
+              >
+                <div style={{ fontSize: '3.5rem', fontWeight: '700', marginBottom: '0.75rem', color: '#F5B041' }}>
+                  {item.stat}
+                </div>
+                <p style={{ fontSize: '1rem', fontWeight: '600', color: 'white', marginBottom: '0.5rem' }}>{item.label}</p>
+                <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.7)' }}>{item.desc}</p>
               </div>
-              <p className="text-gray-300 font-semibold">On-time Delivery</p>
-              <p className="text-gray-500 text-sm mt-2">Across all corridors</p>
-            </div>
-            <div className="bg-gray-900 bg-opacity-50 p-8 rounded-lg border border-gray-800 hover:border-emerald-500 transition">
-              <div className="text-6xl font-bold mb-3" style={{ color: '#10b981' }}>
-                12K+
-              </div>
-              <p className="text-gray-300 font-semibold">Shipments Handled</p>
-              <p className="text-gray-500 text-sm mt-2">Successfully cleared</p>
-            </div>
-            <div className="bg-gray-900 bg-opacity-50 p-8 rounded-lg border border-gray-800 hover:border-emerald-500 transition">
-              <div className="text-6xl font-bold mb-3" style={{ color: '#10b981' }}>
-                25+
-              </div>
-              <p className="text-gray-300 font-semibold">Countries Served</p>
-              <p className="text-gray-500 text-sm mt-2">Across Africa</p>
-            </div>
-            <div className="bg-gray-900 bg-opacity-50 p-8 rounded-lg border border-gray-800 hover:border-emerald-500 transition">
-              <div className="text-6xl font-bold mb-3" style={{ color: '#10b981' }}>
-                24/7
-              </div>
-              <p className="text-gray-300 font-semibold">Operations Support</p>
-              <p className="text-gray-500 text-sm mt-2">Always available</p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
