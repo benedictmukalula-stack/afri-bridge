@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import PremiumHeader from "@/components/PremiumHeader";
 import PremiumFooter from "@/components/PremiumFooter";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import AIChat from "@/components/AIChat";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -42,6 +43,7 @@ export default function RootLayout({
         </main>
         <PremiumFooter />
         <WhatsAppButton />
+        <AIChat />
       </body>
     </html>
   );
