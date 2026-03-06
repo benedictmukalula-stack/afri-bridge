@@ -140,7 +140,7 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section style={{ padding: '4rem 2rem', background: '#F9FAFB' }}>
+      <section style={{ padding: '4rem 2rem', background: 'transparent' }}>
         <div className="container-max">
           <h2 style={{ fontSize: '1.5rem', fontWeight: '800', textAlign: 'center', marginBottom: '2.5rem', color: '#111827' }}>
             How It Works
