@@ -140,18 +140,45 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section style={{ padding: '4rem 2rem', background: 'transparent' }}>
+      <section style={{ padding: '4rem 2rem', background: 'linear-gradient(135deg, rgba(30, 107, 76, 0.05) 0%, rgba(245, 176, 65, 0.03) 100%)' }}>
         <div className="container-max">
           <h2 style={{ fontSize: '1.5rem', fontWeight: '800', textAlign: 'center', marginBottom: '2.5rem', color: '#111827' }}>
             How It Works
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '2rem',
+            background: 'rgba(255, 255, 255, 0.6)',
+            backdropFilter: 'blur(10px)',
+            padding: '3rem 2rem',
+            borderRadius: '1rem',
+            border: '1px solid rgba(30, 107, 76, 0.1)',
+            boxShadow: '0 8px 32px rgba(30, 107, 76, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5)'
+          }}>
             {[
               { step: '01', title: 'Quote & Request', desc: 'Submit your shipment details and get a custom quote' },
               { step: '02', title: 'Ship & Track', desc: 'We handle all logistics with real-time visibility' },
               { step: '03', title: 'Deliver & Compliance', desc: 'Cargo cleared and delivered to destination' },
             ].map((item, i) => (
-              <div key={i} style={{ textAlign: 'center', position: 'relative', paddingTop: '2rem' }}>
+              <div key={i} style={{
+                textAlign: 'center',
+                position: 'relative',
+                paddingTop: '2rem',
+                transition: 'all 0.3s ease',
+                borderRadius: '0.75rem',
+                padding: '1.5rem',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'rgba(30, 107, 76, 0.05)';
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 8px 20px rgba(30, 107, 76, 0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'transparent';
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}>
                 <div style={{ fontSize: '3.5rem', fontWeight: '700', marginBottom: '1rem', color: 'var(--emerald)', position: 'relative', zIndex: '1' }}>
                   {item.step}
                 </div>
