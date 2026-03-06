@@ -20,16 +20,18 @@ export default function TrackingPage() {
       <section className="relative py-16 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1f2937 100%)', color: 'white' }}>
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-transparent"></div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h1 className="text-3xl md:text-4xl font-bold mb-3" style={{
+          <h1 className="text-2xl md:text-3xl font-bold mb-3" style={{
             textShadow: '0 2px 8px rgba(0, 0, 0, 0.4)',
-            letterSpacing: '-0.02em'
+            letterSpacing: '-0.02em',
+            fontWeight: '800'
           }}>
             Track Your Shipment
           </h1>
-          <p className="text-base md:text-lg" style={{
+          <p className="text-sm md:text-base" style={{
             color: '#E5E7EB',
             textShadow: '0 1px 4px rgba(0, 0, 0, 0.3)',
-            lineHeight: '1.8'
+            lineHeight: '1.65',
+            fontSize: '0.875rem'
           }}>
             Real-time visibility across all modes and corridors
           </p>

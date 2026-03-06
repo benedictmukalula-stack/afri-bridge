@@ -65,16 +65,18 @@ export default function ContactPage() {
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1f2937 100%)', color: 'white' }}>
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-transparent"></div>
         <div className="max-w-6xl mx-auto relative z-10">
-          <h1 className="text-3xl md:text-4xl font-bold mb-3" style={{
+          <h1 className="text-2xl md:text-3xl font-bold mb-3" style={{
             textShadow: '0 2px 8px rgba(0, 0, 0, 0.4)',
-            letterSpacing: '-0.02em'
+            letterSpacing: '-0.02em',
+            fontWeight: '800'
           }}>
             Contact AfriBridge
           </h1>
-          <p className="text-base md:text-lg" style={{
+          <p className="text-sm md:text-base" style={{
             color: '#E5E7EB',
             textShadow: '0 1px 4px rgba(0, 0, 0, 0.3)',
-            lineHeight: '1.8'
+            lineHeight: '1.65',
+            fontSize: '0.875rem'
           }}>
             Our operations team responds within 24–48 hours. Available 24/7 on WhatsApp.
           </p>
@@ -86,7 +88,7 @@ export default function ContactPage() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
           {/* Left: Contact Info */}
           <div>
-            <h2 className="text-3xl font-bold mb-8">Contact AfriBridge</h2>
+            <h2 className="text-2xl font-bold mb-8" style={{ fontSize: '1.5rem', fontWeight: '800' }}>Contact AfriBridge</h2>
 
             {/* Contact */}
             <div className="mb-10">

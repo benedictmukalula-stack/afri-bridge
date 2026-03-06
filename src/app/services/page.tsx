@@ -79,15 +79,17 @@ export default function ServicesPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/30"></div>
 
         <div className="max-w-6xl mx-auto w-full relative z-10">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-3" style={{
+          <h1 className="text-2xl md:text-3xl font-bold text-white mb-3" style={{
             textShadow: '0 4px 12px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.4)',
-            letterSpacing: '-0.02em'
+            letterSpacing: '-0.02em',
+            fontWeight: '800'
           }}>
             Our Services
           </h1>
-          <p className="text-base md:text-lg text-white max-w-2xl" style={{
+          <p className="text-sm md:text-base text-white max-w-2xl" style={{
             textShadow: '0 3px 8px rgba(0, 0, 0, 0.45), 0 1px 3px rgba(0, 0, 0, 0.3)',
-            lineHeight: '1.8'
+            lineHeight: '1.65',
+            fontSize: '0.875rem'
           }}>
             Comprehensive clearing, forwarding, and logistics solutions across Africa
           </p>
