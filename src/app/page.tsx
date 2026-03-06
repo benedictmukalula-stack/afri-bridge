@@ -133,13 +133,13 @@ export default function Home() {
               { icon: '📦', title: 'Warehousing', desc: 'Bonded storage, pick & pack, last-mile delivery' },
               { icon: '⚙️', title: 'Project Cargo', desc: 'Oversized shipments, mining, energy sector solutions' },
             ].map((service, i) => (
-              <div key={i} className="card-premium fade-in-up" style={{ animationDelay: `${i * 0.1}s` }}>
-                <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{service.icon}</div>
+              <div key={i} className="card-premium fade-in-up" style={{ animationDelay: `${i * 0.1}s`, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                <div style={{ fontSize: '2.5rem', marginBottom: '1rem', width: '100%', textAlign: 'center' }}>{service.icon}</div>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: '#111827' }}>
                   {service.title}
                 </h3>
-                <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '0.9375rem' }}>{service.desc}</p>
-                <Link href="/quote" className="premium-link">
+                <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '0.9375rem', flex: '1' }}>{service.desc}</p>
+                <Link href="/quote" className="premium-link" style={{ marginTop: 'auto' }}>
                   Get a Quote →
                 </Link>
               </div>
@@ -190,12 +190,12 @@ export default function Home() {
               { name: 'East Africa', countries: 'Kenya, Tanzania, Uganda, Ethiopia' },
               { name: 'West Africa', countries: 'Ghana, Nigeria, Ivory Coast, Senegal' },
             ].map((corridor, i) => (
-              <Link href="/trade-corridors" key={i} className="card-premium">
+              <Link href="/trade-corridors" key={i} className="card-premium" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                 <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '0.75rem', color: '#111827' }}>
                   {corridor.name}
                 </h3>
-                <p style={{ color: '#6b7280', marginBottom: '1rem', fontSize: '0.9375rem' }}>{corridor.countries}</p>
-                <span className="premium-link">Explore Corridor →</span>
+                <p style={{ color: '#6b7280', marginBottom: '1rem', fontSize: '0.9375rem', flex: '1' }}>{corridor.countries}</p>
+                <span className="premium-link" style={{ marginTop: 'auto' }}>Explore Corridor →</span>
               </Link>
             ))}
           </div>
@@ -227,13 +227,17 @@ export default function Home() {
                   border: '1px solid rgba(255, 255, 255, 0.1)',
                   backdropFilter: 'blur(10px)',
                   transition: 'all 0.3s ease',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  textAlign: 'center',
                 }}
               >
                 <div style={{ fontSize: '2.75rem', fontWeight: '700', marginBottom: '0.5rem', color: '#F5B041' }}>
                   {item.stat}
                 </div>
-                <p style={{ fontSize: '0.9375rem', fontWeight: '600', color: 'white', marginBottom: '0.375rem' }}>{item.label}</p>
-                <p style={{ fontSize: '0.8125rem', color: 'rgba(255, 255, 255, 0.7)' }}>{item.desc}</p>
+                <p style={{ fontSize: '0.9375rem', fontWeight: '600', color: 'white', marginBottom: '0.375rem', margin: '0 0 0.375rem 0' }}>{item.label}</p>
+                <p style={{ fontSize: '0.8125rem', color: 'rgba(255, 255, 255, 0.7)', margin: '0' }}>{item.desc}</p>
               </div>
             ))}
           </div>

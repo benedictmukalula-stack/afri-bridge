@@ -291,7 +291,7 @@ export default function ContactPage() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             {/* Smart Assistant Card */}
-            <div className="card-premium" style={{ textAlign: 'center', padding: '2rem' }}>
+            <div className="card-premium" style={{ textAlign: 'center', padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🤖</div>
               <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: '#111827' }}>
                 AI Smart Assistant
@@ -338,7 +338,7 @@ export default function ContactPage() {
             </div>
 
             {/* WhatsApp Assistant Card */}
-            <div className="card-premium" style={{ textAlign: 'center', padding: '2rem' }}>
+            <div className="card-premium" style={{ textAlign: 'center', padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>💬</div>
               <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: '#111827' }}>
                 WhatsApp Support
@@ -346,9 +346,9 @@ export default function ContactPage() {
               <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '0.9375rem' }}>
                 Connect with our team directly on WhatsApp for personalized assistance and immediate responses.
               </p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
                 <p style={{ fontSize: '12px', fontWeight: '600', color: '#25D366', margin: '0', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Available:</p>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '13px', color: '#6b7280' }}>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '13px', color: '#6b7280', textAlign: 'center' }}>
                   <li>✓ Instant responses</li>
                   <li>✓ Personal attention</li>
                   <li>✓ 24/7 availability</li>
@@ -386,7 +386,7 @@ export default function ContactPage() {
             </div>
 
             {/* Phone Support Card */}
-            <div className="card-premium" style={{ textAlign: 'center', padding: '2rem' }}>
+            <div className="card-premium" style={{ textAlign: 'center', padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>☎️</div>
               <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: '#111827' }}>
                 Call Support
@@ -394,9 +394,9 @@ export default function ContactPage() {
               <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '0.9375rem' }}>
                 Speak directly with our logistics experts during business hours for complex inquiries.
               </p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
                 <p style={{ fontSize: '12px', fontWeight: '600', color: '#0B1F3A', margin: '0', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Phone Lines:</p>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '13px', color: '#6b7280' }}>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '13px', color: '#6b7280', textAlign: 'center' }}>
                   <li>📞 +27 11 568 6712</li>
                   <li>📱 +27 83 391 0863</li>
                   <li>Mon-Fri 8:00-18:00 SAST</li>

@@ -88,24 +88,24 @@ export default function IndustriesPage() {
           />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>
             {industries.map((industry, i) => (
-              <div key={i} className="card-premium fade-in-up" style={{ animationDelay: `${i * 0.05}s` }}>
-                <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{industry.icon}</div>
+              <div key={i} className="card-premium fade-in-up" style={{ animationDelay: `${i * 0.05}s`, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                <div style={{ fontSize: '2.5rem', marginBottom: '1rem', width: '100%', textAlign: 'center' }}>{industry.icon}</div>
                 <h3 style={{ fontSize: '1.375rem', fontWeight: '700', marginBottom: '1rem', color: '#111827' }}>
                   {industry.name}
                 </h3>
-                <div style={{ marginBottom: '1rem' }}>
+                <div style={{ marginBottom: '1rem', width: '100%' }}>
                   <h4 style={{ fontSize: '11px', fontWeight: '700', color: '#6b7280', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.8px' }}>
                     Typical Cargo
                   </h4>
                   <p style={{ color: '#6b7280', marginBottom: '1rem', fontSize: '0.9375rem' }}>{industry.cargo}</p>
                 </div>
-                <div style={{ marginBottom: '1.5rem' }}>
+                <div style={{ marginBottom: '1.5rem', width: '100%' }}>
                   <h4 style={{ fontSize: '11px', fontWeight: '700', color: '#6b7280', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.8px' }}>
                     Compliance Notes
                   </h4>
                   <p style={{ fontSize: '0.875rem', color: '#6b7280' }}>{industry.compliance}</p>
                 </div>
-                <Link href="/quote" className="premium-link">
+                <Link href="/quote" className="premium-link" style={{ marginTop: 'auto' }}>
                   Get a Quote →
                 </Link>
               </div>

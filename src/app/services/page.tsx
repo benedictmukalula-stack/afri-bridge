@@ -99,22 +99,24 @@ export default function ServicesPage() {
       <section style={{ padding: '4rem 2rem' }}>
         <div className="container-max" style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
           {services.map((service, i) => (
-            <div key={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', alignItems: 'center' }}>
-              <div>
-                <h2 style={{ fontSize: '1.875rem', fontWeight: '700', marginBottom: '1rem', color: '#111827' }}>
-                  {service.title}
-                </h2>
-                <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '1.0625rem', lineHeight: '1.7' }}>
-                  {service.desc}
-                </p>
-                <ul style={{ marginBottom: '2rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                  {service.details.map((detail, j) => (
-                    <li key={j} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', color: '#4b5563', fontSize: '0.9375rem' }}>
-                      <span style={{ color: 'var(--emerald)', fontWeight: '700', marginTop: '0.25rem', flexShrink: 0 }}>✓</span>
-                      <span>{detail}</span>
-                    </li>
-                  ))}
-                </ul>
+            <div key={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', alignItems: 'stretch' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <h2 style={{ fontSize: '1.875rem', fontWeight: '700', marginBottom: '1rem', color: '#111827' }}>
+                    {service.title}
+                  </h2>
+                  <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '1.0625rem', lineHeight: '1.7' }}>
+                    {service.desc}
+                  </p>
+                  <ul style={{ marginBottom: '2rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', listStyle: 'none', padding: 0, margin: 0 }}>
+                    {service.details.map((detail, j) => (
+                      <li key={j} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', color: '#4b5563', fontSize: '0.9375rem' }}>
+                        <span style={{ color: 'var(--emerald)', fontWeight: '700', marginTop: '0.25rem', flexShrink: 0 }}>✓</span>
+                        <span>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
                 <Link href="/quote" className="btn btn-primary">
                   Get a Quote
                 </Link>
