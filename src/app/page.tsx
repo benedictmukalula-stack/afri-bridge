@@ -15,9 +15,10 @@ export default function Home() {
         <div className="max-w-6xl mx-auto w-full relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div style={{ position: 'relative' }}>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight" style={{
-                textShadow: '0 6px 16px rgba(0, 0, 0, 0.7), 0 3px 6px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.5)',
-                filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.5))',
+              <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight" style={{
+                color: '#F5B041',
+                textShadow: '0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.6)',
+                filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.6))',
                 letterSpacing: '-0.02em'
               }}>
                 Premium Clearing & Logistics Across Africa
