@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import SocialMediaIcons from './SocialMediaIcons';
 
 export default function PremiumFooter() {
   return (
@@ -306,6 +307,40 @@ export default function PremiumFooter() {
               </li>
             </ul>
           </div>
+        </div>
+
+        {/* Social Media Section */}
+        <div
+          style={{
+            paddingTop: '2rem',
+            paddingBottom: '1rem',
+            borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+            borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '2rem',
+          }}
+        >
+          <div>
+            <p
+              style={{
+                fontSize: '13px',
+                fontWeight: '600',
+                color: '#ffffff',
+                margin: '0 0 8px 0',
+                textTransform: 'uppercase',
+                letterSpacing: '0.8px',
+              }}
+            >
+              Follow Us
+            </p>
+            <p style={{ fontSize: '12px', color: '#a1a5b1', margin: '0' }}>
+              Connect with AfriBridge on social media
+            </p>
+          </div>
+          <SocialMediaIcons variant="inline" />
         </div>
 
         {/* Bottom border and copyright */}

@@ -1,6 +1,7 @@
 'use client';
 
 import ImagePlaceholder from '@/components/ImagePlaceholder';
+import SocialMediaIcons from '@/components/SocialMediaIcons';
 import { useState } from 'react';
 
 export default function ContactPage() {
@@ -139,11 +140,19 @@ export default function ContactPage() {
             </div>
 
             {/* Response SLA */}
-            <div className="bg-emerald-50 p-6 rounded-lg border border-emerald-200">
+            <div className="bg-emerald-50 p-6 rounded-lg border border-emerald-200 mb-8">
               <p className="text-sm text-emerald-900">
                 <span className="font-bold">⚡ Quick Response Guarantee:</span><br />
                 Most inquiries answered within 2 hours during business hours. Emergency shipments available 24/7 via WhatsApp.
               </p>
+            </div>
+
+            {/* Social Media Section */}
+            <div>
+              <h4 style={{ fontSize: '12px', fontWeight: '700', color: '#111827', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.8px' }}>
+                Connect With Us
+              </h4>
+              <SocialMediaIcons variant="footer" />
             </div>
           </div>
 
