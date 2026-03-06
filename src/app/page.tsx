@@ -6,18 +6,24 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-16 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex items-center" style={{ background: 'linear-gradient(135deg, #0B1F3A 0%, #1a3a52 50%, #0f2438 100%)' }}>
+      <section className="relative py-16 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex items-center" style={{ backgroundImage: `url('https://images.pexels.com/photos/33870195/pexels-photo-33870195.jpeg')`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
+        {/* Premium Dark Overlay - Enhanced for text visibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/65 to-black/50"></div>
+        {/* Bottom Gradient for depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/25 to-black/45"></div>
 
         <div className="max-w-6xl mx-auto w-full relative z-10">
           <div style={{ maxWidth: '800px' }}>
             <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight" style={{
               color: '#F5B041',
-              letterSpacing: '-0.02em'
+              letterSpacing: '-0.02em',
+              textShadow: '0 6px 16px rgba(0, 0, 0, 0.8), 0 3px 6px rgba(0, 0, 0, 0.7)'
             }}>
               Premium Clearing & Logistics Across Africa
             </h1>
             <p className="text-lg text-white mb-8" style={{
-              lineHeight: '1.8'
+              lineHeight: '1.8',
+              textShadow: '0 4px 10px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.6)'
             }}>
               Customs compliance, freight forwarding, and cross-border logistics built for SADC trade corridors.
             </p>
