@@ -20,28 +20,13 @@ export default function PremiumHeader() {
       {/* Main navbar */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo/Wordmark */}
-          <Link href="/" className="flex items-center gap-3">
-            {/* Logo Icon */}
-            <div style={{
-              width: '40px',
-              height: '40px',
-              background: 'linear-gradient(135deg, #1E6B4C 0%, #0B1F3A 100%)',
-              borderRadius: '8px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontWeight: '700',
-              color: 'white',
-              fontSize: '20px',
-              boxShadow: '0 2px 8px rgba(30, 107, 76, 0.25)'
-            }}>
-              A
-            </div>
-            {/* Logo Text */}
-            <span style={{ fontSize: '22px', fontWeight: '700', color: '#0f172a', letterSpacing: '-0.5px' }}>
-              AfriBridge
-            </span>
+          {/* Logo */}
+          <Link href="/" className="flex items-center">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2Fdc61da1f09234263a84e25f305acc6be%2F6d65564945c34d529d336d8c04265a4f?format=webp&width=800&height=1200"
+              alt="AfriBridge Logistics"
+              style={{ height: '50px', width: 'auto', objectFit: 'contain' }}
+            />
           </Link>
 
           {/* Desktop Navigation */}
