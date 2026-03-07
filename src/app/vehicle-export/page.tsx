@@ -225,8 +225,8 @@ export default function VehicleExportPage() {
 
       {/* Premium Hero */}
       <section className="relative py-20 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0B1F3A 0%, #1e3a5f 100%)' }}>
-        <div className="absolute inset-0" style={{ backgroundImage: `url('/afribridge-vehicle-export.webp')`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.35 }}></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 via-transparent to-blue-500/10"></div>
+        <div className="absolute inset-0" style={{ backgroundImage: `url('/afribridge-vehicle-export.webp')`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.2 }}></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent"></div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
         <div className="max-w-6xl mx-auto relative z-10">
           <div style={{ animation: 'fadeInUp 0.8s ease-out' }}>
