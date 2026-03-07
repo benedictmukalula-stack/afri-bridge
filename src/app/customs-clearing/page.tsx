@@ -8,8 +8,8 @@ export default function CustomsClearingPage() {
     <>
       {/* Hero Section */}
       <section className="section-spacing-lg relative px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex items-center" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%)' }}>
-        <div className="absolute inset-0" style={{ backgroundImage: `url('/afribridge-customs-clearing.webp')`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.15 }}></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
+        <div className="absolute inset-0" style={{ backgroundImage: `url('/afribridge-customs-clearing.webp')`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.2 }}></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent"></div>
         <div className="max-w-6xl mx-auto w-full relative z-10">
           <div className="text-center md:text-left">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
