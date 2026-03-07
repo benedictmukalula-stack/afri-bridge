@@ -221,7 +221,7 @@ export default function Home() {
             }}>
               INTEGRATED SERVICES
             </p>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: '800', marginBottom: '1rem', color: '#0B1F3A', letterSpacing: '-0.01em' }}>
+            <h2 style={{ fontSize: '2.5rem', fontWeight: '800', marginBottom: '1rem', color: '#000000', letterSpacing: '-0.01em' }}>
               Complete Logistics Solutions
             </h2>
             <p style={{ textAlign: 'center', color: '#6b7280', maxWidth: '600px', margin: '0 auto', fontSize: '16px', lineHeight: '1.6' }}>
