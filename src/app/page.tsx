@@ -288,7 +288,7 @@ export default function Home() {
                   }}>
                     {service.icon}
                   </div>
-                  <h3 style={{ fontSize: '18px', fontWeight: '700', marginBottom: '0.75rem', color: '#ffffff', margin: '0 0 0.75rem 0' }}>
+                  <h3 style={{ fontSize: '18px', fontWeight: '700', marginBottom: '0.75rem', color: '#000000', margin: '0 0 0.75rem 0' }}>
                     {service.title}
                   </h3>
                   <p style={{ color: '#6b7280', marginBottom: '1.5rem', fontSize: '15px', flex: '1', lineHeight: '1.6' }}>
