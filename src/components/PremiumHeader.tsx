@@ -125,7 +125,7 @@ export default function PremiumHeader() {
                   >
                     {link.submenu.map((item) => (
                       <Link
-                        key={item.href}
+                        key={item.label}
                         href={item.href}
                         style={{
                           display: 'block',
@@ -246,7 +246,7 @@ export default function PremiumHeader() {
                   <div style={{ marginLeft: '16px', marginTop: '8px' }}>
                     {link.submenu.map((item) => (
                       <Link
-                        key={item.href}
+                        key={item.label}
                         href={item.href}
                         style={{
                           fontSize: '13px',
