@@ -15,7 +15,7 @@ export default function CustomsClearingPage() {
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Expert Customs Clearing
             </h1>
-            <p className="text-xl text-gray-200 mb-8 max-w-2xl">
+            <p className="text-xl text-white mb-8 max-w-2xl">
               Navigate complex customs regulations with confidence. AfriBridge handles compliance, documentation, and border coordination for seamless cargo movement across SADC.
             </p>
             <div className="flex gap-4 flex-wrap">
