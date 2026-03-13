@@ -1,13 +1,12 @@
-import { builder, BuilderComponent } from "@builder.io/react";
+import BuilderCatchAllPage from "@/components/BuilderCatchAllPage";
 
-builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
+type PageProps = {
+  params: Promise<{ page?: string[] }>;
+};
 
-export default async function HomePage() {
-  const content = await builder
-    .get("page", {
-      userAttributes: { urlPath: "/" },
-    })
-    .toPromise();
+export default async function CatchAllPage({ params }: PageProps) {
+  const resolvedParams = await params;
+  const path = "/" + (resolvedParams.page?.join("/") || "");
 
-  return <BuilderComponent model="page" content={content || undefined} />;
+  return <BuilderCatchAllPage urlPath={path} />;
 }
