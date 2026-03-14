@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use client";
 
 import { useEffect, useState } from "react";
@@ -22,4 +23,10 @@ export default function Page() {
   if (!content) return <div>Loading...</div>;
 
   return <BuilderComponent model="page" content={content} />;
+=======
+import BuilderCatchAllPage from "@/components/BuilderCatchAllPage";
+
+export default function HomePage() {
+  return <BuilderCatchAllPage urlPath="/" />;
+>>>>>>> e3720a4 (Fix AfriBridge production build and deployment issues)
 }
