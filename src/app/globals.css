@@ -2,25 +2,61 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4 {
+  letter-spacing: -0.02em;
+  color: #020617;
+}
+
+p {
+  color: #475569;
+  line-height: 1.75;
+}
+
+a {
+  transition: color 0.2s ease;
+}
+
+.surface {
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.section-space {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .section-space {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  background: #ecfeff;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #0e7490;
 }
