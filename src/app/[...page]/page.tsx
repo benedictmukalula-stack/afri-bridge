@@ -7,6 +7,5 @@ export default async function CatchAllPage({
 }) {
   const resolvedParams = await params;
   const path = "/" + (resolvedParams.page?.join("/") || "");
-
   return <BuilderCatchAllPage urlPath={path} />;
 }

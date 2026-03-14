@@ -19,7 +19,6 @@ export default function BuilderCatchAllPage({
 }: BuilderCatchAllPageProps) {
   const [content, setContent] = useState<any>(null);
   const [loaded, setLoaded] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     let active = true;
@@ -27,9 +26,7 @@ export default function BuilderCatchAllPage({
     async function fetchContent() {
       try {
         if (!builderApiKey) {
-          if (active) {
-            setLoaded(true);
-          }
+          if (active) setLoaded(true);
           return;
         }
 
@@ -40,14 +37,11 @@ export default function BuilderCatchAllPage({
           .promise();
 
         if (!active) return;
-
         setContent(result || null);
         setLoaded(true);
-      } catch (err: any) {
-        console.error("Builder page load error:", err);
-        if (!active) return;
-        setError(err?.message || "Unknown Builder runtime error");
-        setLoaded(true);
+      } catch (error) {
+        console.error("Builder page load error:", error);
+        if (active) setLoaded(true);
       }
     }
 
@@ -61,20 +55,9 @@ export default function BuilderCatchAllPage({
   if (!loaded) {
     return (
       <main className="mx-auto max-w-7xl px-6 py-20">
-        <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-          <h1 className="text-2xl font-semibold text-slate-900">Loading page</h1>
+        <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+          <h1 className="text-2xl font-semibold text-slate-950">Loading page</h1>
           <p className="mt-3 text-slate-600">Fetching content for {urlPath}</p>
-        </div>
-      </main>
-    );
-  }
-
-  if (error) {
-    return (
-      <main className="mx-auto max-w-7xl px-6 py-20">
-        <div className="rounded-3xl border border-red-200 bg-white p-8 shadow-sm">
-          <h1 className="text-2xl font-semibold text-red-700">Page load error</h1>
-          <p className="mt-3 text-slate-700">{error}</p>
         </div>
       </main>
     );
@@ -83,27 +66,18 @@ export default function BuilderCatchAllPage({
   if (!content) {
     return (
       <main className="mx-auto max-w-7xl px-6 py-20">
-        <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-          <h1 className="text-3xl font-semibold text-slate-950">
-            Page not yet published
-          </h1>
-          <p className="mt-4 max-w-2xl text-slate-600">
-            This route exists, but no published Builder content was found for:
+        <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+          <h1 className="text-3xl font-semibold text-slate-950">Page not found</h1>
+          <p className="mt-4 text-slate-600">
+            No local route or published Builder content was found for:
           </p>
-          <p className="mt-2 font-semibold text-slate-900">{urlPath}</p>
-
-          <div className="mt-8 flex flex-wrap gap-4">
+          <p className="mt-2 font-semibold text-slate-950">{urlPath}</p>
+          <div className="mt-8">
             <Link
               href="/"
-              className="rounded-xl bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-cyan-300"
+              className="rounded-xl bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950"
             >
               Back Home
-            </Link>
-            <Link
-              href="/quote"
-              className="rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-50"
-            >
-              Request Quote
             </Link>
           </div>
         </div>
